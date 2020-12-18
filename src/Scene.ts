@@ -1,5 +1,5 @@
 import { IJSONObject, isJSONArray } from "@aicacia/json";
-import { none, Option, some, IConstructor, iter } from "@aicacia/core";
+import { none, Option, some, IConstructor } from "@aicacia/core";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 // tslint:disable-next-line: interface-name
