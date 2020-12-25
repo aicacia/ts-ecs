@@ -11,9 +11,5 @@
     "lib": ["esnext"]
   },
   "include": ["src"],
-  "exclude": ["src/**/*.test.*"],
-  "typedocOptions": {
-    "mode": "library",
-    "out": "docs"
-  }
+  "exclude": ["src/**/*.test.*"]
 }

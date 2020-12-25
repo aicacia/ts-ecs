@@ -390,6 +390,9 @@ export class Entity extends ToFromJSONEventEmitter {
     this.UNSAFE_removeChild(child);
     return this;
   }
+  /**
+   * @ignore
+   */
   UNSAFE_removeChild(child: Entity) {
     const index = this.children.indexOf(child);
 

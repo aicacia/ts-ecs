@@ -72,10 +72,16 @@ export abstract class Plugin extends ToFromJSONEventEmitter {
     }
   }
 
+  /**
+   * @ignore
+   */
   UNSAFE_setScene(scene: Scene) {
     this.scene.replace(scene);
     return this;
   }
+  /**
+   * @ignore
+   */
   UNSAFE_removeScene() {
     this.scene.clear();
     return this;
