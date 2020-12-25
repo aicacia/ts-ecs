@@ -14,7 +14,13 @@ export declare abstract class Plugin extends ToFromJSONEventEmitter {
     getManager<M extends Manager = Manager>(Manager: IConstructor<M>): Option<M>;
     getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>): M;
     validateRequirements(): void;
+    /**
+     * @ignore
+     */
     UNSAFE_setScene(scene: Scene): this;
+    /**
+     * @ignore
+     */
     UNSAFE_removeScene(): this;
     getScene(): Option<Scene>;
     getRequiredScene(): Scene;

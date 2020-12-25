@@ -74,6 +74,9 @@ export declare class Entity extends ToFromJSONEventEmitter {
     private _removeComponent;
     private _addChild;
     private _removeChild;
+    /**
+     * @ignore
+     */
     UNSAFE_removeChild(child: Entity): this;
     private setDepth;
     toJSON(): IJSONObject;
