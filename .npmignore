@@ -6,6 +6,4 @@ tsconfig.json
 .vscode
 .editorconfig
 .gitignore
-dist
-.cache
 .nyc_output
