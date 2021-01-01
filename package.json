@@ -15,11 +15,12 @@
     "coverage": "nyc --reporter=lcov --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
     "clean": "rm -rf ./lib",
     "lint": "eslint . --fix",
-    "doc": "typedoc --entryPoints src"
+    "doc": "typedoc --entryPoints src",
+    "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run coverage && npm run prepublishOnly"
+      "pre-commit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly"
     }
   },
   "keywords": [
