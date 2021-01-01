@@ -56,6 +56,10 @@ export class Entity extends ToFromJSONEventEmitter {
     tags.forEach((tag) => this.tags.delete(tag));
     return this;
   }
+  clearTags() {
+    this.tags.clear();
+    return this;
+  }
   addTag(...tags: string[]) {
     return this.addTags(tags);
   }

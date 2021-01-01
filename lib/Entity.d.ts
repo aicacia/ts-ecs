@@ -23,6 +23,7 @@ export declare class Entity extends ToFromJSONEventEmitter {
     addTags(tags: string[]): this;
     removeTag(...tags: string[]): this;
     removeTags(tags: string[]): this;
+    clearTags(): this;
     addTag(...tags: string[]): this;
     getDepth(): number;
     getRoot(): Entity;

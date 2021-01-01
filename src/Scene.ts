@@ -314,7 +314,7 @@ export class Scene extends ToFromJSONEventEmitter {
       this.entities.push(entity);
     } else if (!isChild) {
       throw new Error(
-        "Scene trying to add an Entity that has a parent to the Scene"
+        "Scene trying to add an Entity that already has a parent"
       );
     }
 
