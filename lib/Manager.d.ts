@@ -1,4 +1,7 @@
 import { Option, IConstructor } from "@aicacia/core";
+import type { Component } from "./Component";
+import type { Plugin } from "./Plugin";
+import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export declare abstract class Manager<C extends Component = Component> extends ToFromJSONEventEmitter {
     static managerPriority: number;
@@ -29,6 +32,3 @@ export declare abstract class Manager<C extends Component = Component> extends T
     abstract onUpdate(): this;
     abstract onAfterUpdate(): this;
 }
-import { Component } from "./Component";
-import { Plugin } from "./Plugin";
-import { Scene } from "./Scene";

@@ -1,5 +1,9 @@
 import { IJSONObject, isJSONArray } from "@aicacia/json";
 import { none, Option, some, IConstructor } from "@aicacia/core";
+import type { Component } from "./Component";
+import { Entity } from "./Entity";
+import type { Manager } from "./Manager";
+import { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 // tslint:disable-next-line: interface-name
@@ -89,6 +93,16 @@ export class Scene extends ToFromJSONEventEmitter {
     return this;
   }
 
+  forEachEntity(fn: (entity: Entity) => void, recur = true) {
+    for (const entity of this.entities) {
+      fn(entity);
+
+      if (recur) {
+        entity.forEachChild(fn, recur);
+      }
+    }
+    return this;
+  }
   find(fn: (entity: Entity) => boolean, recur = true): Option<Entity> {
     for (const entity of this.entities) {
       if (fn(entity)) {
@@ -459,8 +473,3 @@ export class Scene extends ToFromJSONEventEmitter {
     return this.maintain(false);
   }
 }
-
-import { Component } from "./Component";
-import { Entity } from "./Entity";
-import { Manager } from "./Manager";
-import { Plugin } from "./Plugin";

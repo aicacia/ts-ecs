@@ -1,4 +1,8 @@
 import { Option, IConstructor } from "@aicacia/core";
+import { IRequirement } from "./IRequirement";
+import type { Entity } from "./Entity";
+import type { Manager } from "./Manager";
+import type { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export interface Component {
     on(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
@@ -50,7 +54,3 @@ export declare abstract class Component extends ToFromJSONEventEmitter {
     onUpdate(): this;
     onAfterUpdate(): this;
 }
-import { IRequirement } from "./IRequirement";
-import { Entity } from "./Entity";
-import { Manager } from "./Manager";
-import { Plugin } from "./Plugin";

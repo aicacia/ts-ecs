@@ -1,4 +1,11 @@
 import { none, Option, IConstructor } from "@aicacia/core";
+import {
+  IRequirement,
+  filterRequirements,
+  requirementToString,
+} from "./IRequirement";
+import type { Manager } from "./Manager";
+import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 export abstract class Plugin extends ToFromJSONEventEmitter {
@@ -109,11 +116,3 @@ export abstract class Plugin extends ToFromJSONEventEmitter {
     return this;
   }
 }
-
-import {
-  IRequirement,
-  filterRequirements,
-  requirementToString,
-} from "./IRequirement";
-import { Manager } from "./Manager";
-import { Scene } from "./Scene";

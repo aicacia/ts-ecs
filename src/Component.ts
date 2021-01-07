@@ -1,4 +1,9 @@
 import { none, Option, IConstructor } from "@aicacia/core";
+import { IRequirement } from "./IRequirement";
+import { DefaultManager } from "./DefaultManager";
+import type { Entity } from "./Entity";
+import type { Manager } from "./Manager";
+import type { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 // tslint:disable-next-line: interface-name
@@ -7,7 +12,7 @@ export interface Component {
 }
 
 export abstract class Component extends ToFromJSONEventEmitter {
-  static Manager: IConstructor<Manager>;
+  static Manager: IConstructor<Manager> = DefaultManager;
   static requiredComponents: IRequirement<Component>[] = [];
   static requiredPlugins: IRequirement<Plugin>[] = [];
 
@@ -146,11 +151,3 @@ export abstract class Component extends ToFromJSONEventEmitter {
     return this;
   }
 }
-
-import { IRequirement } from "./IRequirement";
-import { DefaultManager } from "./DefaultManager";
-import { Entity } from "./Entity";
-import { Manager } from "./Manager";
-import { Plugin } from "./Plugin";
-
-Component.Manager = DefaultManager;

@@ -7,7 +7,10 @@ export {
   filterRequirements,
   requirementToString,
 } from "./IRequirement";
-export { JSONClassRegistry } from "./JSONClassRegistry";
+export {
+  JSONClassRegistry,
+  globalJSONClassRegistry,
+} from "./JSONClassRegistry";
 export { Manager } from "./Manager";
 export { Plugin } from "./Plugin";
 export { Scene } from "./Scene";

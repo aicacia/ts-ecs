@@ -1,5 +1,13 @@
 import { IJSONObject, isJSONArray } from "@aicacia/json";
 import { none, Option, some, IConstructor, iter } from "@aicacia/core";
+import {
+  filterRequirements,
+  IRequirement,
+  requirementToString,
+} from "./IRequirement";
+import { Component } from "./Component";
+import type { Plugin } from "./Plugin";
+import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 // tslint:disable-next-line: interface-name
@@ -109,19 +117,17 @@ export class Entity extends ToFromJSONEventEmitter {
   }
 
   forEachChild(fn: (entity: Entity) => void, recur = true) {
-    this.getChildren().forEach((child) => {
+    for (const child of this.getChildren()) {
       fn(child);
 
       if (recur) {
         child.forEachChild(fn, recur);
       }
-    });
+    }
     return this;
   }
   find(fn: (entity: Entity) => boolean, recur = true): Option<Entity> {
-    const children = this.getChildren();
-
-    for (const child of children) {
+    for (const child of this.getChildren()) {
       if (fn(child)) {
         return some(child);
       } else if (recur) {
@@ -454,12 +460,3 @@ export class Entity extends ToFromJSONEventEmitter {
     return this;
   }
 }
-
-import {
-  filterRequirements,
-  IRequirement,
-  requirementToString,
-} from "./IRequirement";
-import { Component } from "./Component";
-import { Plugin } from "./Plugin";
-import { Scene } from "./Scene";

@@ -1,5 +1,7 @@
 import { IJSONObject } from "@aicacia/json";
 import { Option, IConstructor } from "@aicacia/core";
+import { Component } from "./Component";
+import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export interface Entity {
     on(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
@@ -83,5 +85,3 @@ export declare class Entity extends ToFromJSONEventEmitter {
     toJSON(): IJSONObject;
     fromJSON(json: IJSONObject): this;
 }
-import { Component } from "./Component";
-import { Scene } from "./Scene";

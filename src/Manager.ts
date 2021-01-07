@@ -1,4 +1,7 @@
 import { none, Option, IConstructor } from "@aicacia/core";
+import type { Component } from "./Component";
+import type { Plugin } from "./Plugin";
+import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 export abstract class Manager<
@@ -70,7 +73,3 @@ export abstract class Manager<
   abstract onUpdate(): this;
   abstract onAfterUpdate(): this;
 }
-
-import { Component } from "./Component";
-import { Plugin } from "./Plugin";
-import { Scene } from "./Scene";

@@ -16,11 +16,12 @@
     "clean": "rm -rf ./lib",
     "lint": "eslint . --fix",
     "doc": "typedoc --entryPoints src",
-    "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write ."
+    "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
+    "preCommit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly"
+      "pre-commit": "npm run preCommit"
     }
   },
   "keywords": [

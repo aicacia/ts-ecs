@@ -1,4 +1,7 @@
 import { Option, IConstructor } from "@aicacia/core";
+import { IRequirement } from "./IRequirement";
+import type { Manager } from "./Manager";
+import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export declare abstract class Plugin extends ToFromJSONEventEmitter {
     static pluginPriority: number;
@@ -30,6 +33,3 @@ export declare abstract class Plugin extends ToFromJSONEventEmitter {
     onAfterUpdate(): this;
     onUpdate(): this;
 }
-import { IRequirement } from "./IRequirement";
-import { Manager } from "./Manager";
-import { Scene } from "./Scene";

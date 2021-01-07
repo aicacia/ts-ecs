@@ -1,5 +1,9 @@
 import { IJSONObject } from "@aicacia/json";
 import { Option, IConstructor } from "@aicacia/core";
+import type { Component } from "./Component";
+import { Entity } from "./Entity";
+import type { Manager } from "./Manager";
+import { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export interface Scene {
     on(event: "maintain" | "update", listener: () => void): this;
@@ -25,6 +29,7 @@ export declare class Scene extends ToFromJSONEventEmitter {
     getName(): Option<string>;
     setName(name: string): this;
     removeName(): this;
+    forEachEntity(fn: (entity: Entity) => void, recur?: boolean): this;
     find(fn: (entity: Entity) => boolean, recur?: boolean): Option<Entity>;
     findWithTag(...tags: string[]): Option<Entity>;
     findWithTags(tags: string[]): Option<Entity>;
@@ -76,7 +81,3 @@ export declare class Scene extends ToFromJSONEventEmitter {
     toJSON(): IJSONObject;
     fromJSON(json: IJSONObject): this;
 }
-import { Component } from "./Component";
-import { Entity } from "./Entity";
-import { Manager } from "./Manager";
-import { Plugin } from "./Plugin";
