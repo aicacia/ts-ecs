@@ -104,7 +104,9 @@ export class Entity extends ToFromJSONEventEmitter {
   UNSAFE_setScene(scene: Scene, recur = false) {
     this.scene.replace(scene);
     if (recur) {
-      this.forEachChild((child) => child.UNSAFE_setScene(scene, recur), false);
+      this.forEachChild((child) => {
+        child.UNSAFE_setScene(scene, recur);
+      }, false);
     }
     return this;
   }
@@ -116,9 +118,11 @@ export class Entity extends ToFromJSONEventEmitter {
     return this;
   }
 
-  forEachChild(fn: (entity: Entity) => void, recur = true) {
+  forEachChild(fn: (entity: Entity) => false | void, recur = true) {
     for (const child of this.getChildren()) {
-      fn(child);
+      if (fn(child) === false) {
+        break;
+      }
 
       if (recur) {
         child.forEachChild(fn, recur);

@@ -29,7 +29,7 @@ export declare class Scene extends ToFromJSONEventEmitter {
     getName(): Option<string>;
     setName(name: string): this;
     removeName(): this;
-    forEachEntity(fn: (entity: Entity) => void, recur?: boolean): this;
+    forEachEntity(fn: (entity: Entity) => false | void, recur?: boolean): this;
     find(fn: (entity: Entity) => boolean, recur?: boolean): Option<Entity>;
     findWithTag(...tags: string[]): Option<Entity>;
     findWithTags(tags: string[]): Option<Entity>;

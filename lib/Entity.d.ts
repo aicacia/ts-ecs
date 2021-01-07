@@ -43,7 +43,7 @@ export declare class Entity extends ToFromJSONEventEmitter {
      * @ignore
      */
     UNSAFE_removeScene(): this;
-    forEachChild(fn: (entity: Entity) => void, recur?: boolean): this;
+    forEachChild(fn: (entity: Entity) => false | void, recur?: boolean): this;
     find(fn: (entity: Entity) => boolean, recur?: boolean): Option<Entity>;
     findWithName(name: string): Option<Entity>;
     findWithTag(...tags: string[]): Option<Entity>;
