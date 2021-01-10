@@ -1,5 +1,5 @@
 import { IJSONObject, isJSONArray } from "@aicacia/json";
-import { none, Option, some, IConstructor, iter } from "@aicacia/core";
+import { none, Option, some, IConstructor } from "@aicacia/core";
 import {
   filterRequirements,
   IRequirement,
@@ -17,6 +17,14 @@ export interface Entity {
     listener: (component: Component) => void
   ): this;
   on(
+    event: "add-child" | "remove-child",
+    listener: (child: Entity) => void
+  ): this;
+  off(
+    event: "add-component" | "remove-component",
+    listener: (component: Component) => void
+  ): this;
+  off(
     event: "add-child" | "remove-child",
     listener: (child: Entity) => void
   ): this;
@@ -54,14 +62,18 @@ export class Entity extends ToFromJSONEventEmitter {
     return this.tags;
   }
   addTags(tags: string[]) {
-    tags.forEach((tag) => this.tags.add(tag));
+    for (const tag of tags) {
+      this.tags.add(tag);
+    }
     return this;
   }
   removeTag(...tags: string[]) {
     return this.removeTags(tags);
   }
   removeTags(tags: string[]) {
-    tags.forEach((tag) => this.tags.delete(tag));
+    for (const tag of tags) {
+      this.tags.delete(tag);
+    }
     return this;
   }
   clearTags() {
@@ -104,9 +116,9 @@ export class Entity extends ToFromJSONEventEmitter {
   UNSAFE_setScene(scene: Scene, recur = false) {
     this.scene.replace(scene);
     if (recur) {
-      this.forEachChild((child) => {
+      for (const child of this.children) {
         child.UNSAFE_setScene(scene, recur);
-      }, false);
+      }
     }
     return this;
   }
@@ -227,29 +239,35 @@ export class Entity extends ToFromJSONEventEmitter {
   }
   getComponentInstanceOf<C extends Component = Component>(
     Component: IConstructor<C>
-  ) {
-    return iter(this.components.values()).find(
-      (component) => component instanceof Component
+  ): Option<C> {
+    return Option.from(
+      Array.from(this.components.values()).find(
+        (component) => component instanceof Component
+      )
     ) as Option<C>;
   }
   getComponentsInstanceOf<C extends Component = Component>(
     Component: IConstructor<C>
-  ) {
-    return iter(this.components.values())
-      .filter((component) => component instanceof Component)
-      .toArray() as C[];
+  ): C[] {
+    return Array.from(this.components.values()).filter(
+      (component) => component instanceof Component
+    ) as C[];
   }
 
   addComponents(components: Component[]) {
-    components.forEach((component) => this._addComponent(component));
+    for (const component of components) {
+      this._addComponent(component);
+    }
     return this;
   }
   addComponent(...components: Component[]) {
     return this.addComponents(components);
   }
 
-  removeComponents(components: IConstructor<Component>[]) {
-    components.forEach((component) => this._removeComponent(component));
+  removeComponents(Components: IConstructor<Component>[]) {
+    for (const Component of Components) {
+      this._removeComponent(Component);
+    }
     return this;
   }
   removeComponent(...components: IConstructor<Component>[]) {
@@ -274,7 +292,9 @@ export class Entity extends ToFromJSONEventEmitter {
     return this.children;
   }
   addChildren(children: Entity[]) {
-    children.forEach((child) => this._addChild(child));
+    for (const child of children) {
+      this._addChild(child);
+    }
     return this;
   }
   addChild(...children: Entity[]) {
@@ -282,7 +302,9 @@ export class Entity extends ToFromJSONEventEmitter {
   }
 
   removeChildren(children: Entity[]) {
-    children.forEach((child) => this._removeChild(child));
+    for (const child of children) {
+      this._removeChild(child);
+    }
     return this;
   }
   removeChild(...children: Entity[]) {
@@ -424,7 +446,9 @@ export class Entity extends ToFromJSONEventEmitter {
 
   private setDepth(depth: number) {
     this.depth = depth;
-    this.children.forEach((child) => child.setDepth(depth + 1));
+    for (const child of this.children) {
+      child.setDepth(depth + 1);
+    }
     return this;
   }
 

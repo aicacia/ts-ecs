@@ -37,15 +37,21 @@ export class DefaultManager<
   }
 
   onInit() {
-    this.components.forEach((component) => component.onInit());
+    for (const component of this.components) {
+      component.onInit();
+    }
     return this;
   }
   onUpdate() {
-    this.components.forEach((component) => component.onUpdate());
+    for (const component of this.components) {
+      component.onUpdate();
+    }
     return this;
   }
   onAfterUpdate() {
-    this.components.forEach((component) => component.onAfterUpdate());
+    for (const component of this.components) {
+      component.onAfterUpdate();
+    }
     return this;
   }
 }

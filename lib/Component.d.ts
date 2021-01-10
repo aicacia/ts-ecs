@@ -6,6 +6,7 @@ import type { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export interface Component {
     on(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
+    off(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
 }
 export declare abstract class Component extends ToFromJSONEventEmitter {
     static Manager: IConstructor<Manager>;

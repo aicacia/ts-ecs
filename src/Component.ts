@@ -9,6 +9,7 @@ import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 // tslint:disable-next-line: interface-name
 export interface Component {
   on(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
+  off(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
 }
 
 export abstract class Component extends ToFromJSONEventEmitter {

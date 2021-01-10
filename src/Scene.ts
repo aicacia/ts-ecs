@@ -21,6 +21,19 @@ export interface Scene {
     event: "add-entity" | "remove-entity",
     listener: (entity: Entity) => void
   ): this;
+  off(event: "maintain" | "update", listener: () => void): this;
+  off(
+    event: "add-component" | "remove-component",
+    listener: (component: Component) => void
+  ): this;
+  off(
+    event: "add-plugin" | "remove-plugin",
+    listener: (entity: Plugin) => void
+  ): this;
+  off(
+    event: "add-entity" | "remove-entity",
+    listener: (entity: Entity) => void
+  ): this;
 }
 
 export class Scene extends ToFromJSONEventEmitter {
@@ -44,7 +57,9 @@ export class Scene extends ToFromJSONEventEmitter {
       this.isInitted = true;
       this.emit("init");
       this.maintain();
-      this.plugins.forEach((plugin) => plugin.onInit());
+      for (const plugin of this.plugins) {
+        plugin.onInit();
+      }
       this.isInitted = true;
     }
     return this;
@@ -52,12 +67,14 @@ export class Scene extends ToFromJSONEventEmitter {
 
   maintain(emit = true) {
     emit && this.emit("maintain");
-    this.entitiesToAdd.forEach((entity) => this.addEntityNow(entity, true));
-    this.entitiesToAdd.length = 0;
-    this.entitiesToRemove.forEach((entity) =>
-      this.removeEntityNow(entity, true)
-    );
+    for (const entity of this.entitiesToRemove) {
+      this.removeEntityNow(entity, true);
+    }
     this.entitiesToRemove.length = 0;
+    for (const entity of this.entitiesToAdd) {
+      this.addEntityNow(entity, true);
+    }
+    this.entitiesToAdd.length = 0;
     return this;
   }
 
@@ -66,10 +83,18 @@ export class Scene extends ToFromJSONEventEmitter {
     this.isUpdating = true;
     this.emit("update");
     this.maintain();
-    this.plugins.forEach((plugin) => plugin.onUpdate());
-    this.managers.forEach((manager) => manager.onUpdate());
-    this.managers.forEach((manager) => manager.onAfterUpdate());
-    this.plugins.forEach((plugin) => plugin.onAfterUpdate());
+    for (const plugin of this.plugins) {
+      plugin.onUpdate();
+    }
+    for (const manager of this.managers) {
+      manager.onUpdate();
+    }
+    for (const manager of this.managers) {
+      manager.onAfterUpdate();
+    }
+    for (const plugin of this.plugins) {
+      plugin.onAfterUpdate();
+    }
     this.isUpdating = false;
     return this;
   }
@@ -197,15 +222,19 @@ export class Scene extends ToFromJSONEventEmitter {
   }
 
   addPlugins(plugins: Plugin[]) {
-    plugins.forEach((plugin) => this._addPlugin(plugin));
+    for (const plugin of plugins) {
+      this._addPlugin(plugin);
+    }
     return this.sortPlugins();
   }
   addPlugin(...plugins: Plugin[]) {
     return this.addPlugins(plugins);
   }
 
-  removePlugins(plugins: IConstructor<Plugin>[]) {
-    plugins.forEach((plugin) => this._removePlugin(plugin));
+  removePlugins(Plugins: IConstructor<Plugin>[]) {
+    for (const Plugin of Plugins) {
+      this._removePlugin(Plugin);
+    }
     return this;
   }
   removePlugin(...plugins: IConstructor<Plugin>[]) {
@@ -338,9 +367,9 @@ export class Scene extends ToFromJSONEventEmitter {
     for (const component of entity.getComponents().values()) {
       this.UNSAFE_addComponent(component);
     }
-    entity.forEachChild((child) => {
+    for (const child of entity.getChildren()) {
       this.UNSAFE_addEntityNow(child, true);
-    }, false);
+    }
 
     if (process.env.NODE_ENV !== "production") {
       entity.validateRequirements();
@@ -382,10 +411,9 @@ export class Scene extends ToFromJSONEventEmitter {
       entity.getParent().ifSome((parent) => parent.UNSAFE_removeChild(entity));
     }
 
-    entity
-      .getChildren()
-      .slice()
-      .forEach((child) => this.removeEntityNow(child, true));
+    for (const child of entity.getChildren().slice()) {
+      this.removeEntityNow(child, true);
+    }
     this.emit("remove-entity", entity);
 
     return this;

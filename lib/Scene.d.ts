@@ -10,6 +10,10 @@ export interface Scene {
     on(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
     on(event: "add-plugin" | "remove-plugin", listener: (entity: Plugin) => void): this;
     on(event: "add-entity" | "remove-entity", listener: (entity: Entity) => void): this;
+    off(event: "maintain" | "update", listener: () => void): this;
+    off(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
+    off(event: "add-plugin" | "remove-plugin", listener: (entity: Plugin) => void): this;
+    off(event: "add-entity" | "remove-entity", listener: (entity: Entity) => void): this;
 }
 export declare class Scene extends ToFromJSONEventEmitter {
     private name;
@@ -48,7 +52,7 @@ export declare class Scene extends ToFromJSONEventEmitter {
     getRequiredPlugin<P extends Plugin>(Plugin: IConstructor<P>): P;
     addPlugins(plugins: Plugin[]): this;
     addPlugin(...plugins: Plugin[]): this;
-    removePlugins(plugins: IConstructor<Plugin>[]): this;
+    removePlugins(Plugins: IConstructor<Plugin>[]): this;
     removePlugin(...plugins: IConstructor<Plugin>[]): this;
     addEntities(entities: Entity[]): this;
     addEntity(...entities: Entity[]): this;

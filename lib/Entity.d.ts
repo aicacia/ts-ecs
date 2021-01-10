@@ -6,6 +6,8 @@ import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export interface Entity {
     on(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
     on(event: "add-child" | "remove-child", listener: (child: Entity) => void): this;
+    off(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
+    off(event: "add-child" | "remove-child", listener: (child: Entity) => void): this;
 }
 export declare class Entity extends ToFromJSONEventEmitter {
     private name;
@@ -63,7 +65,7 @@ export declare class Entity extends ToFromJSONEventEmitter {
     getComponentsInstanceOf<C extends Component = Component>(Component: IConstructor<C>): C[];
     addComponents(components: Component[]): this;
     addComponent(...components: Component[]): this;
-    removeComponents(components: IConstructor<Component>[]): this;
+    removeComponents(Components: IConstructor<Component>[]): this;
     removeComponent(...components: IConstructor<Component>[]): this;
     removeFromScene(): void;
     detach(): void;
