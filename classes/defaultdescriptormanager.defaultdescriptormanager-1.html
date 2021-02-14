@@ -103,6 +103,8 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#scene" class="tsd-kind-icon">scene</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#capturerejectionsymbol" class="tsd-kind-icon">capture<wbr>Rejection<wbr>Symbol</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#capturerejections" class="tsd-kind-icon">capture<wbr>Rejections</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#errormonitor" class="tsd-kind-icon">error<wbr>Monitor</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#managerpriority" class="tsd-kind-icon">manager<wbr>Priority</a></li>
@@ -154,6 +156,8 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#istofromjsonenabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#listenercount-1" class="tsd-kind-icon">listener<wbr>Count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#on-1" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#once-1" class="tsd-kind-icon">once</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultdescriptormanager.defaultdescriptormanager-1.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 							</ul>
 						</section>
@@ -173,7 +177,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in node_modules/@types/node/events.d.ts:41</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:23</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -202,9 +206,36 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#scene">scene</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L16">src/Manager.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L16">src/Manager.ts:16</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="capturerejectionsymbol" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> <span class="tsd-flag ts-flagStatic">Static</span> capture<wbr>Rejection<wbr>Symbol</h3>
+					<div class="tsd-signature tsd-kind-icon">capture<wbr>Rejection<wbr>Symbol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">unique </span><span class="tsd-signature-type">symbol</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#capturerejectionsymbol">captureRejectionSymbol</a></p>
+						<ul>
+							<li>Defined in node_modules/@types/node/events.d.ts:43</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="capturerejections" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> capture<wbr>Rejections</h3>
+					<div class="tsd-signature tsd-kind-icon">capture<wbr>Rejections<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#capturerejections">captureRejections</a></p>
+						<ul>
+							<li>Defined in node_modules/@types/node/events.d.ts:49</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sets or gets the default captureRejection value for all emitters.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 					<a name="defaultmaxlisteners" class="tsd-anchor"></a>
@@ -213,7 +244,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#defaultmaxlisteners">defaultMaxListeners</a></p>
 						<ul>
-							<li>Defined in node_modules/@types/node/events.d.ts:45</li>
+							<li>Defined in node_modules/@types/node/events.d.ts:50</li>
 						</ul>
 					</aside>
 				</section>
@@ -224,7 +255,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#errormonitor">errorMonitor</a></p>
 						<ul>
-							<li>Defined in node_modules/@types/node/events.d.ts:55</li>
+							<li>Defined in node_modules/@types/node/events.d.ts:42</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -245,7 +276,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#managerpriority">managerPriority</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L10">src/Manager.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L10">src/Manager.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -256,7 +287,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#tofromjsonenabled">toFromJSONEnabled</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L7">src/ToFromJSONEventEmitter.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L7">src/ToFromJSONEventEmitter.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -267,7 +298,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#typeid">typeId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L6">src/ToFromJSONEventEmitter.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L6">src/ToFromJSONEventEmitter.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -285,7 +316,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#addcomponent">addComponent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultManager.ts#L13">src/DefaultManager.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultManager.ts#L13">src/DefaultManager.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -399,7 +430,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#fromjson">fromJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L49">src/ToFromJSONEventEmitter.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L49">src/ToFromJSONEventEmitter.ts:49</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -423,7 +454,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getcomponents">getComponents</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultManager.ts#L9">src/DefaultManager.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultManager.ts#L9">src/DefaultManager.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -441,7 +472,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getconstructor">getConstructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L36">src/Manager.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L36">src/Manager.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="defaultdescriptormanager.defaultdescriptormanager-1.html" class="tsd-signature-type">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -459,7 +490,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getmanager">getManager</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L52">src/Manager.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L52">src/Manager.ts:52</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -489,7 +520,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getmanagerpriority">getManagerPriority</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L39">src/Manager.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L39">src/Manager.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -525,7 +556,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getplugin">getPlugin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L43">src/Manager.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L43">src/Manager.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -555,7 +586,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getrequiredmanager">getRequiredManager</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L55">src/Manager.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L55">src/Manager.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -585,7 +616,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getrequiredplugin">getRequiredPlugin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L46">src/Manager.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L46">src/Manager.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -615,7 +646,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getscene">getScene</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L32">src/Manager.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L32">src/Manager.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.scene-1.html" class="tsd-signature-type">Scene</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -633,7 +664,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#isempty">isEmpty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultManager.ts#L26">src/DefaultManager.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultManager.ts#L26">src/DefaultManager.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -789,7 +820,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#onadd">onAdd</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L61">src/Manager.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L61">src/Manager.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="defaultdescriptormanager.defaultdescriptormanager-1.html" class="tsd-signature-type">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -807,7 +838,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#onafterupdate">onAfterUpdate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultDescriptorManager.ts#L13">src/DefaultDescriptorManager.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultDescriptorManager.ts#L13">src/DefaultDescriptorManager.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="defaultdescriptormanager.defaultdescriptormanager-1.html" class="tsd-signature-type">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -825,7 +856,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#oninit">onInit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultDescriptorManager.ts#L7">src/DefaultDescriptorManager.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultDescriptorManager.ts#L7">src/DefaultDescriptorManager.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="defaultdescriptormanager.defaultdescriptormanager-1.html" class="tsd-signature-type">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -843,7 +874,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#onremove">onRemove</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L64">src/Manager.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L64">src/Manager.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="defaultdescriptormanager.defaultdescriptormanager-1.html" class="tsd-signature-type">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -861,7 +892,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#onupdate">onUpdate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultDescriptorManager.ts#L10">src/DefaultDescriptorManager.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultDescriptorManager.ts#L10">src/DefaultDescriptorManager.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="defaultdescriptormanager.defaultdescriptormanager-1.html" class="tsd-signature-type">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1062,7 +1093,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#removecomponent">removeComponent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultManager.ts#L17">src/DefaultManager.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultManager.ts#L17">src/DefaultManager.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1155,7 +1186,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#sort">sort</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultManager.ts#L34">src/DefaultManager.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultManager.ts#L34">src/DefaultManager.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="defaultdescriptormanager.defaultdescriptormanager-1.html" class="tsd-signature-type">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1173,7 +1204,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#sortfunction">sortFunction</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/DefaultManager.ts#L30">src/DefaultManager.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/DefaultManager.ts#L30">src/DefaultManager.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1200,7 +1231,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#tojson">toJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L40">src/ToFromJSONEventEmitter.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L40">src/ToFromJSONEventEmitter.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IJSONObject</span></h4>
@@ -1218,7 +1249,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getconstructorfromjson">getConstructorFromJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L19">src/ToFromJSONEventEmitter.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L19">src/ToFromJSONEventEmitter.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1248,7 +1279,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#getmanagerpriority-1">getManagerPriority</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/Manager.ts#L12">src/Manager.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/Manager.ts#L12">src/Manager.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1266,7 +1297,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#gettypeid">getTypeId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1284,7 +1315,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#istofromjsonenabled">isToFromJSONEnabled</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1302,7 +1333,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#listenercount-1">listenerCount</a></p>
 								<ul>
-									<li>Defined in node_modules/@types/node/events.d.ts:44</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:31</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1336,7 +1367,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#newfromjson">newFromJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L29">src/ToFromJSONEventEmitter.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L29">src/ToFromJSONEventEmitter.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1355,6 +1386,79 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="on-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> on</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventEmitter</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#on-1">on</a></p>
+								<ul>
+									<li>Defined in node_modules/@types/node/events.d.ts:28</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitter: <span class="tsd-signature-type">EventEmitter</span></h5>
+								</li>
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="once-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> once</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeEventTarget</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DOMEventTarget</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#once-1">once</a></p>
+								<ul>
+									<li>Defined in node_modules/@types/node/events.d.ts:26</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitter: <span class="tsd-signature-type">NodeEventTarget</span></h5>
+								</li>
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#once-1">once</a></p>
+								<ul>
+									<li>Defined in node_modules/@types/node/events.d.ts:27</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitter: <span class="tsd-signature-type">DOMEventTarget</span></h5>
+								</li>
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="tostring" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> to<wbr>String</h3>
@@ -1366,7 +1470,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="defaultmanager.defaultmanager-1.html">DefaultManager</a>.<a href="defaultmanager.defaultmanager-1.html#tostring">toString</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/dd9d48a/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8ce65a0/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1428,6 +1532,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#scene" class="tsd-kind-icon">scene</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#capturerejectionsymbol" class="tsd-kind-icon">capture<wbr>Rejection<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#capturerejections" class="tsd-kind-icon">capture<wbr>Rejections</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a>
@@ -1566,6 +1676,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
 								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#on-1" class="tsd-kind-icon">on</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#once-1" class="tsd-kind-icon">once</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="defaultdescriptormanager.defaultdescriptormanager-1.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
