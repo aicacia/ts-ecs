@@ -36,7 +36,7 @@ export abstract class Plugin extends ToFromJSONEventEmitter {
   }
   getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
     return this.getPlugin(Plugin).expect(
-      `${this.getConstructor()} required ${Plugin} Plugin`
+      () => `${this.getConstructor()} required ${Plugin} Plugin`
     );
   }
 
@@ -45,7 +45,7 @@ export abstract class Plugin extends ToFromJSONEventEmitter {
   }
   getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>) {
     return this.getManager(Manager).expect(
-      `${this.getConstructor()} required ${Manager} Manager`
+      () => `${this.getConstructor()} required ${Manager} Manager`
     );
   }
 
@@ -97,7 +97,9 @@ export abstract class Plugin extends ToFromJSONEventEmitter {
     return this.scene;
   }
   getRequiredScene() {
-    return this.getScene().expect(`${this.getConstructor()} required a Scene`);
+    return this.getScene().expect(
+      () => `${this.getConstructor()} required a Scene`
+    );
   }
 
   onInit() {

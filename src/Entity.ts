@@ -234,17 +234,18 @@ export class Entity extends ToFromJSONEventEmitter {
     Component: IConstructor<C>
   ) {
     return this.getComponent(Component).expect(
-      `Entity expected to have a ${Component} Component`
+      () => `Entity expected to have a ${Component} Component`
     );
   }
   getComponentInstanceOf<C extends Component = Component>(
     Component: IConstructor<C>
   ): Option<C> {
-    return Option.from(
-      Array.from(this.components.values()).find(
-        (component) => component instanceof Component
-      )
-    ) as Option<C>;
+    for (const component of this.components.values()) {
+      if (component instanceof Component) {
+        return some(component);
+      }
+    }
+    return none();
   }
   getComponentsInstanceOf<C extends Component = Component>(
     Component: IConstructor<C>

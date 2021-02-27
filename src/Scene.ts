@@ -204,7 +204,9 @@ export class Scene extends ToFromJSONEventEmitter {
     return Option.from(this.managerMap.get(Manager)) as Option<M>;
   }
   getRequiredManager<M extends Manager>(Manager: IConstructor<M>) {
-    return this.getManager(Manager).expect(`Scene required ${Manager} Manager`);
+    return this.getManager(Manager).expect(
+      () => `Scene required ${Manager} Manager`
+    );
   }
 
   getPlugins(): readonly Plugin[] {
@@ -218,7 +220,9 @@ export class Scene extends ToFromJSONEventEmitter {
     return Option.from(this.pluginsMap.get(Plugin)) as Option<P>;
   }
   getRequiredPlugin<P extends Plugin>(Plugin: IConstructor<P>) {
-    return this.getPlugin(Plugin).expect(`Scene required ${Plugin} Plugin`);
+    return this.getPlugin(Plugin).expect(
+      () => `Scene required ${Plugin} Plugin`
+    );
   }
 
   addPlugins(plugins: Plugin[]) {

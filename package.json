@@ -47,7 +47,7 @@
     "tape": "5",
     "ts-node": "9",
     "tslib": "2",
-    "typedoc": "beta",
+    "typedoc": "^0.20.28",
     "typescript": "4"
   },
   "dependencies": {

@@ -22,7 +22,8 @@ export abstract class ToFromJSONEventEmitter extends EventEmitter {
     return globalJSONClassRegistry
       .getById<T>(json.typeId as string)
       .expect(
-        `Failed to get class ${json.typeId} from globalJSONClassRegistry make sure the Component was added`
+        () =>
+          `Failed to get class ${json.typeId} from globalJSONClassRegistry make sure the Component was added`
       );
   }
 

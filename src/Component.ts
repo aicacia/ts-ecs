@@ -52,7 +52,7 @@ export abstract class Component extends ToFromJSONEventEmitter {
     Component: IConstructor<C>
   ): C {
     return this.getComponent(Component).expect(
-      `${this.getConstructor()} Component requires ${Component} Component`
+      () => `${this.getConstructor()} Component requires ${Component} Component`
     );
   }
   getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
@@ -60,7 +60,7 @@ export abstract class Component extends ToFromJSONEventEmitter {
   }
   getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
     return this.getPlugin(Plugin).expect(
-      `${this.getConstructor()} Component requires ${Plugin} Plugin`
+      () => `${this.getConstructor()} Component requires ${Plugin} Plugin`
     );
   }
 
@@ -83,7 +83,7 @@ export abstract class Component extends ToFromJSONEventEmitter {
   }
   getRequiredEntity() {
     return this.getEntity().expect(
-      `${this.getConstructor()} Component requires an Entity`
+      () => `${this.getConstructor()} Component requires an Entity`
     );
   }
 
@@ -92,7 +92,7 @@ export abstract class Component extends ToFromJSONEventEmitter {
   }
   getRequiredScene() {
     return this.getScene().expect(
-      `${this.getConstructor()} Component requires a Scene`
+      () => `${this.getConstructor()} Component requires a Scene`
     );
   }
   /**
@@ -114,9 +114,10 @@ export abstract class Component extends ToFromJSONEventEmitter {
   }
   getRequiredManager<M extends Manager = Manager>() {
     return this.getManager<M>().expect(
-      `${this.getConstructor()} Component is not part of a Manager ${Object.getPrototypeOf(
-        this
-      ).getManagerConstructor()} Manager`
+      () =>
+        `${this.getConstructor()} Component is not part of a Manager ${Object.getPrototypeOf(
+          this
+        ).getManagerConstructor()} Manager`
     );
   }
 
@@ -127,9 +128,10 @@ export abstract class Component extends ToFromJSONEventEmitter {
     Manager: IConstructor<M>
   ) {
     return this.getSceneManager(Manager).expect(
-      `${this.getConstructor()} Component requires ${Object.getPrototypeOf(
-        this
-      ).getManagerConstructor()} Manager`
+      () =>
+        `${this.getConstructor()} Component requires ${Object.getPrototypeOf(
+          this
+        ).getManagerConstructor()} Manager`
     );
   }
 

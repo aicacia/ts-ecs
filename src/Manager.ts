@@ -45,7 +45,7 @@ export abstract class Manager<
   }
   getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
     return this.getPlugin(Plugin).expect(
-      `${this.getConstructor()} required ${Plugin} Plugin`
+      () => `${this.getConstructor()} required ${Plugin} Plugin`
     );
   }
 
@@ -54,7 +54,7 @@ export abstract class Manager<
   }
   getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>): M {
     return this.getManager(Manager).expect(
-      `${this.getConstructor()} required ${Manager} Manager`
+      () => `${this.getConstructor()} required ${Manager} Manager`
     );
   }
 
