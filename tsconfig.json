@@ -8,7 +8,7 @@
     "outDir": "lib",
     "strict": true,
     "downlevelIteration": true,
-    "lib": ["esnext"]
+    "lib": ["DOM", "esnext"]
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.*"]
