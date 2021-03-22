@@ -60,6 +60,9 @@ export class Scene extends ToFromJSONEventEmitter {
       for (const plugin of this.plugins) {
         plugin.onInit();
       }
+      for (const manager of this.managers) {
+        manager.onInit();
+      }
       this.isInitted = true;
     }
     return this;
