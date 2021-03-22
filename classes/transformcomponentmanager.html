@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DefaultManager | @aicacia/ecs</title>
+	<title>TransformComponentManager | @aicacia/ecs</title>
 	<meta name="description" content="Documentation for @aicacia/ecs">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,40 +53,24 @@
 					<a href="../modules.html">@aicacia/ecs</a>
 				</li>
 				<li>
-					<a href="defaultmanager.html">DefaultManager</a>
+					<a href="transformcomponentmanager.html">TransformComponentManager</a>
 				</li>
 			</ul>
-			<h1>Class DefaultManager&lt;C&gt;</h1>
+			<h1>Class TransformComponentManager</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>C<span class="tsd-signature-symbol">: </span><a href="component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a> = <a href="component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a></h4>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="defaultdescriptormanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultDescriptorManager</a><span class="tsd-signature-symbol">&lt;</span><a href="transformcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">DefaultManager</span>
-								<ul class="tsd-hierarchy">
-									<li>
-										<a href="camera2dcontrolmanager.html" class="tsd-signature-type" data-tsd-kind="Class">Camera2DControlManager</a>
-									</li>
-									<li>
-										<a href="defaultdescriptormanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultDescriptorManager</a>
-									</li>
-								</ul>
+								<span class="target">TransformComponentManager</span>
 							</li>
 						</ul>
 					</li>
@@ -99,47 +83,47 @@
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="defaultmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="defaultmanager.html#scene" class="tsd-kind-icon">scene</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#managerpriority" class="tsd-kind-icon">manager<wbr>Priority</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#tofromjsonenabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#typeid" class="tsd-kind-icon">type<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="transformcomponentmanager.html#scene" class="tsd-kind-icon">scene</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#managerpriority" class="tsd-kind-icon">manager<wbr>Priority</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#tofromjsonenabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#typeid" class="tsd-kind-icon">type<wbr>Id</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="defaultmanager.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="defaultmanager.html#fromjson" class="tsd-kind-icon">fromJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="defaultmanager.html#getcomponents" class="tsd-kind-icon">get<wbr>Components</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="defaultmanager.html#getconstructor" class="tsd-kind-icon">get<wbr>Constructor</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="defaultmanager.html#getmanager" class="tsd-kind-icon">get<wbr>Manager</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="defaultmanager.html#getmanagerpriority" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="defaultmanager.html#getplugin" class="tsd-kind-icon">get<wbr>Plugin</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="defaultmanager.html#getrequiredmanager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="defaultmanager.html#getrequiredplugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="defaultmanager.html#getscene" class="tsd-kind-icon">get<wbr>Scene</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="defaultmanager.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="defaultmanager.html#onadd" class="tsd-kind-icon">on<wbr>Add</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="defaultmanager.html#onafterupdate" class="tsd-kind-icon">on<wbr>After<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="defaultmanager.html#oninit" class="tsd-kind-icon">on<wbr>Init</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="defaultmanager.html#onremove" class="tsd-kind-icon">on<wbr>Remove</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="defaultmanager.html#onupdate" class="tsd-kind-icon">on<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="defaultmanager.html#removecomponent" class="tsd-kind-icon">remove<wbr>Component</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="defaultmanager.html#sort" class="tsd-kind-icon">sort</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="defaultmanager.html#sortfunction" class="tsd-kind-icon">sort<wbr>Function</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="defaultmanager.html#tojson" class="tsd-kind-icon">toJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#getconstructorfromjson" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#getmanagerpriority-1" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#gettypeid" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#istofromjsonenabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="defaultmanager.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#fromjson" class="tsd-kind-icon">fromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#getcomponents" class="tsd-kind-icon">get<wbr>Components</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#getconstructor" class="tsd-kind-icon">get<wbr>Constructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="transformcomponentmanager.html#getmanager" class="tsd-kind-icon">get<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#getmanagerpriority" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="transformcomponentmanager.html#getplugin" class="tsd-kind-icon">get<wbr>Plugin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="transformcomponentmanager.html#getrequiredmanager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="transformcomponentmanager.html#getrequiredplugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#getscene" class="tsd-kind-icon">get<wbr>Scene</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#onadd" class="tsd-kind-icon">on<wbr>Add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#onafterupdate" class="tsd-kind-icon">on<wbr>After<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#oninit" class="tsd-kind-icon">on<wbr>Init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#onremove" class="tsd-kind-icon">on<wbr>Remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#onupdate" class="tsd-kind-icon">on<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#removecomponent" class="tsd-kind-icon">remove<wbr>Component</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#sort" class="tsd-kind-icon">sort</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#sortfunction" class="tsd-kind-icon">sort<wbr>Function</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="transformcomponentmanager.html#tojson" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#getconstructorfromjson" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#getmanagerpriority-1" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#gettypeid" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#istofromjsonenabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="transformcomponentmanager.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 							</ul>
 						</section>
 					</div>
@@ -147,33 +131,27 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Default<wbr>Manager&lt;C&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EventEmitterOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Transform<wbr>Component<wbr>Manager<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EventEmitterOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#constructor">constructor</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#constructor">constructor</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/events.d.ts:23</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>C<span class="tsd-signature-symbol">: </span><a href="component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span> = <a href="component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a></h4>
-								</li>
-							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">EventEmitterOptions</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -185,7 +163,7 @@
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> scene</h3>
 					<div class="tsd-signature tsd-kind-icon">scene<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#scene">scene</a></p>
+						<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#scene">scene</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L16">src/Manager.ts:16</a></li>
 						</ul>
@@ -196,7 +174,7 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> manager<wbr>Priority</h3>
 					<div class="tsd-signature tsd-kind-icon">manager<wbr>Priority<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#managerpriority">managerPriority</a></p>
+						<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#managerpriority">managerPriority</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L10">src/Manager.ts:10</a></li>
 						</ul>
@@ -207,7 +185,7 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> to<wbr>FromJSONEnabled</h3>
 					<div class="tsd-signature tsd-kind-icon">to<wbr>FromJSONEnabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#tofromjsonenabled">toFromJSONEnabled</a></p>
+						<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#tofromjsonenabled">toFromJSONEnabled</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L7">src/ToFromJSONEventEmitter.ts:7</a></li>
 						</ul>
@@ -218,25 +196,25 @@
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagStatic">Static</span> type<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">type<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#typeid">typeId</a></p>
+						<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#typeid">typeId</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L6">src/ToFromJSONEventEmitter.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="addcomponent" class="tsd-anchor"></a>
 					<h3>add<wbr>Component</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Component<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Component<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><a href="transformcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="manager.html">Manager</a>.<a href="manager.html#addcomponent">addComponent</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#addcomponent">addComponent</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L13">src/DefaultManager.ts:13</a></li>
 								</ul>
@@ -244,10 +222,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>component: <span class="tsd-signature-type">C</span></h5>
+									<h5>component: <a href="transformcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -255,12 +233,12 @@
 					<a name="fromjson" class="tsd-anchor"></a>
 					<h3>fromJSON</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>_json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>_json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#fromjson">fromJSON</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#fromjson">fromJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L50">src/ToFromJSONEventEmitter.ts:50</a></li>
 								</ul>
@@ -271,24 +249,25 @@
 									<h5>_json: <span class="tsd-signature-type">IJSONObject</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getcomponents" class="tsd-anchor"></a>
 					<h3>get<wbr>Components</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Components<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">[]</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Components<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getcomponents">getComponents</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L9">src/DefaultManager.ts:9</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -296,17 +275,17 @@
 					<a name="getconstructor" class="tsd-anchor"></a>
 					<h3>get<wbr>Constructor</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getconstructor">getConstructor</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getconstructor">getConstructor</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L36">src/Manager.ts:36</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -319,7 +298,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getmanager">getManager</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getmanager">getManager</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L52">src/Manager.ts:52</a></li>
 								</ul>
@@ -349,7 +328,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getmanagerpriority">getManagerPriority</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getmanagerpriority">getManagerPriority</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L39">src/Manager.ts:39</a></li>
 								</ul>
@@ -367,7 +346,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getplugin">getPlugin</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getplugin">getPlugin</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L43">src/Manager.ts:43</a></li>
 								</ul>
@@ -397,7 +376,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getrequiredmanager">getRequiredManager</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getrequiredmanager">getRequiredManager</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L55">src/Manager.ts:55</a></li>
 								</ul>
@@ -427,7 +406,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getrequiredplugin">getRequiredPlugin</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getrequiredplugin">getRequiredPlugin</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L46">src/Manager.ts:46</a></li>
 								</ul>
@@ -457,7 +436,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getscene">getScene</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getscene">getScene</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L32">src/Manager.ts:32</a></li>
 								</ul>
@@ -466,16 +445,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="isempty" class="tsd-anchor"></a>
 					<h3>is<wbr>Empty</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">is<wbr>Empty<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="manager.html">Manager</a>.<a href="manager.html#isempty">isEmpty</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#isempty">isEmpty</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L26">src/DefaultManager.ts:26</a></li>
 								</ul>
@@ -488,53 +467,53 @@
 					<a name="onadd" class="tsd-anchor"></a>
 					<h3>on<wbr>Add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Add<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Add<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#onadd">onAdd</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#onadd">onAdd</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L61">src/Manager.ts:61</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onafterupdate" class="tsd-anchor"></a>
 					<h3>on<wbr>After<wbr>Update</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>After<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>After<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="manager.html">Manager</a>.<a href="manager.html#onafterupdate">onAfterUpdate</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#onafterupdate">onAfterUpdate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L51">src/DefaultManager.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultDescriptorManager.ts#L13">src/DefaultDescriptorManager.ts:13</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="oninit" class="tsd-anchor"></a>
 					<h3>on<wbr>Init</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Init<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Init<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="manager.html">Manager</a>.<a href="manager.html#oninit">onInit</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#oninit">onInit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L39">src/DefaultManager.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultDescriptorManager.ts#L7">src/DefaultDescriptorManager.ts:7</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -542,48 +521,48 @@
 					<a name="onremove" class="tsd-anchor"></a>
 					<h3>on<wbr>Remove</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Remove<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Remove<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#onremove">onRemove</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#onremove">onRemove</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L64">src/Manager.ts:64</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onupdate" class="tsd-anchor"></a>
 					<h3>on<wbr>Update</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="manager.html">Manager</a>.<a href="manager.html#onupdate">onUpdate</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#onupdate">onUpdate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L45">src/DefaultManager.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultDescriptorManager.ts#L10">src/DefaultDescriptorManager.ts:10</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="removecomponent" class="tsd-anchor"></a>
 					<h3>remove<wbr>Component</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Component<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Component<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><a href="transformcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="manager.html">Manager</a>.<a href="manager.html#removecomponent">removeComponent</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#removecomponent">removeComponent</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L17">src/DefaultManager.ts:17</a></li>
 								</ul>
@@ -591,40 +570,41 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>component: <span class="tsd-signature-type">C</span></h5>
+									<h5>component: <a href="transformcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="sort" class="tsd-anchor"></a>
 					<h3>sort</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="manager.html">Manager</a>.<a href="manager.html#sort">sort</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#sort">sort</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L34">src/DefaultManager.ts:34</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="defaultmanager.html" class="tsd-signature-type" data-tsd-kind="Class">DefaultManager</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="transformcomponentmanager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="sortfunction" class="tsd-anchor"></a>
 					<h3>sort<wbr>Function</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">sort<wbr>Function<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">C</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#sortfunction">sortFunction</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/DefaultManager.ts#L30">src/DefaultManager.ts:30</a></li>
 								</ul>
@@ -651,7 +631,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#tojson">toJSON</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#tojson">toJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L41">src/ToFromJSONEventEmitter.ts:41</a></li>
 								</ul>
@@ -669,7 +649,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getconstructorfromjson">getConstructorFromJSON</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getconstructorfromjson">getConstructorFromJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L19">src/ToFromJSONEventEmitter.ts:19</a></li>
 								</ul>
@@ -699,7 +679,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#getmanagerpriority-1">getManagerPriority</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#getmanagerpriority-1">getManagerPriority</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/Manager.ts#L12">src/Manager.ts:12</a></li>
 								</ul>
@@ -717,7 +697,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#gettypeid">getTypeId</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#gettypeid">getTypeId</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
 								</ul>
@@ -735,7 +715,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#istofromjsonenabled">isToFromJSONEnabled</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#istofromjsonenabled">isToFromJSONEnabled</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
 								</ul>
@@ -753,7 +733,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#newfromjson">newFromJSON</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#newfromjson">newFromJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L30">src/ToFromJSONEventEmitter.ts:30</a></li>
 								</ul>
@@ -783,7 +763,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="manager.html">Manager</a>.<a href="manager.html#tostring">toString</a></p>
+								<p>Inherited from <a href="defaultdescriptormanager.html">DefaultDescriptorManager</a>.<a href="defaultdescriptormanager.html#tostring">toString</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/a026772/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
 								</ul>
@@ -806,101 +786,101 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-has-type-parameter">
-						<a href="defaultmanager.html" class="tsd-kind-icon">Default<wbr>Manager</a>
+					<li class="current tsd-kind-class">
+						<a href="transformcomponentmanager.html" class="tsd-kind-icon">Transform<wbr>Component<wbr>Manager</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="defaultmanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="defaultmanager.html#scene" class="tsd-kind-icon">scene</a>
+								<a href="transformcomponentmanager.html#scene" class="tsd-kind-icon">scene</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#managerpriority" class="tsd-kind-icon">manager<wbr>Priority</a>
+								<a href="transformcomponentmanager.html#managerpriority" class="tsd-kind-icon">manager<wbr>Priority</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#tofromjsonenabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a>
+								<a href="transformcomponentmanager.html#tofromjsonenabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#typeid" class="tsd-kind-icon">type<wbr>Id</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="defaultmanager.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a>
+								<a href="transformcomponentmanager.html#typeid" class="tsd-kind-icon">type<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="defaultmanager.html#fromjson" class="tsd-kind-icon">fromJSON</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="defaultmanager.html#getcomponents" class="tsd-kind-icon">get<wbr>Components</a>
+								<a href="transformcomponentmanager.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="defaultmanager.html#getconstructor" class="tsd-kind-icon">get<wbr>Constructor</a>
+								<a href="transformcomponentmanager.html#fromjson" class="tsd-kind-icon">fromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#getcomponents" class="tsd-kind-icon">get<wbr>Components</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#getconstructor" class="tsd-kind-icon">get<wbr>Constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="defaultmanager.html#getmanager" class="tsd-kind-icon">get<wbr>Manager</a>
+								<a href="transformcomponentmanager.html#getmanager" class="tsd-kind-icon">get<wbr>Manager</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="defaultmanager.html#getmanagerpriority" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a>
+								<a href="transformcomponentmanager.html#getmanagerpriority" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="defaultmanager.html#getplugin" class="tsd-kind-icon">get<wbr>Plugin</a>
+								<a href="transformcomponentmanager.html#getplugin" class="tsd-kind-icon">get<wbr>Plugin</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="defaultmanager.html#getrequiredmanager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a>
+								<a href="transformcomponentmanager.html#getrequiredmanager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="defaultmanager.html#getrequiredplugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a>
+								<a href="transformcomponentmanager.html#getrequiredplugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="defaultmanager.html#getscene" class="tsd-kind-icon">get<wbr>Scene</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="defaultmanager.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
+								<a href="transformcomponentmanager.html#getscene" class="tsd-kind-icon">get<wbr>Scene</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="defaultmanager.html#onadd" class="tsd-kind-icon">on<wbr>Add</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="defaultmanager.html#onafterupdate" class="tsd-kind-icon">on<wbr>After<wbr>Update</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="defaultmanager.html#oninit" class="tsd-kind-icon">on<wbr>Init</a>
+								<a href="transformcomponentmanager.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="defaultmanager.html#onremove" class="tsd-kind-icon">on<wbr>Remove</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="defaultmanager.html#onupdate" class="tsd-kind-icon">on<wbr>Update</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="defaultmanager.html#removecomponent" class="tsd-kind-icon">remove<wbr>Component</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="defaultmanager.html#sort" class="tsd-kind-icon">sort</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="defaultmanager.html#sortfunction" class="tsd-kind-icon">sort<wbr>Function</a>
+								<a href="transformcomponentmanager.html#onadd" class="tsd-kind-icon">on<wbr>Add</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="defaultmanager.html#tojson" class="tsd-kind-icon">toJSON</a>
+								<a href="transformcomponentmanager.html#onafterupdate" class="tsd-kind-icon">on<wbr>After<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#oninit" class="tsd-kind-icon">on<wbr>Init</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#onremove" class="tsd-kind-icon">on<wbr>Remove</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#onupdate" class="tsd-kind-icon">on<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#removecomponent" class="tsd-kind-icon">remove<wbr>Component</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#sort" class="tsd-kind-icon">sort</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#sortfunction" class="tsd-kind-icon">sort<wbr>Function</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="transformcomponentmanager.html#tojson" class="tsd-kind-icon">toJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#getconstructorfromjson" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a>
+								<a href="transformcomponentmanager.html#getconstructorfromjson" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#getmanagerpriority-1" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a>
+								<a href="transformcomponentmanager.html#getmanagerpriority-1" class="tsd-kind-icon">get<wbr>Manager<wbr>Priority</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#gettypeid" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a>
+								<a href="transformcomponentmanager.html#gettypeid" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#istofromjsonenabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a>
+								<a href="transformcomponentmanager.html#istofromjsonenabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a>
+								<a href="transformcomponentmanager.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="defaultmanager.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+								<a href="transformcomponentmanager.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
 							</li>
 						</ul>
 					</li>
