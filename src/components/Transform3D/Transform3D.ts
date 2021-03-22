@@ -6,7 +6,7 @@ import { TransformComponent } from "../TransformComponent";
 const MAT4_0 = mat4.create(),
   QUAT_0 = quat.create(),
   VEC3_0 = vec3.create(),
-  VEC3_UP = vec3.fromValues(0.0, 0.0, 1.0);
+  VEC3_UP = vec3.fromValues(0, 0, 1);
 
 export class Transform3D extends TransformComponent {
   private localPosition: vec3 = vec3.create();
@@ -195,7 +195,7 @@ export class Transform3D extends TransformComponent {
     return mat2dFromMat4(out, this.getLocalMatrix());
   }
 
-  lookAt(position: vec3) {
+  lookAt(position: vec3, up: vec3 = VEC3_UP) {
     let inverseMatrix = mat4.invert(MAT4_0, this.getMatrix());
     if (inverseMatrix == null) {
       inverseMatrix = mat4.identity(MAT4_0);
@@ -203,7 +203,7 @@ export class Transform3D extends TransformComponent {
     const localPosition = vec3.transformMat4(VEC3_0, position, inverseMatrix);
     mat4.getRotation(
       this.localRotation,
-      mat4.lookAt(MAT4_0, this.localPosition, localPosition, VEC3_UP)
+      mat4.lookAt(MAT4_0, this.localPosition, localPosition, up)
     );
     return this.setNeedsUpdate();
   }

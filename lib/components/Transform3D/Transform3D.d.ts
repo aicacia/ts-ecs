@@ -45,7 +45,7 @@ export declare class Transform3D extends TransformComponent {
     getMatrix2d(out: mat2d): mat2d;
     getLocalMatrix4(out: mat4): mat4;
     getLocalMatrix2d(out: mat2d): mat2d;
-    lookAt(position: vec3): this;
+    lookAt(position: vec3, up?: vec3): this;
     toJSON(): {
         localPosition: IJSONArray;
         localScale: IJSONArray;
