@@ -195,15 +195,19 @@ export class Transform3D extends TransformComponent {
     return mat2dFromMat4(out, this.getLocalMatrix());
   }
 
+  toLocalPosition(out: vec3, position: vec3) {
+    return vec3.sub(out, position, this.getPosition());
+  }
+
   lookAt(position: vec3, up: vec3 = VEC3_UP) {
-    let inverseMatrix = mat4.invert(MAT4_0, this.getMatrix());
-    if (inverseMatrix == null) {
-      inverseMatrix = mat4.identity(MAT4_0);
-    }
-    const localPosition = vec3.transformMat4(VEC3_0, position, inverseMatrix);
     mat4.getRotation(
       this.localRotation,
-      mat4.lookAt(MAT4_0, this.localPosition, localPosition, up)
+      mat4.targetTo(
+        MAT4_0,
+        this.localPosition,
+        this.toLocalPosition(VEC3_0, position),
+        up
+      )
     );
     return this.setNeedsUpdate();
   }
