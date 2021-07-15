@@ -1,5 +1,27 @@
 import { EventEmitter } from "events";
 
+// tslint:disable-next-line: interface-name
+export interface Entity {
+  on(
+    event: "resize",
+    listener: (
+      width: number,
+      height: number,
+      origWidth: number,
+      origHeight: number
+    ) => void
+  ): this;
+  off(
+    event: "resize",
+    listener: (
+      width: number,
+      height: number,
+      origWidth: number,
+      origHeight: number
+    ) => void
+  ): this;
+}
+
 export abstract class Canvas extends EventEmitter {
   private width = 1;
   private height = 1;

@@ -6,11 +6,11 @@ import type { Manager } from "./Manager";
 import { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export interface Scene {
-    on(event: "maintain" | "update", listener: () => void): this;
+    on(event: "maintain" | "update" | "init" | "clear", listener: () => void): this;
     on(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
     on(event: "add-plugin" | "remove-plugin", listener: (entity: Plugin) => void): this;
     on(event: "add-entity" | "remove-entity", listener: (entity: Entity) => void): this;
-    off(event: "maintain" | "update", listener: () => void): this;
+    off(event: "maintain" | "update" | "init" | "clear", listener: () => void): this;
     off(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
     off(event: "add-plugin" | "remove-plugin", listener: (entity: Plugin) => void): this;
     off(event: "add-entity" | "remove-entity", listener: (entity: Entity) => void): this;

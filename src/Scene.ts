@@ -8,7 +8,10 @@ import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 // tslint:disable-next-line: interface-name
 export interface Scene {
-  on(event: "maintain" | "update", listener: () => void): this;
+  on(
+    event: "maintain" | "update" | "init" | "clear",
+    listener: () => void
+  ): this;
   on(
     event: "add-component" | "remove-component",
     listener: (component: Component) => void
@@ -21,7 +24,10 @@ export interface Scene {
     event: "add-entity" | "remove-entity",
     listener: (entity: Entity) => void
   ): this;
-  off(event: "maintain" | "update", listener: () => void): this;
+  off(
+    event: "maintain" | "update" | "init" | "clear",
+    listener: () => void
+  ): this;
   off(
     event: "add-component" | "remove-component",
     listener: (component: Component) => void
