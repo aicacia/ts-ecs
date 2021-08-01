@@ -1,0 +1,2215 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TransformComponent | @aicacia/ecs</title>
+	<meta name="description" content="Documentation for @aicacia/ecs">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@aicacia/ecs</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@aicacia/ecs</a>
+				</li>
+				<li>
+					<a href="TransformComponent.html">TransformComponent</a>
+				</li>
+			</ul>
+			<h1>Class TransformComponent</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">TransformComponent</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="Transform2D.html" class="tsd-signature-type" data-tsd-kind="Class">Transform2D</a>
+									</li>
+									<li>
+										<a href="Transform3D.html" class="tsd-signature-type" data-tsd-kind="Class">Transform3D</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="TransformComponent.html#Manager" class="tsd-kind-icon">Manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#requiredComponents" class="tsd-kind-icon">required<wbr>Components</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#requiredPlugins" class="tsd-kind-icon">required<wbr>Plugins</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#toFromJSONEnabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#typeId" class="tsd-kind-icon">type<wbr>Id</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#fromJSON" class="tsd-kind-icon">fromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getComponent" class="tsd-kind-icon">get<wbr>Component</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getConstructor" class="tsd-kind-icon">get<wbr>Constructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getEntity" class="tsd-kind-icon">get<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalMatrix2d" class="tsd-kind-icon">get<wbr>Local<wbr>Matrix2d</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalMatrix4" class="tsd-kind-icon">get<wbr>Local<wbr>Matrix4</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalNeedsUpdate" class="tsd-kind-icon">get<wbr>Local<wbr>Needs<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalPosition2" class="tsd-kind-icon">get<wbr>Local<wbr>Position2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalPosition3" class="tsd-kind-icon">get<wbr>Local<wbr>Position3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalRotationQuat" class="tsd-kind-icon">get<wbr>Local<wbr>Rotation<wbr>Quat</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalRotationZ" class="tsd-kind-icon">get<wbr>Local<wbr>RotationZ</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalScale2" class="tsd-kind-icon">get<wbr>Local<wbr>Scale2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getLocalScale3" class="tsd-kind-icon">get<wbr>Local<wbr>Scale3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getManager" class="tsd-kind-icon">get<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getManagerConstructor" class="tsd-kind-icon">get<wbr>Manager<wbr>Constructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getMatrix2d" class="tsd-kind-icon">get<wbr>Matrix2d</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getMatrix4" class="tsd-kind-icon">get<wbr>Matrix4</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getNeedsUpdate" class="tsd-kind-icon">get<wbr>Needs<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getParentTransform" class="tsd-kind-icon">get<wbr>Parent<wbr>Transform</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getPlugin" class="tsd-kind-icon">get<wbr>Plugin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getPosition2" class="tsd-kind-icon">get<wbr>Position2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getPosition3" class="tsd-kind-icon">get<wbr>Position3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getRenderable" class="tsd-kind-icon">get<wbr>Renderable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getRequiredComponent" class="tsd-kind-icon">get<wbr>Required<wbr>Component</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getRequiredComponents" class="tsd-kind-icon">get<wbr>Required<wbr>Components</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getRequiredEntity" class="tsd-kind-icon">get<wbr>Required<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getRequiredManager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getRequiredPlugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getRequiredPlugins" class="tsd-kind-icon">get<wbr>Required<wbr>Plugins</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getRequiredScene" class="tsd-kind-icon">get<wbr>Required<wbr>Scene</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getRequiredSceneManager" class="tsd-kind-icon">get<wbr>Required<wbr>Scene<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getRotationQuat" class="tsd-kind-icon">get<wbr>Rotation<wbr>Quat</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getRotationZ" class="tsd-kind-icon">get<wbr>RotationZ</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getScale2" class="tsd-kind-icon">get<wbr>Scale2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#getScale3" class="tsd-kind-icon">get<wbr>Scale3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#getScene" class="tsd-kind-icon">get<wbr>Scene</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="TransformComponent.html#getSceneManager" class="tsd-kind-icon">get<wbr>Scene<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#off" class="tsd-kind-icon">off</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#onAfterUpdate" class="tsd-kind-icon">on<wbr>After<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="TransformComponent.html#onDetach" class="tsd-kind-icon">on<wbr>Detach</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#onInit" class="tsd-kind-icon">on<wbr>Init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#onRemove" class="tsd-kind-icon">on<wbr>Remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#onUpdate" class="tsd-kind-icon">on<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#scale2" class="tsd-kind-icon">scale2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#scale3" class="tsd-kind-icon">scale3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setLocalNeedsUpdate" class="tsd-kind-icon">set<wbr>Local<wbr>Needs<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setLocalPosition2" class="tsd-kind-icon">set<wbr>Local<wbr>Position2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setLocalPosition3" class="tsd-kind-icon">set<wbr>Local<wbr>Position3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setLocalRotationQuat" class="tsd-kind-icon">set<wbr>Local<wbr>Rotation<wbr>Quat</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setLocalRotationZ" class="tsd-kind-icon">set<wbr>Local<wbr>RotationZ</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setLocalScale2" class="tsd-kind-icon">set<wbr>Local<wbr>Scale2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setLocalScale3" class="tsd-kind-icon">set<wbr>Local<wbr>Scale3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#setNeedsUpdate" class="tsd-kind-icon">set<wbr>Needs<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#setRenderable" class="tsd-kind-icon">set<wbr>Renderable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="TransformComponent.html#toJSON" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#translate2" class="tsd-kind-icon">translate2</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#translate3" class="tsd-kind-icon">translate3</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#updateLocalMatrix" class="tsd-kind-icon">update<wbr>Local<wbr>Matrix</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#updateLocalMatrixIfNeeded" class="tsd-kind-icon">update<wbr>Local<wbr>Matrix<wbr>IfNeeded</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#updateMatrix" class="tsd-kind-icon">update<wbr>Matrix</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="TransformComponent.html#updateMatrixIfNeeded" class="tsd-kind-icon">update<wbr>Matrix<wbr>IfNeeded</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#getConstructorFromJSON" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#getManagerConstructor-1" class="tsd-kind-icon">get<wbr>Manager<wbr>Constructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="TransformComponent.html#getParentTransform-1" class="tsd-kind-icon">get<wbr>Parent<wbr>Transform</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#getRequiredComponents-1" class="tsd-kind-icon">get<wbr>Required<wbr>Components</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#getRequiredPlugins-1" class="tsd-kind-icon">get<wbr>Required<wbr>Plugins</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="TransformComponent.html#getRequiredTransform" class="tsd-kind-icon">get<wbr>Required<wbr>Transform</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="TransformComponent.html#getTransform" class="tsd-kind-icon">get<wbr>Transform</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#getTypeId" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#isToFromJSONEnabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#newFromJSON" class="tsd-kind-icon">new<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="TransformComponent.html#toString" class="tsd-kind-icon">to<wbr>String</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Transform<wbr>Component<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EventEmitterOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in node_modules/@types/node/events.d.ts:74</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">EventEmitterOptions</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+					<a name="Manager" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Manager</h3>
+					<div class="tsd-signature tsd-kind-icon">Manager<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><a href="TransformComponentManager.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponentManager</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#Manager">Manager</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L11">src/components/TransformComponent.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="requiredComponents" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> required<wbr>Components</h3>
+					<div class="tsd-signature tsd-kind-icon">required<wbr>Components<span class="tsd-signature-symbol">:</span> <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#requiredComponents">requiredComponents</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L17">src/Component.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="requiredPlugins" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> required<wbr>Plugins</h3>
+					<div class="tsd-signature tsd-kind-icon">required<wbr>Plugins<span class="tsd-signature-symbol">:</span> <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#requiredPlugins">requiredPlugins</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L18">src/Component.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="toFromJSONEnabled" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> to<wbr>FromJSONEnabled</h3>
+					<div class="tsd-signature tsd-kind-icon">to<wbr>FromJSONEnabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#toFromJSONEnabled">toFromJSONEnabled</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L7">src/ToFromJSONEventEmitter.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="typeId" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagOptional">Optional</span> type<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">type<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#typeId">typeId</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L6">src/ToFromJSONEventEmitter.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="fromJSON" class="tsd-anchor"></a>
+					<h3>fromJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>_json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#fromJSON">fromJSON</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L50">src/ToFromJSONEventEmitter.ts:50</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_json: <span class="tsd-signature-type">IJSONObject</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getComponent" class="tsd-anchor"></a>
+					<h3>get<wbr>Component</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Component&lt;C&gt;<span class="tsd-signature-symbol">(</span>Component<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getComponent">getComponent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L46">src/Component.ts:46</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>C<span class="tsd-signature-symbol">: </span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>Component: <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getConstructor" class="tsd-anchor"></a>
+					<h3>get<wbr>Constructor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getConstructor">getConstructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L37">src/ToFromJSONEventEmitter.ts:37</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getEntity" class="tsd-anchor"></a>
+					<h3>get<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getEntity">getEntity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L81">src/Component.ts:81</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalMatrix2d" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>Matrix2d</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Matrix2d<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat2d</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat2d</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L121">src/components/TransformComponent.ts:121</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">mat2d</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">mat2d</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalMatrix4" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>Matrix4</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Matrix4<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat4</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat4</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L122">src/components/TransformComponent.ts:122</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">mat4</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">mat4</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalNeedsUpdate" class="tsd-anchor"></a>
+					<h3>get<wbr>Local<wbr>Needs<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Needs<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L71">src/components/TransformComponent.ts:71</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalPosition2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>Position2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Position2<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L124">src/components/TransformComponent.ts:124</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec2</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalPosition3" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>Position3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Position3<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L125">src/components/TransformComponent.ts:125</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec3</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalRotationQuat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>Rotation<wbr>Quat</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Rotation<wbr>Quat<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">quat</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">quat</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L131">src/components/TransformComponent.ts:131</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">quat</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">quat</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalRotationZ" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>RotationZ</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>RotationZ<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L130">src/components/TransformComponent.ts:130</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalScale2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>Scale2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Scale2<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L136">src/components/TransformComponent.ts:136</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec2</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getLocalScale3" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Local<wbr>Scale3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Local<wbr>Scale3<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L137">src/components/TransformComponent.ts:137</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec3</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getManager" class="tsd-anchor"></a>
+					<h3>get<wbr>Manager</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Manager&lt;M&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getManager">getManager</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L112">src/Component.ts:112</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>M<span class="tsd-signature-symbol">: </span><a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getManagerConstructor" class="tsd-anchor"></a>
+					<h3>get<wbr>Manager<wbr>Constructor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Manager<wbr>Constructor&lt;M&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getManagerConstructor">getManagerConstructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L36">src/Component.ts:36</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>M<span class="tsd-signature-symbol">: </span><a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getMatrix2d" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Matrix2d</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Matrix2d<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat2d</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat2d</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L118">src/components/TransformComponent.ts:118</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">mat2d</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">mat2d</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getMatrix4" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Matrix4</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Matrix4<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat4</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mat4</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L119">src/components/TransformComponent.ts:119</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">mat4</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">mat4</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getNeedsUpdate" class="tsd-anchor"></a>
+					<h3>get<wbr>Needs<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Needs<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L63">src/components/TransformComponent.ts:63</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getParentTransform" class="tsd-anchor"></a>
+					<h3>get<wbr>Parent<wbr>Transform</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Parent<wbr>Transform<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L42">src/components/TransformComponent.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getPlugin" class="tsd-anchor"></a>
+					<h3>get<wbr>Plugin</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Plugin&lt;P&gt;<span class="tsd-signature-symbol">(</span>Plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getPlugin">getPlugin</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L58">src/Component.ts:58</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>P<span class="tsd-signature-symbol">: </span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>Plugin: <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getPosition2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Position2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Position2<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L142">src/components/TransformComponent.ts:142</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec2</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getPosition3" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Position3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Position3<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L143">src/components/TransformComponent.ts:143</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec3</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getRenderable" class="tsd-anchor"></a>
+					<h3>get<wbr>Renderable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Renderable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRenderable">getRenderable</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/RenderableComponent.ts#L6">src/components/RenderableComponent.ts:6</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getRequiredComponent" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Component</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Component&lt;C&gt;<span class="tsd-signature-symbol">(</span>Component<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">C</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredComponent">getRequiredComponent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L51">src/Component.ts:51</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>C<span class="tsd-signature-symbol">: </span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>Component: <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">C</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">C</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getRequiredComponents" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Components</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Components<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredComponents">getRequiredComponents</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L39">src/Component.ts:39</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getRequiredEntity" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Entity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredEntity">getRequiredEntity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L84">src/Component.ts:84</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getRequiredManager" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Manager</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Manager&lt;M&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">M</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredManager">getRequiredManager</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L115">src/Component.ts:115</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>M<span class="tsd-signature-symbol">: </span><a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">M</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getRequiredPlugin" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Plugin</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugin&lt;P&gt;<span class="tsd-signature-symbol">(</span>Plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredPlugin">getRequiredPlugin</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L61">src/Component.ts:61</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>P<span class="tsd-signature-symbol">: </span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>Plugin: <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">P</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getRequiredPlugins" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Plugins</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugins<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredPlugins">getRequiredPlugins</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L42">src/Component.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getRequiredScene" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Scene</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Scene<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredScene">getRequiredScene</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L93">src/Component.ts:93</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getRequiredSceneManager" class="tsd-anchor"></a>
+					<h3>get<wbr>Required<wbr>Scene<wbr>Manager</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Scene<wbr>Manager&lt;M&gt;<span class="tsd-signature-symbol">(</span>Manager<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">M</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredSceneManager">getRequiredSceneManager</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L127">src/Component.ts:127</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>M<span class="tsd-signature-symbol">: </span><a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>Manager: <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">M</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getRotationQuat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Rotation<wbr>Quat</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Rotation<wbr>Quat<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">quat</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">quat</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L146">src/components/TransformComponent.ts:146</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">quat</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">quat</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getRotationZ" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>RotationZ</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>RotationZ<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L145">src/components/TransformComponent.ts:145</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getScale2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Scale2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Scale2<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L148">src/components/TransformComponent.ts:148</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec2</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getScale3" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Scale3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Scale3<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L149">src/components/TransformComponent.ts:149</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec3</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getScene" class="tsd-anchor"></a>
+					<h3>get<wbr>Scene</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Scene<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getScene">getScene</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L90">src/Component.ts:90</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+					<a name="getSceneManager" class="tsd-anchor"></a>
+					<h3>get<wbr>Scene<wbr>Manager</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Scene<wbr>Manager&lt;M&gt;<span class="tsd-signature-symbol">(</span>Manager<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getSceneManager">getSceneManager</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L124">src/Component.ts:124</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>M<span class="tsd-signature-symbol">: </span><a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>Manager: <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="off" class="tsd-anchor"></a>
+					<h3>off</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#off">off</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L12">src/Component.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L11">src/Component.ts:11</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="onAdd" class="tsd-anchor"></a>
+					<h3>on<wbr>Add</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Add<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#onAdd">onAdd</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L144">src/Component.ts:144</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="onAfterUpdate" class="tsd-anchor"></a>
+					<h3>on<wbr>After<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>After<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#onAfterUpdate">onAfterUpdate</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L153">src/Component.ts:153</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="onDetach" class="tsd-anchor"></a>
+					<h3>on<wbr>Detach</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Detach<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#onDetach">onDetach</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L38">src/components/TransformComponent.ts:38</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="onInit" class="tsd-anchor"></a>
+					<h3>on<wbr>Init</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Init<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#onInit">onInit</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L138">src/Component.ts:138</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="onRemove" class="tsd-anchor"></a>
+					<h3>on<wbr>Remove</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Remove<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#onRemove">onRemove</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L147">src/Component.ts:147</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="onUpdate" class="tsd-anchor"></a>
+					<h3>on<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#onUpdate">onUpdate</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L150">src/Component.ts:150</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="scale2" class="tsd-anchor"></a>
+					<h3>scale2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">scale2<span class="tsd-signature-symbol">(</span>scale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L104">src/components/TransformComponent.ts:104</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scale: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="scale3" class="tsd-anchor"></a>
+					<h3>scale3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">scale3<span class="tsd-signature-symbol">(</span>scale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L109">src/components/TransformComponent.ts:109</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scale: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setLocalNeedsUpdate" class="tsd-anchor"></a>
+					<h3>set<wbr>Local<wbr>Needs<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Local<wbr>Needs<wbr>Update<span class="tsd-signature-symbol">(</span>localNeedsUpdate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L67">src/components/TransformComponent.ts:67</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>localNeedsUpdate: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setLocalPosition2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> set<wbr>Local<wbr>Position2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Local<wbr>Position2<span class="tsd-signature-symbol">(</span>localPosition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L127">src/components/TransformComponent.ts:127</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>localPosition: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setLocalPosition3" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> set<wbr>Local<wbr>Position3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Local<wbr>Position3<span class="tsd-signature-symbol">(</span>localPosition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L128">src/components/TransformComponent.ts:128</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>localPosition: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setLocalRotationQuat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> set<wbr>Local<wbr>Rotation<wbr>Quat</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Local<wbr>Rotation<wbr>Quat<span class="tsd-signature-symbol">(</span>localRotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">quat</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L134">src/components/TransformComponent.ts:134</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>localRotation: <span class="tsd-signature-type">quat</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setLocalRotationZ" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> set<wbr>Local<wbr>RotationZ</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Local<wbr>RotationZ<span class="tsd-signature-symbol">(</span>localRotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L133">src/components/TransformComponent.ts:133</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>localRotation: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setLocalScale2" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> set<wbr>Local<wbr>Scale2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Local<wbr>Scale2<span class="tsd-signature-symbol">(</span>localScale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L139">src/components/TransformComponent.ts:139</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>localScale: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setLocalScale3" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> set<wbr>Local<wbr>Scale3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Local<wbr>Scale3<span class="tsd-signature-symbol">(</span>localScale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L140">src/components/TransformComponent.ts:140</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>localScale: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setNeedsUpdate" class="tsd-anchor"></a>
+					<h3>set<wbr>Needs<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Needs<wbr>Update<span class="tsd-signature-symbol">(</span>needsUpdate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L46">src/components/TransformComponent.ts:46</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>needsUpdate: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setRenderable" class="tsd-anchor"></a>
+					<h3>set<wbr>Renderable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Renderable<span class="tsd-signature-symbol">(</span>renderable<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#setRenderable">setRenderable</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/RenderableComponent.ts#L9">src/components/RenderableComponent.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>renderable: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toJSON" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#toJSON">toJSON</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L41">src/ToFromJSONEventEmitter.ts:41</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IJSONObject</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="translate2" class="tsd-anchor"></a>
+					<h3>translate2</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">translate2<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L93">src/components/TransformComponent.ts:93</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="translate3" class="tsd-anchor"></a>
+					<h3>translate3</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">translate3<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L98">src/components/TransformComponent.ts:98</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">vec3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="updateLocalMatrix" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> update<wbr>Local<wbr>Matrix</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Local<wbr>Matrix<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L115">src/components/TransformComponent.ts:115</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="updateLocalMatrixIfNeeded" class="tsd-anchor"></a>
+					<h3>update<wbr>Local<wbr>Matrix<wbr>IfNeeded</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Local<wbr>Matrix<wbr>IfNeeded<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L75">src/components/TransformComponent.ts:75</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="updateMatrix" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> update<wbr>Matrix</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Matrix<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L116">src/components/TransformComponent.ts:116</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="updateMatrixIfNeeded" class="tsd-anchor"></a>
+					<h3>update<wbr>Matrix<wbr>IfNeeded</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Matrix<wbr>IfNeeded<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L84">src/components/TransformComponent.ts:84</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+					<a name="getConstructorFromJSON" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Constructor<wbr>FromJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON&lt;T&gt;<span class="tsd-signature-symbol">(</span>json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getConstructorFromJSON">getConstructorFromJSON</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L19">src/ToFromJSONEventEmitter.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>json: <span class="tsd-signature-type">IJSONObject</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+					<a name="getManagerConstructor-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Manager<wbr>Constructor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Manager<wbr>Constructor&lt;M&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getManagerConstructor-1">getManagerConstructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L20">src/Component.ts:20</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>M<span class="tsd-signature-symbol">: </span><a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Manager.html" class="tsd-signature-type" data-tsd-kind="Class">Manager</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getParentTransform-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Parent<wbr>Transform</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Parent<wbr>Transform<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L13">src/components/TransformComponent.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="getRequiredComponents-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Required<wbr>Components</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Components<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredComponents-1">getRequiredComponents</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L26">src/Component.ts:26</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="getRequiredPlugins-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Required<wbr>Plugins</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugins<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getRequiredPlugins-1">getRequiredPlugins</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/Component.ts#L29">src/Component.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getRequiredTransform" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Required<wbr>Transform</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Transform<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L29">src/components/TransformComponent.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getTransform" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Transform</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Transform<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/components/TransformComponent.ts#L17">src/components/TransformComponent.ts:17</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="TransformComponent.html" class="tsd-signature-type" data-tsd-kind="Class">TransformComponent</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="getTypeId" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Type<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<wbr>Id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#getTypeId">getTypeId</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="isToFromJSONEnabled" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> is<wbr>ToFromJSONEnabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>ToFromJSONEnabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#isToFromJSONEnabled">isToFromJSONEnabled</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+					<a name="newFromJSON" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> new<wbr>FromJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">new<wbr>FromJSON&lt;T&gt;<span class="tsd-signature-symbol">(</span>json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#newFromJSON">newFromJSON</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L30">src/ToFromJSONEventEmitter.ts:30</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>json: <span class="tsd-signature-type">IJSONObject</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="toString" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RenderableComponent.html">RenderableComponent</a>.<a href="RenderableComponent.html#toString">toString</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="TransformComponent.html" class="tsd-kind-icon">Transform<wbr>Component</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="TransformComponent.html#Manager" class="tsd-kind-icon">Manager</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#requiredComponents" class="tsd-kind-icon">required<wbr>Components</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#requiredPlugins" class="tsd-kind-icon">required<wbr>Plugins</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#toFromJSONEnabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#typeId" class="tsd-kind-icon">type<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#fromJSON" class="tsd-kind-icon">fromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getComponent" class="tsd-kind-icon">get<wbr>Component</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getConstructor" class="tsd-kind-icon">get<wbr>Constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getEntity" class="tsd-kind-icon">get<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalMatrix2d" class="tsd-kind-icon">get<wbr>Local<wbr>Matrix2d</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalMatrix4" class="tsd-kind-icon">get<wbr>Local<wbr>Matrix4</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalNeedsUpdate" class="tsd-kind-icon">get<wbr>Local<wbr>Needs<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalPosition2" class="tsd-kind-icon">get<wbr>Local<wbr>Position2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalPosition3" class="tsd-kind-icon">get<wbr>Local<wbr>Position3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalRotationQuat" class="tsd-kind-icon">get<wbr>Local<wbr>Rotation<wbr>Quat</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalRotationZ" class="tsd-kind-icon">get<wbr>Local<wbr>RotationZ</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalScale2" class="tsd-kind-icon">get<wbr>Local<wbr>Scale2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getLocalScale3" class="tsd-kind-icon">get<wbr>Local<wbr>Scale3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getManager" class="tsd-kind-icon">get<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getManagerConstructor" class="tsd-kind-icon">get<wbr>Manager<wbr>Constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getMatrix2d" class="tsd-kind-icon">get<wbr>Matrix2d</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getMatrix4" class="tsd-kind-icon">get<wbr>Matrix4</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getNeedsUpdate" class="tsd-kind-icon">get<wbr>Needs<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getParentTransform" class="tsd-kind-icon">get<wbr>Parent<wbr>Transform</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getPlugin" class="tsd-kind-icon">get<wbr>Plugin</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getPosition2" class="tsd-kind-icon">get<wbr>Position2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getPosition3" class="tsd-kind-icon">get<wbr>Position3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getRenderable" class="tsd-kind-icon">get<wbr>Renderable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredComponent" class="tsd-kind-icon">get<wbr>Required<wbr>Component</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredComponents" class="tsd-kind-icon">get<wbr>Required<wbr>Components</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredEntity" class="tsd-kind-icon">get<wbr>Required<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredManager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredPlugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredPlugins" class="tsd-kind-icon">get<wbr>Required<wbr>Plugins</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredScene" class="tsd-kind-icon">get<wbr>Required<wbr>Scene</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getRequiredSceneManager" class="tsd-kind-icon">get<wbr>Required<wbr>Scene<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getRotationQuat" class="tsd-kind-icon">get<wbr>Rotation<wbr>Quat</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getRotationZ" class="tsd-kind-icon">get<wbr>RotationZ</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getScale2" class="tsd-kind-icon">get<wbr>Scale2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#getScale3" class="tsd-kind-icon">get<wbr>Scale3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#getScene" class="tsd-kind-icon">get<wbr>Scene</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="TransformComponent.html#getSceneManager" class="tsd-kind-icon">get<wbr>Scene<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#off" class="tsd-kind-icon">off</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#on" class="tsd-kind-icon">on</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#onAfterUpdate" class="tsd-kind-icon">on<wbr>After<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="TransformComponent.html#onDetach" class="tsd-kind-icon">on<wbr>Detach</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#onInit" class="tsd-kind-icon">on<wbr>Init</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#onRemove" class="tsd-kind-icon">on<wbr>Remove</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#onUpdate" class="tsd-kind-icon">on<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#scale2" class="tsd-kind-icon">scale2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#scale3" class="tsd-kind-icon">scale3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setLocalNeedsUpdate" class="tsd-kind-icon">set<wbr>Local<wbr>Needs<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setLocalPosition2" class="tsd-kind-icon">set<wbr>Local<wbr>Position2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setLocalPosition3" class="tsd-kind-icon">set<wbr>Local<wbr>Position3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setLocalRotationQuat" class="tsd-kind-icon">set<wbr>Local<wbr>Rotation<wbr>Quat</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setLocalRotationZ" class="tsd-kind-icon">set<wbr>Local<wbr>RotationZ</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setLocalScale2" class="tsd-kind-icon">set<wbr>Local<wbr>Scale2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setLocalScale3" class="tsd-kind-icon">set<wbr>Local<wbr>Scale3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#setNeedsUpdate" class="tsd-kind-icon">set<wbr>Needs<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#setRenderable" class="tsd-kind-icon">set<wbr>Renderable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="TransformComponent.html#toJSON" class="tsd-kind-icon">toJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#translate2" class="tsd-kind-icon">translate2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#translate3" class="tsd-kind-icon">translate3</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#updateLocalMatrix" class="tsd-kind-icon">update<wbr>Local<wbr>Matrix</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#updateLocalMatrixIfNeeded" class="tsd-kind-icon">update<wbr>Local<wbr>Matrix<wbr>IfNeeded</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#updateMatrix" class="tsd-kind-icon">update<wbr>Matrix</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="TransformComponent.html#updateMatrixIfNeeded" class="tsd-kind-icon">update<wbr>Matrix<wbr>IfNeeded</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#getConstructorFromJSON" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#getManagerConstructor-1" class="tsd-kind-icon">get<wbr>Manager<wbr>Constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="TransformComponent.html#getParentTransform-1" class="tsd-kind-icon">get<wbr>Parent<wbr>Transform</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#getRequiredComponents-1" class="tsd-kind-icon">get<wbr>Required<wbr>Components</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#getRequiredPlugins-1" class="tsd-kind-icon">get<wbr>Required<wbr>Plugins</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="TransformComponent.html#getRequiredTransform" class="tsd-kind-icon">get<wbr>Required<wbr>Transform</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="TransformComponent.html#getTransform" class="tsd-kind-icon">get<wbr>Transform</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#getTypeId" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#isToFromJSONEnabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#newFromJSON" class="tsd-kind-icon">new<wbr>FromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="TransformComponent.html#toString" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
