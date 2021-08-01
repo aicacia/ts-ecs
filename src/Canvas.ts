@@ -7,8 +7,8 @@ export interface Entity {
     listener: (
       width: number,
       height: number,
-      origWidth: number,
-      origHeight: number
+      prevWidth: number,
+      prevHeight: number
     ) => void
   ): this;
   off(
@@ -16,8 +16,8 @@ export interface Entity {
     listener: (
       width: number,
       height: number,
-      origWidth: number,
-      origHeight: number
+      prevWidth: number,
+      prevHeight: number
     ) => void
   ): this;
 }
@@ -41,15 +41,15 @@ export abstract class Canvas extends EventEmitter {
   }
 
   set(width: number, height: number) {
-    const origWidth = this.width,
-      origHeight = this.height;
+    const prevWidth = this.width,
+      prevHeight = this.height;
 
-    if (width !== origWidth || height !== origHeight) {
+    if (width !== prevWidth || height !== prevHeight) {
       this.width = width;
       this.height = height;
 
       this.onResize();
-      this.emit("resize", width, height, origWidth, origHeight);
+      this.emit("resize", width, height, prevWidth, prevHeight);
     }
     return this;
   }

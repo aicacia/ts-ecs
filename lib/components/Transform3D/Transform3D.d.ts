@@ -16,11 +16,11 @@ export declare class Transform3D extends TransformComponent {
     setLocalPosition3(localPosition: vec3): this;
     getPosition3(out: vec3): vec3;
     getPosition2(out: vec2): vec2;
-    getLocalRotationQuat(out: quat): import("gl-matrix").mat2;
+    getLocalRotationQuat(out: quat): import("gl-matrix").vec4;
     getLocalRotationZ(): number;
     setLocalRotationZ(localRotation: number): this;
     setLocalRotationQuat(localRotation: quat): this;
-    getRotationQuat(out: quat): import("gl-matrix").mat2;
+    getRotationQuat(out: quat): import("gl-matrix").vec4;
     getRotationZ(): number;
     getLocalScale3(out: vec3): vec3;
     getLocalScale2(out: vec2): vec2;
@@ -35,8 +35,8 @@ export declare class Transform3D extends TransformComponent {
     getScale(): vec3;
     getLocalScale(): vec3;
     setLocalRotation(localRotation: quat): this;
-    getRotation(): import("gl-matrix").mat2;
-    getLocalRotation(): import("gl-matrix").mat2;
+    getRotation(): quat;
+    getLocalRotation(): quat;
     getMatrix(): mat4;
     getLocalMatrix(): mat4;
     updateLocalMatrix(): this;

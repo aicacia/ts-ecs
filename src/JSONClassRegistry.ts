@@ -27,7 +27,9 @@ export class JSONClassRegistry {
         }
       })
       .unwrapOrElse(() => {
-        const typeId = ((klass as any) as typeof ToFromJSONEventEmitter).getTypeId();
+        const typeId = (
+          klass as any as typeof ToFromJSONEventEmitter
+        ).getTypeId();
         this.constructorToTypeId.set(klass, typeId);
         this.typeIdToConstructor.set(typeId, klass);
         return typeId;

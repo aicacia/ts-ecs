@@ -22,16 +22,12 @@ export class Input extends Plugin {
   private events: InputEvent[] = [];
 
   private inputHandlers: InputHandler[] = [];
-  private inputHandlerMap: Map<
-    IConstructor<InputHandler>,
-    InputHandler
-  > = new Map();
+  private inputHandlerMap: Map<IConstructor<InputHandler>, InputHandler> =
+    new Map();
 
   private eventListeners: EventListener[] = [];
-  private eventListenerMap: Map<
-    IConstructor<EventListener>,
-    EventListener
-  > = new Map();
+  private eventListenerMap: Map<IConstructor<EventListener>, EventListener> =
+    new Map();
 
   private buttons: Record<string, InputButton> = {};
   private axes: Record<string, InputAxis> = {};

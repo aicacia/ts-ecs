@@ -21,7 +21,7 @@ export declare class Camera3D extends RenderableComponent {
     private view;
     private needsUpdate;
     private background;
-    getBackground(): import("gl-matrix").mat2;
+    getBackground(): vec4;
     setBackground(background: vec4): this;
     set(width: number, height: number): this;
     getWidth(): number;

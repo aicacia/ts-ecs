@@ -17,11 +17,11 @@ export declare class Transform2D extends TransformComponent {
     getPosition2(out: vec2): vec2;
     getPosition3(out: vec3): vec3;
     getLocalRotationZ(): number;
-    getLocalRotationQuat(out: quat): import("gl-matrix").mat2;
+    getLocalRotationQuat(out: quat): quat;
     setLocalRotationZ(localRotation: number): this;
     setLocalRotationQuat(localRotation: quat): this;
     getRotationZ(): number;
-    getRotationQuat(out: quat): import("gl-matrix").mat2;
+    getRotationQuat(out: quat): quat;
     getLocalScale2(out: vec2): vec2;
     getLocalScale3(out: vec3): vec3;
     setLocalScale2(localScale: vec2): this;
