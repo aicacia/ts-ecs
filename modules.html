@@ -103,6 +103,10 @@
 								<li class="tsd-kind-class"><a href="classes/RunOnUpdateComponent.html" class="tsd-kind-icon">Run<wbr>OnUpdate<wbr>Component</a></li>
 								<li class="tsd-kind-class"><a href="classes/RunOnUpdatePlugin.html" class="tsd-kind-icon">Run<wbr>OnUpdate<wbr>Plugin</a></li>
 								<li class="tsd-kind-class"><a href="classes/Scene.html" class="tsd-kind-icon">Scene</a></li>
+								<li class="tsd-kind-class"><a href="classes/Sprite.html" class="tsd-kind-icon">Sprite</a></li>
+								<li class="tsd-kind-class"><a href="classes/SpriteClip.html" class="tsd-kind-icon">Sprite<wbr>Clip</a></li>
+								<li class="tsd-kind-class"><a href="classes/SpriteManager.html" class="tsd-kind-icon">Sprite<wbr>Manager</a></li>
+								<li class="tsd-kind-class"><a href="classes/SpriteSheet.html" class="tsd-kind-icon">Sprite<wbr>Sheet</a></li>
 								<li class="tsd-kind-class"><a href="classes/Time.html" class="tsd-kind-icon">Time</a></li>
 								<li class="tsd-kind-class"><a href="classes/ToFromJSONEventEmitter.html" class="tsd-kind-icon">To<wbr>FromJSONEvent<wbr>Emitter</a></li>
 								<li class="tsd-kind-class"><a href="classes/TouchInputEvent.html" class="tsd-kind-icon">Touch<wbr>Input<wbr>Event</a></li>
@@ -141,6 +145,7 @@
 								<li class="tsd-kind-function"><a href="modules.html#degToRad" class="tsd-kind-icon">deg<wbr>ToRad</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#equals" class="tsd-kind-icon">equals</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#filterRequirements" class="tsd-kind-icon">filter<wbr>Requirements</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#getAABB2FromRect" class="tsd-kind-icon">getAABB2<wbr>From<wbr>Rect</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#getAngleBetweenPoints" class="tsd-kind-icon">get<wbr>Angle<wbr>Between<wbr>Points</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#getAngleFromPoint" class="tsd-kind-icon">get<wbr>Angle<wbr>From<wbr>Point</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#getPointFromAngle" class="tsd-kind-icon">get<wbr>Point<wbr>From<wbr>Angle</a></li>
@@ -167,7 +172,7 @@
 					<div class="tsd-signature tsd-kind-icon">IRequirement&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/IRequirement.ts#L3">src/IRequirement.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/IRequirement.ts#L3">src/IRequirement.ts:3</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -183,7 +188,7 @@
 					<div class="tsd-signature tsd-kind-icon">IRun<wbr>OnUpdate<wbr>Fn&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>this<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/IRunOnUpdateFn.ts#L1">src/IRunOnUpdateFn.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/IRunOnUpdateFn.ts#L1">src/IRunOnUpdateFn.ts:1</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -223,7 +228,7 @@
 					<div class="tsd-signature tsd-kind-icon">DEG_<wbr>TO_<wbr>RAD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L3">src/math.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L4">src/math/index.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +238,7 @@
 					<div class="tsd-signature tsd-kind-icon">EPSILON<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0.000001</span><span class="tsd-signature-symbol"> = 0.000001</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L7">src/math.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L8">src/math/index.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -243,7 +248,7 @@
 					<div class="tsd-signature tsd-kind-icon">HALF_<wbr>PI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L5">src/math.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L6">src/math/index.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -253,7 +258,7 @@
 					<div class="tsd-signature tsd-kind-icon">RAD_<wbr>TO_<wbr>DEG<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L4">src/math.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L5">src/math/index.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -263,7 +268,7 @@
 					<div class="tsd-signature tsd-kind-icon">TAU<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L6">src/math.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L7">src/math/index.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -273,7 +278,7 @@
 					<div class="tsd-signature tsd-kind-icon">globalJSONClass<wbr>Registry<span class="tsd-signature-symbol">:</span> <a href="classes/JSONClassRegistry.html" class="tsd-signature-type" data-tsd-kind="Class">JSONClassRegistry</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/JSONClassRegistry.ts#L45">src/JSONClassRegistry.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/JSONClassRegistry.ts#L45">src/JSONClassRegistry.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -290,7 +295,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L95">src/math.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L96">src/math/index.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -313,7 +318,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L91">src/math.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L92">src/math/index.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -342,7 +347,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L9">src/math.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L10">src/math/index.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -374,7 +379,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L40">src/math.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L41">src/math/index.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -403,7 +408,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L116">src/math.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L117">src/math/index.ts:117</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -426,7 +431,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L120">src/math.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L121">src/math/index.ts:121</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -452,7 +457,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/IRequirement.ts#L5">src/IRequirement.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/IRequirement.ts#L5">src/IRequirement.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -493,6 +498,38 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getAABB2FromRect" class="tsd-anchor"></a>
+					<h3>getAABB2<wbr>From<wbr>Rect</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">getAABB2<wbr>From<wbr>Rect<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AABB2</span>, position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span>, angle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AABB2</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L183">src/math/index.ts:183</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">AABB2</span></h5>
+								</li>
+								<li>
+									<h5>position: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+								<li>
+									<h5>angle: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AABB2</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="getAngleBetweenPoints" class="tsd-anchor"></a>
 					<h3>get<wbr>Angle<wbr>Between<wbr>Points</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -502,7 +539,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L82">src/math.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L83">src/math/index.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -528,7 +565,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L60">src/math.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L61">src/math/index.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -551,7 +588,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L54">src/math.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L55">src/math/index.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -577,7 +614,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L50">src/math.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L51">src/math/index.ts:51</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -600,7 +637,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L74">src/math.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L75">src/math/index.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -623,7 +660,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L105">src/math.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L106">src/math/index.ts:106</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -652,7 +689,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L112">src/math.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L113">src/math/index.ts:113</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -675,7 +712,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/IRequirement.ts#L23">src/IRequirement.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/IRequirement.ts#L23">src/IRequirement.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -704,7 +741,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L87">src/math.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L88">src/math/index.ts:88</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -727,7 +764,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L124">src/math.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L125">src/math/index.ts:125</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -750,7 +787,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L131">src/math.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L132">src/math/index.ts:132</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -773,7 +810,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L135">src/math.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L136">src/math/index.ts:136</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -796,7 +833,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/75ac3eb/src/math.ts#L99">src/math.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/math/index.ts#L100">src/math/index.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -948,6 +985,18 @@
 						<a href="classes/Scene.html" class="tsd-kind-icon">Scene</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/Sprite.html" class="tsd-kind-icon">Sprite</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SpriteClip.html" class="tsd-kind-icon">Sprite<wbr>Clip</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SpriteManager.html" class="tsd-kind-icon">Sprite<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SpriteSheet.html" class="tsd-kind-icon">Sprite<wbr>Sheet</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/Time.html" class="tsd-kind-icon">Time</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -1015,6 +1064,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="modules.html#filterRequirements" class="tsd-kind-icon">filter<wbr>Requirements</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getAABB2FromRect" class="tsd-kind-icon">getAABB2<wbr>From<wbr>Rect</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#getAngleBetweenPoints" class="tsd-kind-icon">get<wbr>Angle<wbr>Between<wbr>Points</a>
