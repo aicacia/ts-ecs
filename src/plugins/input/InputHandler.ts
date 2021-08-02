@@ -54,6 +54,6 @@ export abstract class InputHandler<
   abstract onEvent(time: Time, event: InputEvent): this;
 }
 
-import { Time } from "../Time";
-import { Input } from "./Input";
-import { InputEvent } from "./InputEvent";
+import type { Time } from "../Time";
+import type { Input } from "./Input";
+import type { InputEvent } from "./InputEvent";

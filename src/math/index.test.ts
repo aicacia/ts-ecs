@@ -1,6 +1,6 @@
 import { vec2 } from "gl-matrix";
 import * as tape from "tape";
-import { getAngleFromPoint } from "./math";
+import { getAngleFromPoint } from ".";
 
 tape("math getAngleFromPoint", (assert: tape.Test) => {
   assert.equals(getAngleFromPoint(vec2.fromValues(0, 0)), 0, "center");

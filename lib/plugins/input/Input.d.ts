@@ -1,10 +1,11 @@
-import { Option, IConstructor } from "@aicacia/core";
+import { Option } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { Plugin } from "../../Plugin";
 import { InputAxis } from "./InputAxis";
 import { InputButton } from "./InputButton";
 import { InputHandler } from "./InputHandler";
-import { EventListener } from "./EventListener";
-import { InputEvent } from "./InputEvent";
+import type { EventListener } from "./EventListener";
+import type { InputEvent } from "./InputEvent";
 import { IJSONObject } from "@aicacia/json";
 export interface Input {
     on(event: string, listener: (event: InputEvent) => void): this;

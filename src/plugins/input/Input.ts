@@ -1,4 +1,5 @@
-import { Option, IConstructor } from "@aicacia/core";
+import { Option } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { Plugin } from "../../Plugin";
 import { Time } from "../Time";
 import { InputAxis } from "./InputAxis";
@@ -6,9 +7,9 @@ import { InputButton } from "./InputButton";
 import { InputHandler } from "./InputHandler";
 import { MouseInputHandler } from "./MouseInputHandler";
 import { KeyboardInputHandler } from "./KeyboardInputHandler";
-import { EventListener } from "./EventListener";
+import type { EventListener } from "./EventListener";
 import { TouchInputHandler } from "./TouchInputHandler";
-import { InputEvent } from "./InputEvent";
+import type { InputEvent } from "./InputEvent";
 import { ResizeInputHandler } from "./ResizeInputHandler";
 import { IJSONObject, isJSONArray } from "@aicacia/json";
 

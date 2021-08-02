@@ -1,4 +1,4 @@
-import { IJSON, IJSONObject } from "@aicacia/json";
+import type { IJSON, IJSONObject } from "@aicacia/json";
 import { Asset } from "./Asset";
 export declare class RawJSONAsset extends Asset {
     private json;

@@ -1,6 +1,7 @@
-import { none, Option, IConstructor } from "@aicacia/core";
-import { Plugin } from "../../Plugin";
-import { Manager } from "../../Manager";
+import { none } from "@aicacia/core";
+import type { Option, IConstructor } from "@aicacia/core";
+import type { Plugin } from "../../Plugin";
+import type { Manager } from "../../Manager";
 import { ToFromJSONEventEmitter } from "../../ToFromJSONEventEmitter";
 import type { Renderer } from "./Renderer";
 import type { IJSONObject } from "@aicacia/json";

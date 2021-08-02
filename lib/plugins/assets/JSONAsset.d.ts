@@ -1,5 +1,5 @@
-import { Option } from "@aicacia/core";
-import { IJSON, IJSONObject } from "@aicacia/json";
+import type { Option } from "@aicacia/core";
+import type { IJSON, IJSONObject } from "@aicacia/json";
 import { Asset } from "./Asset";
 export declare class JSONAsset extends Asset {
     private json;

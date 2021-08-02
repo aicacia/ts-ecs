@@ -1,4 +1,4 @@
-import { IJSONObject } from "@aicacia/json";
+import type { IJSONObject } from "@aicacia/json";
 export declare class InputButton {
     private name;
     private value;

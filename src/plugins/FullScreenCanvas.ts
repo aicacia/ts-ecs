@@ -1,8 +1,8 @@
-import { Canvas } from "../Canvas";
+import type { Canvas } from "../Canvas";
 import { RunOnUpdatePlugin } from "./RunOnUpdatePlugin";
 import { Input } from "./input";
 import type { IRequirement } from "../IRequirement";
-import { Plugin } from "../Plugin";
+import type { Plugin } from "../Plugin";
 
 export class FullScreenCanvas extends RunOnUpdatePlugin {
   static toFromJSONEnabled = false;

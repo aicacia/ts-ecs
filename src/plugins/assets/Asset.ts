@@ -1,4 +1,4 @@
-import { IJSONObject } from "@aicacia/json";
+import type { IJSONObject } from "@aicacia/json";
 import { v4 } from "uuid";
 import { ToFromJSONEventEmitter } from "../../ToFromJSONEventEmitter";
 

@@ -5,6 +5,10 @@ export {
   Camera2DControlManager,
   Camera3D,
   Camera3DManager,
+  Sprite,
+  SpriteClip,
+  SpriteManager,
+  SpriteSheet,
   Transform2D,
   Transform3D,
   RunOnUpdateComponent,
@@ -84,4 +88,5 @@ export {
   sign,
   projectPointOnAxis,
   equals,
+  getAABB2FromRect,
 } from "./math";

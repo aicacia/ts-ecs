@@ -1,0 +1,46 @@
+import { Option } from "@aicacia/core";
+import type { IJSONObject } from "@aicacia/json";
+import type { vec2 } from "gl-matrix";
+import { Assets } from "../../plugins";
+import type { ImageAsset } from "../../plugins/assets/ImageAsset";
+import { RenderableComponent } from "../RenderableComponent";
+export declare class Sprite extends RenderableComponent {
+    static requiredPlugins: (typeof Assets)[];
+    private layer;
+    private imageAsset;
+    private clipX;
+    private clipY;
+    private clipWidth;
+    private clipHeight;
+    private width;
+    private height;
+    getClipX(): number;
+    setClipX(clipX: number): this;
+    getClipY(): number;
+    setClipY(clipY: number): this;
+    getClipWidth(): number;
+    setClipWidth(clipWidth: number): this;
+    getClipHeight(): number;
+    setClipHeight(clipHeight: number): this;
+    getSize(out: vec2): vec2;
+    getWidth(): number;
+    setWidth(width: number): this;
+    getHeight(): number;
+    setHeight(height: number): this;
+    getLayer(): number;
+    setLayer(layer: number): this;
+    getImageAsset<T extends ImageAsset = ImageAsset>(): Option<T>;
+    setImageAsset(imageAsset: ImageAsset): this;
+    private onImageLoadHandler;
+    toJSON(): {
+        imageAssetUUID: string | null;
+        layer: number;
+        clipX: number;
+        clipY: number;
+        clipWidth: number;
+        clipHeight: number;
+        width: number;
+        height: number;
+    };
+    fromJSON(json: IJSONObject): this;
+}

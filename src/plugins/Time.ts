@@ -1,4 +1,4 @@
-import { IJSONObject } from "@aicacia/json";
+import type { IJSONObject } from "@aicacia/json";
 import { Plugin } from "../Plugin";
 
 export class Time extends Plugin {

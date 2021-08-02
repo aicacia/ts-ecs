@@ -5,6 +5,7 @@ export {
   Camera2DControlManager,
 } from "./Camera2D";
 export { Camera3D, Camera3DManager } from "./Camera3D";
+export { Sprite, SpriteClip, SpriteManager, SpriteSheet } from "./Sprite";
 export { Transform2D } from "./Transform2D";
 export { Transform3D } from "./Transform3D";
 export { RenderableComponent } from "./RenderableComponent";

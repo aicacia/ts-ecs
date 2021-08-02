@@ -1,7 +1,9 @@
 .github
 .nyc_output
+.parcel-cache
 .vscode
 coverage
+dist
 docs
 src
 node_modules

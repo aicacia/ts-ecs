@@ -1,5 +1,5 @@
-import { IJSONObject } from "@aicacia/json";
-import { Time } from "../Time";
+import type { IJSONObject } from "@aicacia/json";
+import type { Time } from "../Time";
 
 export class InputAxis {
   private name: string;

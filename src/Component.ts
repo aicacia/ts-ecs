@@ -1,5 +1,5 @@
 import { none, Option, IConstructor } from "@aicacia/core";
-import { IRequirement } from "./IRequirement";
+import type { IRequirement } from "./IRequirement";
 import { DefaultManager } from "./DefaultManager";
 import type { Entity } from "./Entity";
 import type { Manager } from "./Manager";

@@ -1,5 +1,5 @@
 import { RenderableComponent } from "./RenderableComponent";
-import { IRunOnUpdateFn } from "../IRunOnUpdateFn";
+import type { IRunOnUpdateFn } from "../IRunOnUpdateFn";
 export declare abstract class RunOnUpdateComponent extends RenderableComponent {
     private queue;
     private swap;

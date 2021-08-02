@@ -1,5 +1,7 @@
+.parcel-cache
 node_modules
 coverage
+dist
 docs
 npm-debug.log
 .nyc_output

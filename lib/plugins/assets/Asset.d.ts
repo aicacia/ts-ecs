@@ -1,4 +1,4 @@
-import { IJSONObject } from "@aicacia/json";
+import type { IJSONObject } from "@aicacia/json";
 import { ToFromJSONEventEmitter } from "../../ToFromJSONEventEmitter";
 export interface Asset {
     on(event: "load" | "unload", listener: () => void): this;

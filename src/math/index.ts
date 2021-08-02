@@ -1,4 +1,5 @@
 import { mat2d, vec2, vec3, vec4, mat4 } from "gl-matrix";
+import { AABB2 } from "./AABB2";
 
 export const DEG_TO_RAD = Math.PI / 180;
 export const RAD_TO_DEG = 180 / Math.PI;
@@ -170,4 +171,36 @@ export function mat2dFromMat4(out: mat2d, matrix: mat4) {
     matrix[13],
     matrix[14]
   );
+}
+
+const getAABB2_points = [
+  vec2.create(),
+  vec2.create(),
+  vec2.create(),
+  vec2.create(),
+];
+
+export function getAABB2FromRect(
+  out: AABB2,
+  position: vec2,
+  angle: number,
+  size: vec2
+): AABB2 {
+  const points = getAABB2_points,
+    hw = size[0] * 0.5,
+    hh = size[1] * 0.5;
+
+  AABB2.identity(out);
+
+  vec2.set(points[0], position[0] - hw, position[1] - hh);
+  vec2.set(points[1], position[0] - hw, position[1] + hh);
+  vec2.set(points[2], position[0] + hw, position[1] + hh);
+  vec2.set(points[3], position[0] + hw, position[1] - hh);
+
+  points.forEach((point) => {
+    vec2.rotate(point, point, position, angle);
+    AABB2.expandPoint(out, out, point);
+  });
+
+  return out;
 }

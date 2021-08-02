@@ -21,6 +21,6 @@ export declare abstract class InputHandler<I extends Input = Input> extends ToFr
     onAfterUpdate(_time: Time): this;
     abstract onEvent(time: Time, event: InputEvent): this;
 }
-import { Time } from "../Time";
-import { Input } from "./Input";
-import { InputEvent } from "./InputEvent";
+import type { Time } from "../Time";
+import type { Input } from "./Input";
+import type { InputEvent } from "./InputEvent";

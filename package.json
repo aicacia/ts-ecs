@@ -10,6 +10,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "watch": "tsc -w",
     "prepublishOnly": "npm run clean && npm run build",
     "test": "ts-node node_modules/.bin/tape src/**/*.test.{ts,tsx} | tap-spec",
     "coverage": "nyc --reporter=lcov --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
@@ -17,7 +18,10 @@
     "lint": "eslint . --fix",
     "doc": "typedoc --tsconfig tsconfig.json",
     "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
-    "preCommit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly"
+    "preCommit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly",
+    "benchmark": "parcel serve examples/benchmark/index.html",
+    "simple": "parcel serve examples/simple/index.html",
+    "eventloop": "parcel serve examples/eventloop/index.html"
   },
   "husky": {
     "hooks": {
@@ -33,6 +37,8 @@
   "license": "(MIT OR Apache-2.0)",
   "readmeFilename": "README.md",
   "devDependencies": {
+    "@aicacia/rand": "0",
+    "@parcel/transformer-image": "next",
     "@types/raf": "3",
     "@types/tape": "4",
     "@types/uuid": "8",
@@ -43,6 +49,7 @@
     "eslint-plugin-prettier": "3",
     "husky": "4",
     "nyc": "15",
+    "parcel": "next",
     "prettier": "2",
     "tap-nyc": "1",
     "tap-spec": "5",

@@ -1,6 +1,6 @@
-import { Time } from "../Time";
+import type { Time } from "../Time";
 import { InputHandler } from "./InputHandler";
-import { ResizeInputEvent } from "./ResizeInputEvent";
+import type { ResizeInputEvent } from "./ResizeInputEvent";
 
 export class ResizeInputHandler extends InputHandler {
   onEvent(_time: Time, event: ResizeInputEvent) {

@@ -4,6 +4,7 @@ import { mat2d, vec2, vec4 } from "gl-matrix";
 import { RenderableComponent } from "../RenderableComponent";
 import type { IJSONArray, IJSONObject } from "@aicacia/json";
 import { Camera2DManager } from "./Camera2DManager";
+import { AABB2 } from "../../math/AABB2";
 export declare class Camera2D extends RenderableComponent {
     static Manager: typeof Camera2DManager;
     static requiredComponents: (typeof Transform3D | typeof Transform2D)[][];
@@ -35,6 +36,7 @@ export declare class Camera2D extends RenderableComponent {
     getZoom(): number;
     getView(): mat2d;
     getProjection(): mat2d;
+    getAABB2(out: AABB2): AABB2;
     setNeedsUpdate(needsUpdate?: boolean): this;
     updateProjectionIfNeeded(): this;
     isActive(): boolean;

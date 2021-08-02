@@ -1,6 +1,6 @@
 import * as tape from "tape";
 import { Component, Entity, Plugin, Scene } from ".";
-import { IJSONObject } from "@aicacia/json";
+import type { IJSONObject } from "@aicacia/json";
 import { DefaultManager } from "./DefaultManager";
 
 export class TestManager extends DefaultManager<Test> {}

@@ -6,9 +6,11 @@ import { TransformComponent } from "../TransformComponent";
 import { extractScale } from "../../math";
 import type { IJSONArray, IJSONObject } from "@aicacia/json";
 import { Camera2DManager } from "./Camera2DManager";
+import { AABB2 } from "../../math/AABB2";
 
 const MAT2D_0 = mat2d.create(),
-  VEC2_0 = vec2.create();
+  VEC2_0 = vec2.create(),
+  POINTS = [vec2.create(), vec2.create(), vec2.create(), vec2.create()];
 
 export class Camera2D extends RenderableComponent {
   static Manager = Camera2DManager;
@@ -119,6 +121,24 @@ export class Camera2D extends RenderableComponent {
 
   getProjection() {
     return this.updateProjectionIfNeeded().projection;
+  }
+
+  getAABB2(out: AABB2): AABB2 {
+    const tmp = VEC2_0,
+      points = POINTS;
+
+    AABB2.identity(out);
+
+    vec2.set(points[0], 0, 0);
+    vec2.set(points[1], this.width, 0);
+    vec2.set(points[2], this.width, this.height);
+    vec2.set(points[3], 0, this.height);
+
+    for (const point of points) {
+      AABB2.expandPoint(out, out, this.toWorld(tmp, point));
+    }
+
+    return out;
   }
 
   setNeedsUpdate(needsUpdate = true) {

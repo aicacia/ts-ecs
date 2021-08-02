@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "importsNotUsedAsValues": "error",
     "importHelpers": true,
     "target": "ES2015",
     "module": "commonjs",

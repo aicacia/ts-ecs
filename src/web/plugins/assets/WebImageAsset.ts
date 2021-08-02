@@ -1,5 +1,5 @@
 import { none, Option } from "@aicacia/core";
-import { IJSONObject } from "@aicacia/json";
+import type { IJSONObject } from "@aicacia/json";
 import { ImageAsset } from "../../../plugins/assets/ImageAsset";
 
 export class WebImageAsset extends ImageAsset {

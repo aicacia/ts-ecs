@@ -1,5 +1,5 @@
 import { Plugin } from "../Plugin";
-import { IRunOnUpdateFn } from "../IRunOnUpdateFn";
+import type { IRunOnUpdateFn } from "../IRunOnUpdateFn";
 
 export abstract class RunOnUpdatePlugin extends Plugin {
   private queue: IRunOnUpdateFn<this>[] = [];

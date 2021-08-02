@@ -1,4 +1,5 @@
 import { mat2d, vec2, vec3, vec4, mat4 } from "gl-matrix";
+import { AABB2 } from "./AABB2";
 export declare const DEG_TO_RAD: number;
 export declare const RAD_TO_DEG: number;
 export declare const HALF_PI: number;
@@ -25,3 +26,4 @@ export declare function toRgb(color: vec3 | vec4): string;
 export declare function toRgba(color: vec4): string;
 export declare function mat4FromMat2d(out: mat4, matrix: mat2d): mat4;
 export declare function mat2dFromMat4(out: mat2d, matrix: mat4): mat2d;
+export declare function getAABB2FromRect(out: AABB2, position: vec2, angle: number, size: vec2): AABB2;

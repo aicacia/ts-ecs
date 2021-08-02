@@ -1,5 +1,5 @@
-import { IConstructor } from "@aicacia/core";
-import { IJSONObject } from "@aicacia/json";
+import type { IConstructor } from "@aicacia/core";
+import type { IJSONObject } from "@aicacia/json";
 import { EventEmitter } from "events";
 
 export abstract class ToFromJSONEventEmitter extends EventEmitter {
