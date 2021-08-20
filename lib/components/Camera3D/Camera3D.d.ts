@@ -6,7 +6,7 @@ import { Camera3DManager } from "./Camera3DManager";
 import type { IJSONArray, IJSONObject } from "@aicacia/json";
 export declare class Camera3D extends RenderableComponent {
     static Manager: typeof Camera3DManager;
-    static requiredComponents: (typeof Transform3D | typeof Transform2D)[][];
+    static requiredComponents: (typeof Transform2D | typeof Transform3D)[][];
     private width;
     private height;
     private aspect;

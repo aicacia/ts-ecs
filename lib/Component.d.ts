@@ -4,11 +4,11 @@ import type { Entity } from "./Entity";
 import type { Manager } from "./Manager";
 import type { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
-export interface Component {
-    on(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
-    off(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
+export interface IComponentEventType {
+    "add-to-scene": () => void;
+    "remove-from-scene": () => void;
 }
-export declare abstract class Component extends ToFromJSONEventEmitter {
+export declare abstract class Component extends ToFromJSONEventEmitter<IComponentEventType> {
     static Manager: IConstructor<Manager>;
     static requiredComponents: IRequirement<Component>[];
     static requiredPlugins: IRequirement<Plugin>[];

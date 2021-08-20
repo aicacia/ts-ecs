@@ -1,6 +1,8 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component, Entity, Scene } from "../../lib";
 import {
+  Component,
+  Entity,
+  Scene,
   Camera2D,
   Camera2DManager,
   FullScreenCanvas,
@@ -8,13 +10,13 @@ import {
   Time,
   Transform2D,
   EventLoop,
-} from "../../lib";
+} from "../../src";
 import {
   WebCanvas,
   CtxRenderer,
   TransformCtxRendererHandler,
   WebEventListener,
-} from "../../lib/web";
+} from "../../src/web";
 
 class MouseTracker extends Component {
   static requiredComponents = [Transform2D];

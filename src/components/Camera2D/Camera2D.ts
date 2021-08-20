@@ -124,7 +124,7 @@ export class Camera2D extends RenderableComponent {
   }
 
   getAABB2(out: AABB2): AABB2 {
-    const tmp = VEC2_0,
+    const matrix = MAT2D_0,
       points = POINTS;
 
     AABB2.identity(out);
@@ -134,8 +134,14 @@ export class Camera2D extends RenderableComponent {
     vec2.set(points[2], this.width, this.height);
     vec2.set(points[3], 0, this.height);
 
+    mat2d.mul(matrix, this.projection, this.view);
+    mat2d.invert(matrix, matrix);
+
     for (const point of points) {
-      AABB2.expandPoint(out, out, this.toWorld(tmp, point));
+      point[0] = 2.0 * (point[0] / this.width) - 1.0;
+      point[1] = -2.0 * (point[1] / this.height) + 1.0;
+      vec2.transformMat2d(point, point, matrix);
+      AABB2.expandPoint(out, out, point);
     }
 
     return out;

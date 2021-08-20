@@ -1,10 +1,9 @@
-/// <reference types="node" />
-import { EventEmitter } from "events";
+import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export interface Entity {
     on(event: "resize", listener: (width: number, height: number, prevWidth: number, prevHeight: number) => void): this;
     off(event: "resize", listener: (width: number, height: number, prevWidth: number, prevHeight: number) => void): this;
 }
-export declare abstract class Canvas extends EventEmitter {
+export declare abstract class Canvas extends ToFromJSONEventEmitter {
     private width;
     private height;
     getWidth(): number;

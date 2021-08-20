@@ -1,6 +1,9 @@
 import { XorShiftRng } from "@aicacia/rand";
-import { Component, Entity, Plugin, Scene } from "../../lib";
 import {
+  Component,
+  Entity,
+  Plugin,
+  Scene,
   Assets,
   Camera2D,
   Camera2DControl,
@@ -10,14 +13,14 @@ import {
   Time,
   Loop,
   Transform2D,
-} from "../../lib";
+} from "../../src";
 import {
   WebCanvas,
   CtxRenderer,
   SpriteCtxRendererHandler,
   WebImageAsset,
   WebEventListener,
-} from "../../lib/web";
+} from "../../src/web";
 // @ts-ignore
 import logoPng from "url:../assets/logo.png";
 
@@ -45,11 +48,15 @@ class Rotator extends Component {
   static requiredComponents = [Transform2D];
   static requiredPlugins = [Time];
 
-  private rotation = 0.0;
+  private rotation: number | undefined;
 
   onUpdate() {
     const delta = this.getRequiredPlugin(Time).getDelta(),
       transform2d = this.getRequiredComponent(Transform2D);
+
+    if (!this.rotation) {
+      this.rotation = transform2d.getLocalRotationZ();
+    }
 
     this.rotation += delta;
     transform2d.setLocalRotation(this.rotation);
@@ -75,10 +82,9 @@ function onLoad() {
         new Entity().addComponent(new Transform2D())
       )
       .addPlugin(
-        new CtxRenderer(
-          canvas,
-          canvas.getElement().getContext("2d")
-        ).addRendererHandler(new SpriteCtxRendererHandler()),
+        new CtxRenderer(canvas.getElement()).addRendererHandler(
+          new SpriteCtxRendererHandler()
+        ),
         new Time(),
         new Input().addEventListener(new WebEventListener(canvas.getElement())),
         new FullScreenCanvas(canvas),
@@ -87,11 +93,17 @@ function onLoad() {
         new Loop()
       );
 
-  const rng = new XorShiftRng().uniformFloat(-50, 50);
+  const positionRNG = new XorShiftRng().uniformFloat(-50, 50),
+    rotationRNG = new XorShiftRng().uniformFloat(-Math.PI, Math.PI);
   for (let i = 0, il = 1000; i < il; i++) {
     scene.addEntity(
       new Entity().addComponent(
-        new Transform2D().setLocalPosition2([rng.nextFloat(), rng.nextFloat()]),
+        new Transform2D()
+          .setLocalRotationZ(rotationRNG.nextFloat())
+          .setLocalPosition2([
+            positionRNG.nextFloat(),
+            positionRNG.nextFloat(),
+          ]),
         new Rotator(),
         new Sprite().setImageAsset(logoAsset)
       )

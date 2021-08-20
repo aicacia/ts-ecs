@@ -1,8 +1,8 @@
-/// <reference types="node" />
 import type { IConstructor } from "@aicacia/core";
 import type { IJSONObject } from "@aicacia/json";
-import { EventEmitter } from "events";
-export declare abstract class ToFromJSONEventEmitter extends EventEmitter {
+import type { ValidEventTypes } from "eventemitter3";
+import { EventEmitter } from "eventemitter3";
+export declare abstract class ToFromJSONEventEmitter<EventTypes extends ValidEventTypes = any> extends EventEmitter<EventTypes> {
     static typeId?: string;
     static toFromJSONEnabled: boolean;
     static toString(): string;

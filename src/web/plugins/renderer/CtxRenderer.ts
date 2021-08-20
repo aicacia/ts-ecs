@@ -3,7 +3,6 @@ import { mat2d } from "gl-matrix";
 import { Camera2D, Camera2DManager } from "../../../components/Camera2D";
 import { toRgba } from "../../../math";
 import { Renderer } from "../../../plugins/renderer/Renderer";
-import type { Canvas } from "../../../Canvas";
 import type { IJSONObject } from "@aicacia/json";
 
 const MAT2D_0 = mat2d.create();
@@ -11,7 +10,7 @@ const MAT2D_0 = mat2d.create();
 export class CtxRenderer extends Renderer {
   static toFromJSONEnabled = false;
 
-  private canvas: Canvas;
+  private element: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private lineWidth = 1.0;
   private camera: Option<Camera2D> = none();
@@ -21,11 +20,11 @@ export class CtxRenderer extends Renderer {
   private scale = 1.0;
   private enabled = true;
 
-  constructor(canvas: Canvas, ctx: CanvasRenderingContext2D) {
+  constructor(element: HTMLCanvasElement) {
     super();
 
-    this.canvas = canvas;
-    this.ctx = ctx;
+    this.element = element;
+    this.ctx = element.getContext("2d") as CanvasRenderingContext2D;
   }
 
   getCameraView() {
@@ -37,8 +36,8 @@ export class CtxRenderer extends Renderer {
   getCameraViewProjection() {
     return this.cameraViewProjection;
   }
-  getCanvas() {
-    return this.canvas;
+  getElement() {
+    return this.element;
   }
   getCtx() {
     return this.ctx;
@@ -78,8 +77,8 @@ export class CtxRenderer extends Renderer {
   }
 
   private getCanvasSize() {
-    const width = this.canvas.getWidth(),
-      height = this.canvas.getHeight();
+    const width = this.element.width,
+      height = this.element.height;
 
     return (width > height ? height : width) * 0.5;
   }
@@ -107,8 +106,8 @@ export class CtxRenderer extends Renderer {
       return this;
     }
     const camera = this.getCamera(),
-      width = this.canvas.getWidth(),
-      height = this.canvas.getHeight(),
+      width = this.element.width,
+      height = this.element.height,
       halfWidth = width * 0.5,
       halfHeight = height * 0.5;
 

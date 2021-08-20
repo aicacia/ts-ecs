@@ -7,7 +7,7 @@ import { Camera2DManager } from "./Camera2DManager";
 import { AABB2 } from "../../math/AABB2";
 export declare class Camera2D extends RenderableComponent {
     static Manager: typeof Camera2DManager;
-    static requiredComponents: (typeof Transform3D | typeof Transform2D)[][];
+    static requiredComponents: (typeof Transform2D | typeof Transform3D)[][];
     private width;
     private height;
     private aspect;

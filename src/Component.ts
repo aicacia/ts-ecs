@@ -6,13 +6,12 @@ import type { Manager } from "./Manager";
 import type { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
-// tslint:disable-next-line: interface-name
-export interface Component {
-  on(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
-  off(event: "add-to-scene" | "remove-from-scene", listener: () => void): this;
+export interface IComponentEventType {
+  "add-to-scene": () => void;
+  "remove-from-scene": () => void;
 }
 
-export abstract class Component extends ToFromJSONEventEmitter {
+export abstract class Component extends ToFromJSONEventEmitter<IComponentEventType> {
   static Manager: IConstructor<Manager> = DefaultManager;
   static requiredComponents: IRequirement<Component>[] = [];
   static requiredPlugins: IRequirement<Plugin>[] = [];

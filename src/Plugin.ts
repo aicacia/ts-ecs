@@ -6,9 +6,12 @@ import {
 } from "./IRequirement";
 import type { Manager } from "./Manager";
 import type { Scene } from "./Scene";
+import type { ValidEventTypes } from "eventemitter3";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
-export abstract class Plugin extends ToFromJSONEventEmitter {
+export abstract class Plugin<
+  EventTypes extends ValidEventTypes = any
+> extends ToFromJSONEventEmitter<EventTypes> {
   static pluginPriority = 0;
   static requiredPlugins: IRequirement<Plugin>[] = [];
 

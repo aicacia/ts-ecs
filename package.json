@@ -10,7 +10,6 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
     "prepublishOnly": "npm run clean && npm run build",
     "test": "ts-node node_modules/.bin/tape src/**/*.test.{ts,tsx} | tap-spec",
     "coverage": "nyc --reporter=lcov --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
@@ -63,6 +62,7 @@
     "@aicacia/core": "0",
     "@aicacia/json": "0",
     "@aicacia/pool": "0",
+    "eventemitter3": "4",
     "gl-matrix": "3",
     "raf": "3",
     "uuid": "3"

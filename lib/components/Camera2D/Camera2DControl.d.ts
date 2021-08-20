@@ -6,7 +6,7 @@ import { Camera2DControlManager } from "./Camera2DControlManager";
 import type { IJSONObject } from "@aicacia/json";
 export declare class Camera2DControl extends RenderableComponent {
     static Manager: typeof Camera2DControlManager;
-    static requiredComponents: (typeof Transform3D | typeof Transform2D)[][];
+    static requiredComponents: (typeof Transform2D | typeof Transform3D)[][];
     static requiredPlugins: (typeof Input)[];
     private enabled;
     private panSpeed;

@@ -3,13 +3,13 @@ import { Option, IConstructor } from "@aicacia/core";
 import { Component } from "./Component";
 import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
-export interface Entity {
-    on(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
-    on(event: "add-child" | "remove-child", listener: (child: Entity) => void): this;
-    off(event: "add-component" | "remove-component", listener: (component: Component) => void): this;
-    off(event: "add-child" | "remove-child", listener: (child: Entity) => void): this;
+export interface IEntityEventTypes {
+    "add-component": (component: Component) => void;
+    "remove-component": (component: Component) => void;
+    "add-child": (child: Entity) => void;
+    "remove-child": (child: Entity) => void;
 }
-export declare class Entity extends ToFromJSONEventEmitter {
+export declare class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     private name;
     private depth;
     private scene;

@@ -6,43 +6,20 @@ import type { Manager } from "./Manager";
 import { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
-// tslint:disable-next-line: interface-name
-export interface Scene {
-  on(
-    event: "maintain" | "update" | "init" | "clear",
-    listener: () => void
-  ): this;
-  on(
-    event: "add-component" | "remove-component",
-    listener: (component: Component) => void
-  ): this;
-  on(
-    event: "add-plugin" | "remove-plugin",
-    listener: (entity: Plugin) => void
-  ): this;
-  on(
-    event: "add-entity" | "remove-entity",
-    listener: (entity: Entity) => void
-  ): this;
-  off(
-    event: "maintain" | "update" | "init" | "clear",
-    listener: () => void
-  ): this;
-  off(
-    event: "add-component" | "remove-component",
-    listener: (component: Component) => void
-  ): this;
-  off(
-    event: "add-plugin" | "remove-plugin",
-    listener: (entity: Plugin) => void
-  ): this;
-  off(
-    event: "add-entity" | "remove-entity",
-    listener: (entity: Entity) => void
-  ): this;
+export interface ISceneEventTypes {
+  maintain(): void;
+  update(): void;
+  init(): void;
+  clear(): void;
+  "add-component": (component: Component) => void;
+  "remove-component": (component: Component) => void;
+  "add-plugin": (plugin: Plugin) => void;
+  "remove-plugin": (plugin: Plugin) => void;
+  "add-entity": (entity: Entity) => void;
+  "remove-entity": (entity: Entity) => void;
 }
 
-export class Scene extends ToFromJSONEventEmitter {
+export class Scene extends ToFromJSONEventEmitter<ISceneEventTypes> {
   private name: Option<string> = none();
 
   private entities: Entity[] = [];

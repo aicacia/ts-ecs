@@ -2,8 +2,9 @@ import { Option, IConstructor } from "@aicacia/core";
 import { IRequirement } from "./IRequirement";
 import type { Manager } from "./Manager";
 import type { Scene } from "./Scene";
+import type { ValidEventTypes } from "eventemitter3";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
-export declare abstract class Plugin extends ToFromJSONEventEmitter {
+export declare abstract class Plugin<EventTypes extends ValidEventTypes = any> extends ToFromJSONEventEmitter<EventTypes> {
     static pluginPriority: number;
     static requiredPlugins: IRequirement<Plugin>[];
     static getPluginPriority(): number;

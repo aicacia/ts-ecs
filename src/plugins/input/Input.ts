@@ -13,13 +13,16 @@ import type { InputEvent } from "./InputEvent";
 import { ResizeInputHandler } from "./ResizeInputHandler";
 import { IJSONObject, isJSONArray } from "@aicacia/json";
 
-// tslint:disable-next-line: interface-name
-export interface Input {
-  on(event: string, listener: (event: InputEvent) => void): this;
-  off(event: string, listener: (event: InputEvent) => void): this;
-}
+export type IInputEventTypes = {
+  "add-input_handler": (handler: InputHandler) => void;
+  "remove-input_handler": (handler: InputHandler) => void;
+  "add-event_listener": (listener: EventListener) => void;
+  "remove-event_listener": (listener: EventListener) => void;
+} & {
+  [name: string]: (event: InputEvent) => void;
+};
 
-export class Input extends Plugin {
+export class Input extends Plugin<IInputEventTypes> {
   private events: InputEvent[] = [];
 
   private inputHandlers: InputHandler[] = [];

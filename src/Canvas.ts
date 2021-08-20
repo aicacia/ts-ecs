@@ -1,4 +1,4 @@
-import { EventEmitter } from "events";
+import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
 // tslint:disable-next-line: interface-name
 export interface Entity {
@@ -22,7 +22,7 @@ export interface Entity {
   ): this;
 }
 
-export abstract class Canvas extends EventEmitter {
+export abstract class Canvas extends ToFromJSONEventEmitter {
   private width = 1;
   private height = 1;
 

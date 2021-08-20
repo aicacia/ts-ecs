@@ -1,11 +1,10 @@
 import { mat2d } from "gl-matrix";
 import { Camera2D } from "../../../components/Camera2D";
 import { Renderer } from "../../../plugins/renderer/Renderer";
-import type { Canvas } from "../../../Canvas";
 import type { IJSONObject } from "@aicacia/json";
 export declare class CtxRenderer extends Renderer {
     static toFromJSONEnabled: boolean;
-    private canvas;
+    private element;
     private ctx;
     private lineWidth;
     private camera;
@@ -14,11 +13,11 @@ export declare class CtxRenderer extends Renderer {
     private cameraViewProjection;
     private scale;
     private enabled;
-    constructor(canvas: Canvas, ctx: CanvasRenderingContext2D);
+    constructor(element: HTMLCanvasElement);
     getCameraView(): mat2d;
     getCameraProjection(): mat2d;
     getCameraViewProjection(): mat2d;
-    getCanvas(): Canvas;
+    getElement(): HTMLCanvasElement;
     getCtx(): CanvasRenderingContext2D;
     getEnabled(): boolean;
     setEnabled(enabled?: boolean): this;

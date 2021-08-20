@@ -7,11 +7,15 @@ import { InputHandler } from "./InputHandler";
 import type { EventListener } from "./EventListener";
 import type { InputEvent } from "./InputEvent";
 import { IJSONObject } from "@aicacia/json";
-export interface Input {
-    on(event: string, listener: (event: InputEvent) => void): this;
-    off(event: string, listener: (event: InputEvent) => void): this;
-}
-export declare class Input extends Plugin {
+export declare type IInputEventTypes = {
+    "add-input_handler": (handler: InputHandler) => void;
+    "remove-input_handler": (handler: InputHandler) => void;
+    "add-event_listener": (listener: EventListener) => void;
+    "remove-event_listener": (listener: EventListener) => void;
+} & {
+    [name: string]: (event: InputEvent) => void;
+};
+export declare class Input extends Plugin<IInputEventTypes> {
     private events;
     private inputHandlers;
     private inputHandlerMap;

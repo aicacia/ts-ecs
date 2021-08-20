@@ -1,6 +1,8 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component, Entity, Scene } from "../../lib";
 import {
+  Component,
+  Entity,
+  Scene,
   Assets,
   Camera2D,
   Camera2DControl,
@@ -11,7 +13,7 @@ import {
   Time,
   Loop,
   Transform2D,
-} from "../../lib";
+} from "../../src";
 import {
   WebCanvas,
   CtxRenderer,
@@ -19,7 +21,7 @@ import {
   TransformCtxRendererHandler,
   WebImageAsset,
   WebEventListener,
-} from "../../lib/web";
+} from "../../src/web";
 // @ts-ignore
 import logoPng from "url:../assets/logo.png";
 

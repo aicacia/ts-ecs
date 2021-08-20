@@ -10,27 +10,14 @@ import type { Plugin } from "./Plugin";
 import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 
-// tslint:disable-next-line: interface-name
-export interface Entity {
-  on(
-    event: "add-component" | "remove-component",
-    listener: (component: Component) => void
-  ): this;
-  on(
-    event: "add-child" | "remove-child",
-    listener: (child: Entity) => void
-  ): this;
-  off(
-    event: "add-component" | "remove-component",
-    listener: (component: Component) => void
-  ): this;
-  off(
-    event: "add-child" | "remove-child",
-    listener: (child: Entity) => void
-  ): this;
+export interface IEntityEventTypes {
+  "add-component": (component: Component) => void;
+  "remove-component": (component: Component) => void;
+  "add-child": (child: Entity) => void;
+  "remove-child": (child: Entity) => void;
 }
 
-export class Entity extends ToFromJSONEventEmitter {
+export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
   private name: Option<string> = none();
   private depth = 0;
   private scene: Option<Scene> = none();
@@ -481,8 +468,9 @@ export class Entity extends ToFromJSONEventEmitter {
     }
     if (isJSONArray(json.components)) {
       this.addComponents(
-        json.components.map((componentJSON) =>
-          Component.newFromJSON(componentJSON as IJSONObject)
+        json.components.map(
+          (componentJSON) =>
+            Component.newFromJSON(componentJSON as IJSONObject) as Component
         )
       );
     }
