@@ -56,18 +56,26 @@
 					<a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>
 				</li>
 			</ul>
-			<h1>Class ToFromJSONEventEmitter</h1>
+			<h1>Class ToFromJSONEventEmitter&lt;EventTypes&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>EventTypes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ValidEventTypes</span> = <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">EventEmitter</span>
+						<span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypes</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">ToFromJSONEventEmitter</span>
@@ -99,6 +107,9 @@
 									<li>
 										<a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a>
 									</li>
+									<li>
+										<a href="Canvas.html" class="tsd-signature-type" data-tsd-kind="Class">Canvas</a>
+									</li>
 								</ul>
 							</li>
 						</ul>
@@ -112,7 +123,7 @@
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="ToFromJSONEventEmitter.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="ToFromJSONEventEmitter.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -140,27 +151,27 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>ToFromJSONEvent<wbr>Emitter<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EventEmitterOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>ToFromJSONEvent<wbr>Emitter&lt;EventTypes&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypes</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from EventEmitter.constructor</p>
+								<p>Inherited from EventEmitter&lt;EventTypes&gt;.constructor</p>
 								<ul>
-									<li>Defined in node_modules/@types/node/events.d.ts:74</li>
+									<li>Defined in node_modules/eventemitter3/index.d.ts:88</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">EventEmitterOptions</span></h5>
+									<h4>EventTypes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ValidEventTypes</span> = <span class="tsd-signature-type">any</span></h4>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypes</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -173,7 +184,7 @@
 					<div class="tsd-signature tsd-kind-icon">to<wbr>FromJSONEnabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L7">src/ToFromJSONEventEmitter.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L10">src/ToFromJSONEventEmitter.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -183,7 +194,7 @@
 					<div class="tsd-signature tsd-kind-icon">type<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L6">src/ToFromJSONEventEmitter.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -194,13 +205,13 @@
 					<a name="fromJSON" class="tsd-anchor"></a>
 					<h3>fromJSON</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>_json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></li>
+						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>_json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypes</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L50">src/ToFromJSONEventEmitter.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L53">src/ToFromJSONEventEmitter.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -209,7 +220,7 @@
 									<h5>_json: <span class="tsd-signature-type">IJSONObject</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypes</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -217,16 +228,16 @@
 					<a name="getConstructor" class="tsd-anchor"></a>
 					<h3>get<wbr>Constructor</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypes</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L37">src/ToFromJSONEventEmitter.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L40">src/ToFromJSONEventEmitter.ts:40</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypes</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -240,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L41">src/ToFromJSONEventEmitter.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L44">src/ToFromJSONEventEmitter.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IJSONObject</span></h4>
@@ -257,13 +268,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L19">src/ToFromJSONEventEmitter.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L22">src/ToFromJSONEventEmitter.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -286,7 +297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -303,7 +314,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L18">src/ToFromJSONEventEmitter.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -320,13 +331,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L30">src/ToFromJSONEventEmitter.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L33">src/ToFromJSONEventEmitter.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -349,7 +360,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -370,10 +381,10 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class="current tsd-kind-class tsd-has-type-parameter">
 						<a href="ToFromJSONEventEmitter.html" class="tsd-kind-icon">To<wbr>FromJSONEvent<wbr>Emitter</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 								<a href="ToFromJSONEventEmitter.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">

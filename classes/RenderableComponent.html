@@ -137,8 +137,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="RenderableComponent.html#getRequiredSceneManager" class="tsd-kind-icon">get<wbr>Required<wbr>Scene<wbr>Manager</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="RenderableComponent.html#getScene" class="tsd-kind-icon">get<wbr>Scene</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="RenderableComponent.html#getSceneManager" class="tsd-kind-icon">get<wbr>Scene<wbr>Manager</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="RenderableComponent.html#off" class="tsd-kind-icon">off</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="RenderableComponent.html#on" class="tsd-kind-icon">on</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="RenderableComponent.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="RenderableComponent.html#onAfterUpdate" class="tsd-kind-icon">on<wbr>After<wbr>Update</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="RenderableComponent.html#onDetach" class="tsd-kind-icon">on<wbr>Detach</a></li>
@@ -166,22 +164,16 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Renderable<wbr>Component<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">EventEmitterOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Renderable<wbr>Component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in node_modules/@types/node/events.d.ts:74</li>
+									<li>Defined in node_modules/eventemitter3/index.d.ts:88</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">EventEmitterOptions</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
 						</li>
 					</ul>
@@ -196,7 +188,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#Manager">Manager</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L16">src/Component.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L15">src/Component.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -207,18 +199,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#requiredComponents">requiredComponents</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L17">src/Component.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L16">src/Component.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="requiredPlugins" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> required<wbr>Plugins</h3>
-					<div class="tsd-signature tsd-kind-icon">required<wbr>Plugins<span class="tsd-signature-symbol">:</span> <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<div class="tsd-signature tsd-kind-icon">required<wbr>Plugins<span class="tsd-signature-symbol">:</span> <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#requiredPlugins">requiredPlugins</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L18">src/Component.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L17">src/Component.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -229,7 +221,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#toFromJSONEnabled">toFromJSONEnabled</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L7">src/ToFromJSONEventEmitter.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L10">src/ToFromJSONEventEmitter.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -240,7 +232,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#typeId">typeId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L6">src/ToFromJSONEventEmitter.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -258,7 +250,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#fromJSON">fromJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L50">src/ToFromJSONEventEmitter.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L53">src/ToFromJSONEventEmitter.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -282,7 +274,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getComponent">getComponent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L46">src/Component.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L45">src/Component.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -312,7 +304,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getConstructor">getConstructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L37">src/ToFromJSONEventEmitter.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L40">src/ToFromJSONEventEmitter.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -330,7 +322,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getEntity">getEntity</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L81">src/Component.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L80">src/Component.ts:80</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -348,7 +340,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getManager">getManager</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L112">src/Component.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L111">src/Component.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -372,7 +364,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getManagerConstructor">getManagerConstructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L36">src/Component.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L35">src/Component.ts:35</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -396,13 +388,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getPlugin">getPlugin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L58">src/Component.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L57">src/Component.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>P<span class="tsd-signature-symbol">: </span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a></h4>
+									<h4>P<span class="tsd-signature-symbol">: </span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -425,7 +417,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/components/RenderableComponent.ts#L6">src/components/RenderableComponent.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/components/RenderableComponent.ts#L6">src/components/RenderableComponent.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -443,7 +435,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredComponent">getRequiredComponent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L51">src/Component.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L50">src/Component.ts:50</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -473,7 +465,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredComponents">getRequiredComponents</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L39">src/Component.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L38">src/Component.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -491,7 +483,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredEntity">getRequiredEntity</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L84">src/Component.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L83">src/Component.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a></h4>
@@ -509,7 +501,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredManager">getRequiredManager</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L115">src/Component.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L114">src/Component.ts:114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -533,13 +525,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredPlugin">getRequiredPlugin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L61">src/Component.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L60">src/Component.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>P<span class="tsd-signature-symbol">: </span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a></h4>
+									<h4>P<span class="tsd-signature-symbol">: </span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -556,17 +548,17 @@
 					<a name="getRequiredPlugins" class="tsd-anchor"></a>
 					<h3>get<wbr>Required<wbr>Plugins</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugins<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugins<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredPlugins">getRequiredPlugins</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L42">src/Component.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L41">src/Component.ts:41</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -581,7 +573,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredScene">getRequiredScene</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L93">src/Component.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L92">src/Component.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a></h4>
@@ -599,7 +591,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredSceneManager">getRequiredSceneManager</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L127">src/Component.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L126">src/Component.ts:126</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -629,7 +621,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getScene">getScene</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L90">src/Component.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L89">src/Component.ts:89</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -647,7 +639,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getSceneManager">getSceneManager</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L124">src/Component.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L123">src/Component.ts:123</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -667,84 +659,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="off" class="tsd-anchor"></a>
-					<h3>off</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#off">off</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L12">src/Component.ts:12</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span></h5>
-								</li>
-								<li>
-									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-signature">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="on" class="tsd-anchor"></a>
-					<h3>on</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#on">on</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L11">src/Component.ts:11</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span></h5>
-								</li>
-								<li>
-									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-signature">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onAdd" class="tsd-anchor"></a>
 					<h3>on<wbr>Add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -755,7 +669,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#onAdd">onAdd</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L144">src/Component.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L143">src/Component.ts:143</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
@@ -773,7 +687,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#onAfterUpdate">onAfterUpdate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L153">src/Component.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L152">src/Component.ts:152</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
@@ -791,7 +705,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#onDetach">onDetach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L141">src/Component.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L140">src/Component.ts:140</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
@@ -809,7 +723,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#onInit">onInit</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L138">src/Component.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L137">src/Component.ts:137</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
@@ -827,7 +741,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#onRemove">onRemove</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L147">src/Component.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L146">src/Component.ts:146</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
@@ -845,7 +759,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#onUpdate">onUpdate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L150">src/Component.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L149">src/Component.ts:149</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="RenderableComponent.html" class="tsd-signature-type" data-tsd-kind="Class">RenderableComponent</a></h4>
@@ -862,7 +776,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/components/RenderableComponent.ts#L9">src/components/RenderableComponent.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/components/RenderableComponent.ts#L9">src/components/RenderableComponent.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -886,7 +800,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#toJSON">toJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L41">src/ToFromJSONEventEmitter.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L44">src/ToFromJSONEventEmitter.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IJSONObject</span></h4>
@@ -904,13 +818,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getConstructorFromJSON">getConstructorFromJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L19">src/ToFromJSONEventEmitter.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L22">src/ToFromJSONEventEmitter.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -934,7 +848,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getManagerConstructor-1">getManagerConstructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L20">src/Component.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L19">src/Component.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -958,7 +872,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredComponents-1">getRequiredComponents</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L26">src/Component.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L25">src/Component.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Component.html" class="tsd-signature-type" data-tsd-kind="Class">Component</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -969,17 +883,17 @@
 					<a name="getRequiredPlugins-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Required<wbr>Plugins</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugins<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugins<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getRequiredPlugins-1">getRequiredPlugins</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/Component.ts#L29">src/Component.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/Component.ts#L28">src/Component.ts:28</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#IRequirement" class="tsd-signature-type" data-tsd-kind="Type alias">IRequirement</a><span class="tsd-signature-symbol">&lt;</span><a href="Plugin.html" class="tsd-signature-type" data-tsd-kind="Class">Plugin</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -994,7 +908,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#getTypeId">getTypeId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1012,7 +926,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#isToFromJSONEnabled">isToFromJSONEnabled</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L18">src/ToFromJSONEventEmitter.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1030,13 +944,13 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#newFromJSON">newFromJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L30">src/ToFromJSONEventEmitter.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L33">src/ToFromJSONEventEmitter.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a></h4>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span> = <a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1060,7 +974,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="Component.html">Component</a>.<a href="Component.html#toString">toString</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/8c476c4/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/55626d2/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1155,12 +1069,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 								<a href="RenderableComponent.html#getSceneManager" class="tsd-kind-icon">get<wbr>Scene<wbr>Manager</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="RenderableComponent.html#off" class="tsd-kind-icon">off</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="RenderableComponent.html#on" class="tsd-kind-icon">on</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="RenderableComponent.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a>
