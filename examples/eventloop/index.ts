@@ -57,10 +57,9 @@ function onLoad() {
         new Entity().addComponent(new Transform2D(), new MouseTracker())
       )
       .addPlugin(
-        new CtxRenderer(
-          canvas,
-          canvas.getElement().getContext("2d")
-        ).addRendererHandler(new TransformCtxRendererHandler()),
+        new CtxRenderer(canvas.getElement()).addRendererHandler(
+          new TransformCtxRendererHandler()
+        ),
         // Required by many Components and plugins
         new Time(),
         // Handles all input

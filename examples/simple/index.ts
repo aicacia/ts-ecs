@@ -88,10 +88,7 @@ function onLoad() {
           )
       )
       .addPlugin(
-        new CtxRenderer(
-          canvas,
-          canvas.getElement().getContext("2d")
-        ).addRendererHandler(
+        new CtxRenderer(canvas.getElement()).addRendererHandler(
           new TransformCtxRendererHandler(),
           new SpriteCtxRendererHandler()
         ),
