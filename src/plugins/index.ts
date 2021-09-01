@@ -22,3 +22,11 @@ export {
   TouchInputEvent,
   TouchInputHandler,
 } from "./input";
+export type {
+  IRequestAnimationFrame,
+  ICancelAnimationFrame,
+} from "./requestAnimationFrame";
+export {
+  requestAnimationFrame,
+  cancelAnimationFrame,
+} from "./requestAnimationFrame";

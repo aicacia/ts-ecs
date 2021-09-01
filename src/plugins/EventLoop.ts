@@ -1,4 +1,7 @@
-import raf = require("raf");
+import {
+  requestAnimationFrame,
+  cancelAnimationFrame,
+} from "./requestAnimationFrame";
 import { Input } from "./input";
 import { Plugin } from "../Plugin";
 
@@ -27,7 +30,7 @@ export class EventLoop extends Plugin {
     this.running = false;
 
     if (this.id !== null) {
-      raf.cancel(this.id);
+      cancelAnimationFrame(this.id);
       this.id = null;
     }
     return this;
@@ -44,7 +47,7 @@ export class EventLoop extends Plugin {
   };
 
   private request() {
-    this.id = raf(this.run);
+    this.id = requestAnimationFrame(this.run);
     return this;
   }
 }

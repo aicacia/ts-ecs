@@ -1,0 +1,13 @@
+import { InputHandler } from "./InputHandler";
+export class ResizeInputHandler extends InputHandler {
+    onEvent(_time, event) {
+        const input = this.getRequiredInput();
+        switch (event.type) {
+            case "resize":
+                input.getOrCreateButton("screen-width").UNSAFE_setValue(event.width);
+                input.getOrCreateButton("screen-height").UNSAFE_setValue(event.height);
+                break;
+        }
+        return this;
+    }
+}

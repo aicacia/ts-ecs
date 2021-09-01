@@ -16,7 +16,10 @@ export {
   TransformComponentManager,
   TransformComponent,
 } from "./components";
+export type { IRequestAnimationFrame, ICancelAnimationFrame } from "./plugins";
 export {
+  requestAnimationFrame,
+  cancelAnimationFrame,
   Asset,
   Assets,
   JSONAsset,
@@ -90,3 +93,12 @@ export {
   equals,
   getAABB2FromRect,
 } from "./math";
+export {
+  WebEventListener,
+  WebImageAsset,
+  SpriteCtxRendererHandler,
+  TransformCtxRendererHandler,
+  CtxRenderer,
+  CtxRendererHandler,
+  WebCanvas,
+} from "./web";

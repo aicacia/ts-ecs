@@ -6,18 +6,22 @@
     "type": "git",
     "url": "https://gitlab.com/aicacia/libs/ts-ecs.git"
   },
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "module": "esm/index.js",
+  "main": "cjs/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run clean && npm run build",
+    "buildESM": "tsc -b tsconfig.esm.json",
+    "buildBrowser": "rollup -c",
+    "doc": "typedoc",
+    "prepublishOnly": "npm run clean && npm run build && npm run buildESM && npm run buildBrowser",
     "test": "ts-node node_modules/.bin/tape src/**/*.test.{ts,tsx} | tap-spec",
-    "coverage": "nyc --reporter=lcov --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
-    "clean": "rm -rf ./lib",
+    "bench": "ts-node node_modules/.bin/tape src/**/*.benchmark.{ts,tsx} | tap-spec",
+    "coverage": "nyc --reporter=lcov --check-coverage --lines=75 --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
+    "clean": "rm -rf esm cjs browser types",
     "lint": "eslint . --fix",
-    "doc": "typedoc --tsconfig tsconfig.json",
-    "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
-    "preCommit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly",
+    "prettier": "prettier --ignore-path .eslintignore --ignore-unknown --write .",
+    "preCommit": "npm run prettier && npm run lint && npm run coverage",
     "benchmark": "parcel serve examples/benchmark/index.html",
     "simple": "parcel serve examples/simple/index.html",
     "eventloop": "parcel serve examples/eventloop/index.html"
@@ -38,6 +42,10 @@
   "devDependencies": {
     "@aicacia/rand": "0",
     "@parcel/transformer-image": "next",
+    "@rollup/plugin-commonjs": "20",
+    "@rollup/plugin-node-resolve": "13",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-typescript": "8",
     "@types/raf": "3",
     "@types/tape": "4",
     "@types/uuid": "8",
@@ -50,13 +58,15 @@
     "nyc": "15",
     "parcel": "next",
     "prettier": "2",
+    "rollup-plugin-esm-import-to-url": "2",
+    "rollup-plugin-terser": "7",
     "tap-nyc": "1",
     "tap-spec": "5",
     "tape": "5",
-    "ts-node": "9",
+    "ts-node": "10",
     "tslib": "2",
     "typedoc": "0",
-    "typescript": "4"
+    "typescript": "4.3"
   },
   "dependencies": {
     "@aicacia/core": "0",
@@ -64,8 +74,7 @@
     "@aicacia/pool": "0",
     "eventemitter3": "4",
     "gl-matrix": "3",
-    "raf": "3",
-    "uuid": "3"
+    "uuid": "8"
   },
   "peerDependencies": {
     "tslib": "2"

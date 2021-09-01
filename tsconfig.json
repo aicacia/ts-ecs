@@ -6,10 +6,11 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "declaration": true,
-    "outDir": "lib",
+    "outDir": "cjs",
+    "declarationDir": "types",
     "strict": true,
     "downlevelIteration": true,
-    "lib": ["DOM", "esnext"]
+    "lib": ["ESNext", "DOM"]
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.*"],
