@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RendererHandler | @aicacia/ecs</title>
+	<title>CtxRendererHandler | @aicacia/ecs</title>
 	<meta name="description" content="Documentation for @aicacia/ecs">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,35 +53,30 @@
 					<a href="../modules.html">@aicacia/ecs</a>
 				</li>
 				<li>
-					<a href="RendererHandler.html">RendererHandler</a>
+					<a href="CtxRendererHandler.html">CtxRendererHandler</a>
 				</li>
 			</ul>
-			<h1>Class RendererHandler&lt;R&gt;</h1>
+			<h1>Class CtxRendererHandler</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>R<span class="tsd-signature-symbol">: </span><a href="Renderer.html" class="tsd-signature-type" data-tsd-kind="Class">Renderer</a> = <a href="Renderer.html" class="tsd-signature-type" data-tsd-kind="Class">Renderer</a></h4>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="ToFromJSONEventEmitter.html" class="tsd-signature-type" data-tsd-kind="Class">ToFromJSONEventEmitter</a>
+						<a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><a href="CtxRenderer.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRenderer</a><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">RendererHandler</span>
+								<span class="target">CtxRendererHandler</span>
 								<ul class="tsd-hierarchy">
 									<li>
-										<a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a>
+										<a href="SpriteCtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">SpriteCtxRendererHandler</a>
+									</li>
+									<li>
+										<a href="TransformCtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">TransformCtxRendererHandler</a>
 									</li>
 								</ul>
 							</li>
@@ -96,47 +91,50 @@
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="RendererHandler.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="RendererHandler.html#rendererHandlerPriority" class="tsd-kind-icon">renderer<wbr>Handler<wbr>Priority</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="RendererHandler.html#toFromJSONEnabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="RendererHandler.html#typeId" class="tsd-kind-icon">type<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="CtxRendererHandler.html#rendererHandlerPriority" class="tsd-kind-icon">renderer<wbr>Handler<wbr>Priority</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#toFromJSONEnabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#typeId" class="tsd-kind-icon">type<wbr>Id</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#UNSAFE_removeRenderer" class="tsd-kind-icon">UNSAFE_<wbr>remove<wbr>Renderer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#UNSAFE_setRenderer" class="tsd-kind-icon">UNSAFE_<wbr>set<wbr>Renderer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="RendererHandler.html#fromJSON" class="tsd-kind-icon">fromJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="RendererHandler.html#getConstructor" class="tsd-kind-icon">get<wbr>Constructor</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#getEnabled" class="tsd-kind-icon">get<wbr>Enabled</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="RendererHandler.html#getManager" class="tsd-kind-icon">get<wbr>Manager</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="RendererHandler.html#getPlugin" class="tsd-kind-icon">get<wbr>Plugin</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#getRenderer" class="tsd-kind-icon">get<wbr>Renderer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#getRendererHandlerPriority" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="RendererHandler.html#getRequiredManager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="RendererHandler.html#getRequiredPlugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#getRequiredRenderer" class="tsd-kind-icon">get<wbr>Required<wbr>Renderer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#getRequiredScene" class="tsd-kind-icon">get<wbr>Required<wbr>Scene</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#getScene" class="tsd-kind-icon">get<wbr>Scene</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#onAfterRender" class="tsd-kind-icon">on<wbr>After<wbr>Render</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#onBeforeRender" class="tsd-kind-icon">on<wbr>Before<wbr>Render</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#onRemove" class="tsd-kind-icon">on<wbr>Remove</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#onRender" class="tsd-kind-icon">on<wbr>Render</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="RendererHandler.html#setEnabled" class="tsd-kind-icon">set<wbr>Enabled</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="RendererHandler.html#toJSON" class="tsd-kind-icon">toJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="RendererHandler.html#getConstructorFromJSON" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="RendererHandler.html#getRendererHandlerPriority-1" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="RendererHandler.html#getTypeId" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="RendererHandler.html#isToFromJSONEnabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="RendererHandler.html#newFromJSON" class="tsd-kind-icon">new<wbr>FromJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="RendererHandler.html#toString" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#UNSAFE_removeRenderer" class="tsd-kind-icon">UNSAFE_<wbr>remove<wbr>Renderer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#UNSAFE_setRenderer" class="tsd-kind-icon">UNSAFE_<wbr>set<wbr>Renderer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#fromJSON" class="tsd-kind-icon">fromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="CtxRendererHandler.html#getCamera" class="tsd-kind-icon">get<wbr>Camera</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#getConstructor" class="tsd-kind-icon">get<wbr>Constructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="CtxRendererHandler.html#getCtx" class="tsd-kind-icon">get<wbr>Ctx</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#getEnabled" class="tsd-kind-icon">get<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="CtxRendererHandler.html#getManager" class="tsd-kind-icon">get<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="CtxRendererHandler.html#getPlugin" class="tsd-kind-icon">get<wbr>Plugin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#getRenderer" class="tsd-kind-icon">get<wbr>Renderer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#getRendererHandlerPriority" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="CtxRendererHandler.html#getRequiredManager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="CtxRendererHandler.html#getRequiredPlugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#getRequiredRenderer" class="tsd-kind-icon">get<wbr>Required<wbr>Renderer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#getRequiredScene" class="tsd-kind-icon">get<wbr>Required<wbr>Scene</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="CtxRendererHandler.html#getScale" class="tsd-kind-icon">get<wbr>Scale</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#getScene" class="tsd-kind-icon">get<wbr>Scene</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#onAfterRender" class="tsd-kind-icon">on<wbr>After<wbr>Render</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#onBeforeRender" class="tsd-kind-icon">on<wbr>Before<wbr>Render</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#onRemove" class="tsd-kind-icon">on<wbr>Remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#onRender" class="tsd-kind-icon">on<wbr>Render</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#setEnabled" class="tsd-kind-icon">set<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="CtxRendererHandler.html#toJSON" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#getConstructorFromJSON" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#getRendererHandlerPriority-1" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#getTypeId" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#isToFromJSONEnabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#newFromJSON" class="tsd-kind-icon">new<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="CtxRendererHandler.html#toString" class="tsd-kind-icon">to<wbr>String</a></li>
 							</ul>
 						</section>
 					</div>
@@ -144,40 +142,35 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Renderer<wbr>Handler&lt;R&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Ctx<wbr>Renderer<wbr>Handler<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#constructor">constructor</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#constructor">constructor</a></p>
 								<ul>
 									<li>Defined in node_modules/eventemitter3/index.d.ts:88</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>R<span class="tsd-signature-symbol">: </span><a href="Renderer.html" class="tsd-signature-type" data-tsd-kind="Class">Renderer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span> = <a href="Renderer.html" class="tsd-signature-type" data-tsd-kind="Class">Renderer</a></h4>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
 					<a name="rendererHandlerPriority" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> renderer<wbr>Handler<wbr>Priority</h3>
-					<div class="tsd-signature tsd-kind-icon">renderer<wbr>Handler<wbr>Priority<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<div class="tsd-signature tsd-kind-icon">renderer<wbr>Handler<wbr>Priority<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
+						<p>Overrides <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#rendererHandlerPriority">rendererHandlerPriority</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L12">src/plugins/renderer/RendererHandler.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/web/plugins/renderer/CtxRendererHandler.ts#L5">src/web/plugins/renderer/CtxRendererHandler.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -186,7 +179,7 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> to<wbr>FromJSONEnabled</h3>
 					<div class="tsd-signature tsd-kind-icon">to<wbr>FromJSONEnabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#toFromJSONEnabled">toFromJSONEnabled</a></p>
+						<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#toFromJSONEnabled">toFromJSONEnabled</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/ToFromJSONEventEmitter.ts#L10">src/ToFromJSONEventEmitter.ts:10</a></li>
 						</ul>
@@ -197,7 +190,7 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagOptional">Optional</span> type<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">type<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#typeId">typeId</a></p>
+						<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#typeId">typeId</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/ToFromJSONEventEmitter.ts#L9">src/ToFromJSONEventEmitter.ts:9</a></li>
 						</ul>
@@ -206,32 +199,34 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="UNSAFE_removeRenderer" class="tsd-anchor"></a>
 					<h3>UNSAFE_<wbr>remove<wbr>Renderer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>remove<wbr>Renderer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>remove<wbr>Renderer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#UNSAFE_removeRenderer">UNSAFE_removeRenderer</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L40">src/plugins/renderer/RendererHandler.ts:40</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="UNSAFE_setRenderer" class="tsd-anchor"></a>
 					<h3>UNSAFE_<wbr>set<wbr>Renderer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>set<wbr>Renderer<span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>set<wbr>Renderer<span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><a href="CtxRenderer.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRenderer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#UNSAFE_setRenderer">UNSAFE_setRenderer</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L36">src/plugins/renderer/RendererHandler.ts:36</a></li>
 								</ul>
@@ -239,23 +234,23 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>renderer: <span class="tsd-signature-type">R</span></h5>
+									<h5>renderer: <a href="CtxRenderer.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRenderer</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="fromJSON" class="tsd-anchor"></a>
 					<h3>fromJSON</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IJSONObject</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#fromJSON">fromJSON</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#fromJSON">fromJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L100">src/plugins/renderer/RendererHandler.ts:100</a></li>
 								</ul>
@@ -266,37 +261,72 @@
 									<h5>json: <span class="tsd-signature-type">IJSONObject</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="getConstructor" class="tsd-anchor"></a>
-					<h3>get<wbr>Constructor</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#getConstructor">getConstructor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L29">src/plugins/renderer/RendererHandler.ts:29</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getCamera" class="tsd-anchor"></a>
+					<h3>get<wbr>Camera</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Camera<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Camera2D.html" class="tsd-signature-type" data-tsd-kind="Class">Camera2D</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/web/plugins/renderer/CtxRendererHandler.ts#L10">src/web/plugins/renderer/CtxRendererHandler.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="Camera2D.html" class="tsd-signature-type" data-tsd-kind="Class">Camera2D</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getConstructor" class="tsd-anchor"></a>
+					<h3>get<wbr>Constructor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Constructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getConstructor">getConstructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L29">src/plugins/renderer/RendererHandler.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getCtx" class="tsd-anchor"></a>
+					<h3>get<wbr>Ctx</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Ctx<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CanvasRenderingContext2D</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/web/plugins/renderer/CtxRendererHandler.ts#L7">src/web/plugins/renderer/CtxRendererHandler.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CanvasRenderingContext2D</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getEnabled" class="tsd-anchor"></a>
 					<h3>get<wbr>Enabled</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getEnabled">getEnabled</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L21">src/plugins/renderer/RendererHandler.ts:21</a></li>
 								</ul>
@@ -305,15 +335,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 					<a name="getManager" class="tsd-anchor"></a>
 					<h3>get<wbr>Manager</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Manager&lt;M&gt;<span class="tsd-signature-symbol">(</span>Manager<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getManager">getManager</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L60">src/plugins/renderer/RendererHandler.ts:60</a></li>
 								</ul>
@@ -334,15 +365,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 					<a name="getPlugin" class="tsd-anchor"></a>
 					<h3>get<wbr>Plugin</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Plugin&lt;P&gt;<span class="tsd-signature-symbol">(</span>Plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">new </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getPlugin">getPlugin</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L69">src/plugins/renderer/RendererHandler.ts:69</a></li>
 								</ul>
@@ -381,32 +413,34 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getRenderer" class="tsd-anchor"></a>
 					<h3>get<wbr>Renderer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Renderer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Renderer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="CtxRenderer.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRenderer</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getRenderer">getRenderer</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L44">src/plugins/renderer/RendererHandler.ts:44</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="CtxRenderer.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRenderer</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getRendererHandlerPriority" class="tsd-anchor"></a>
 					<h3>get<wbr>Renderer<wbr>Handler<wbr>Priority</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getRendererHandlerPriority">getRendererHandlerPriority</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L32">src/plugins/renderer/RendererHandler.ts:32</a></li>
 								</ul>
@@ -415,15 +449,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 					<a name="getRequiredManager" class="tsd-anchor"></a>
 					<h3>get<wbr>Required<wbr>Manager</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Manager&lt;M&gt;<span class="tsd-signature-symbol">(</span>Manager<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConstructor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">M</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getRequiredManager">getRequiredManager</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L63">src/plugins/renderer/RendererHandler.ts:63</a></li>
 								</ul>
@@ -444,15 +479,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 					<a name="getRequiredPlugin" class="tsd-anchor"></a>
 					<h3>get<wbr>Required<wbr>Plugin</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Plugin&lt;P&gt;<span class="tsd-signature-symbol">(</span>Plugin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">new </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getRequiredPlugin">getRequiredPlugin</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L72">src/plugins/renderer/RendererHandler.ts:72</a></li>
 								</ul>
@@ -491,32 +527,34 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getRequiredRenderer" class="tsd-anchor"></a>
 					<h3>get<wbr>Required<wbr>Renderer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Renderer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Renderer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRenderer.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRenderer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getRequiredRenderer">getRequiredRenderer</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L47">src/plugins/renderer/RendererHandler.ts:47</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">R</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRenderer.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRenderer</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getRequiredScene" class="tsd-anchor"></a>
 					<h3>get<wbr>Required<wbr>Scene</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Required<wbr>Scene<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getRequiredScene">getRequiredScene</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L56">src/plugins/renderer/RendererHandler.ts:56</a></li>
 								</ul>
@@ -526,14 +564,32 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getScale" class="tsd-anchor"></a>
+					<h3>get<wbr>Scale</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Scale<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/web/plugins/renderer/CtxRendererHandler.ts#L13">src/web/plugins/renderer/CtxRendererHandler.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getScene" class="tsd-anchor"></a>
 					<h3>get<wbr>Scene</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Scene<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getScene">getScene</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L53">src/plugins/renderer/RendererHandler.ts:53</a></li>
 								</ul>
@@ -542,100 +598,106 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onAdd" class="tsd-anchor"></a>
 					<h3>on<wbr>Add</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Add<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Add<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#onAdd">onAdd</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L78">src/plugins/renderer/RendererHandler.ts:78</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onAfterRender" class="tsd-anchor"></a>
 					<h3>on<wbr>After<wbr>Render</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>After<wbr>Render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>After<wbr>Render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#onAfterRender">onAfterRender</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L90">src/plugins/renderer/RendererHandler.ts:90</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onBeforeRender" class="tsd-anchor"></a>
 					<h3>on<wbr>Before<wbr>Render</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Before<wbr>Render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Before<wbr>Render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#onBeforeRender">onBeforeRender</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L84">src/plugins/renderer/RendererHandler.ts:84</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onRemove" class="tsd-anchor"></a>
 					<h3>on<wbr>Remove</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Remove<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Remove<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#onRemove">onRemove</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L81">src/plugins/renderer/RendererHandler.ts:81</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="onRender" class="tsd-anchor"></a>
 					<h3>on<wbr>Render</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#onRender">onRender</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L87">src/plugins/renderer/RendererHandler.ts:87</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="setEnabled" class="tsd-anchor"></a>
 					<h3>set<wbr>Enabled</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Enabled<span class="tsd-signature-symbol">(</span>enabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Enabled<span class="tsd-signature-symbol">(</span>enabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#setEnabled">setEnabled</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L24">src/plugins/renderer/RendererHandler.ts:24</a></li>
 								</ul>
@@ -646,20 +708,20 @@
 									<h5>enabled: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="RendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">RendererHandler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="CtxRendererHandler.html" class="tsd-signature-type" data-tsd-kind="Class">CtxRendererHandler</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="toJSON" class="tsd-anchor"></a>
 					<h3>toJSON</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#toJSON">toJSON</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#toJSON">toJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L94">src/plugins/renderer/RendererHandler.ts:94</a></li>
 								</ul>
@@ -682,7 +744,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#getConstructorFromJSON">getConstructorFromJSON</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getConstructorFromJSON">getConstructorFromJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/ToFromJSONEventEmitter.ts#L22">src/ToFromJSONEventEmitter.ts:22</a></li>
 								</ul>
@@ -703,15 +765,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="getRendererHandlerPriority-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Renderer<wbr>Handler<wbr>Priority</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getRendererHandlerPriority-1">getRendererHandlerPriority</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/plugins/renderer/RendererHandler.ts#L14">src/plugins/renderer/RendererHandler.ts:14</a></li>
 								</ul>
@@ -729,7 +792,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#getTypeId">getTypeId</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#getTypeId">getTypeId</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/ToFromJSONEventEmitter.ts#L15">src/ToFromJSONEventEmitter.ts:15</a></li>
 								</ul>
@@ -747,7 +810,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#isToFromJSONEnabled">isToFromJSONEnabled</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#isToFromJSONEnabled">isToFromJSONEnabled</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/ToFromJSONEventEmitter.ts#L18">src/ToFromJSONEventEmitter.ts:18</a></li>
 								</ul>
@@ -765,7 +828,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#newFromJSON">newFromJSON</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#newFromJSON">newFromJSON</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/ToFromJSONEventEmitter.ts#L33">src/ToFromJSONEventEmitter.ts:33</a></li>
 								</ul>
@@ -795,7 +858,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="ToFromJSONEventEmitter.html">ToFromJSONEventEmitter</a>.<a href="ToFromJSONEventEmitter.html#toString">toString</a></p>
+								<p>Inherited from <a href="RendererHandler.html">RendererHandler</a>.<a href="RendererHandler.html#toString">toString</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/aicacia/ts-ecs/blob/f633493/src/ToFromJSONEventEmitter.ts#L12">src/ToFromJSONEventEmitter.ts:12</a></li>
 								</ul>
@@ -818,101 +881,110 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-has-type-parameter">
-						<a href="RendererHandler.html" class="tsd-kind-icon">Renderer<wbr>Handler</a>
+					<li class="current tsd-kind-class">
+						<a href="CtxRendererHandler.html" class="tsd-kind-icon">Ctx<wbr>Renderer<wbr>Handler</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="RendererHandler.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="RendererHandler.html#rendererHandlerPriority" class="tsd-kind-icon">renderer<wbr>Handler<wbr>Priority</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="RendererHandler.html#toFromJSONEnabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="CtxRendererHandler.html#rendererHandlerPriority" class="tsd-kind-icon">renderer<wbr>Handler<wbr>Priority</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="RendererHandler.html#typeId" class="tsd-kind-icon">type<wbr>Id</a>
+								<a href="CtxRendererHandler.html#toFromJSONEnabled" class="tsd-kind-icon">to<wbr>FromJSONEnabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="CtxRendererHandler.html#typeId" class="tsd-kind-icon">type<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#UNSAFE_removeRenderer" class="tsd-kind-icon">UNSAFE_<wbr>remove<wbr>Renderer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#UNSAFE_setRenderer" class="tsd-kind-icon">UNSAFE_<wbr>set<wbr>Renderer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#fromJSON" class="tsd-kind-icon">fromJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#UNSAFE_removeRenderer" class="tsd-kind-icon">UNSAFE_<wbr>remove<wbr>Renderer</a>
+								<a href="CtxRendererHandler.html#getCamera" class="tsd-kind-icon">get<wbr>Camera</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getConstructor" class="tsd-kind-icon">get<wbr>Constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#UNSAFE_setRenderer" class="tsd-kind-icon">UNSAFE_<wbr>set<wbr>Renderer</a>
+								<a href="CtxRendererHandler.html#getCtx" class="tsd-kind-icon">get<wbr>Ctx</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="RendererHandler.html#fromJSON" class="tsd-kind-icon">fromJSON</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getEnabled" class="tsd-kind-icon">get<wbr>Enabled</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="RendererHandler.html#getConstructor" class="tsd-kind-icon">get<wbr>Constructor</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getManager" class="tsd-kind-icon">get<wbr>Manager</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#getEnabled" class="tsd-kind-icon">get<wbr>Enabled</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getPlugin" class="tsd-kind-icon">get<wbr>Plugin</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-								<a href="RendererHandler.html#getManager" class="tsd-kind-icon">get<wbr>Manager</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getRenderer" class="tsd-kind-icon">get<wbr>Renderer</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-								<a href="RendererHandler.html#getPlugin" class="tsd-kind-icon">get<wbr>Plugin</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getRendererHandlerPriority" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#getRenderer" class="tsd-kind-icon">get<wbr>Renderer</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getRequiredManager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#getRendererHandlerPriority" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getRequiredPlugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-								<a href="RendererHandler.html#getRequiredManager" class="tsd-kind-icon">get<wbr>Required<wbr>Manager</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getRequiredRenderer" class="tsd-kind-icon">get<wbr>Required<wbr>Renderer</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-								<a href="RendererHandler.html#getRequiredPlugin" class="tsd-kind-icon">get<wbr>Required<wbr>Plugin</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#getRequiredRenderer" class="tsd-kind-icon">get<wbr>Required<wbr>Renderer</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getRequiredScene" class="tsd-kind-icon">get<wbr>Required<wbr>Scene</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#getRequiredScene" class="tsd-kind-icon">get<wbr>Required<wbr>Scene</a>
+								<a href="CtxRendererHandler.html#getScale" class="tsd-kind-icon">get<wbr>Scale</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#getScene" class="tsd-kind-icon">get<wbr>Scene</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#getScene" class="tsd-kind-icon">get<wbr>Scene</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#onAdd" class="tsd-kind-icon">on<wbr>Add</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#onAfterRender" class="tsd-kind-icon">on<wbr>After<wbr>Render</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#onAfterRender" class="tsd-kind-icon">on<wbr>After<wbr>Render</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#onBeforeRender" class="tsd-kind-icon">on<wbr>Before<wbr>Render</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#onBeforeRender" class="tsd-kind-icon">on<wbr>Before<wbr>Render</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#onRemove" class="tsd-kind-icon">on<wbr>Remove</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#onRemove" class="tsd-kind-icon">on<wbr>Remove</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#onRender" class="tsd-kind-icon">on<wbr>Render</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#onRender" class="tsd-kind-icon">on<wbr>Render</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="RendererHandler.html#setEnabled" class="tsd-kind-icon">set<wbr>Enabled</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#setEnabled" class="tsd-kind-icon">set<wbr>Enabled</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="RendererHandler.html#toJSON" class="tsd-kind-icon">toJSON</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="CtxRendererHandler.html#toJSON" class="tsd-kind-icon">toJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
-								<a href="RendererHandler.html#getConstructorFromJSON" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="RendererHandler.html#getRendererHandlerPriority-1" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a>
+								<a href="CtxRendererHandler.html#getConstructorFromJSON" class="tsd-kind-icon">get<wbr>Constructor<wbr>FromJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="RendererHandler.html#getTypeId" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a>
+								<a href="CtxRendererHandler.html#getRendererHandlerPriority-1" class="tsd-kind-icon">get<wbr>Renderer<wbr>Handler<wbr>Priority</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="RendererHandler.html#isToFromJSONEnabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a>
+								<a href="CtxRendererHandler.html#getTypeId" class="tsd-kind-icon">get<wbr>Type<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="CtxRendererHandler.html#isToFromJSONEnabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-static">
-								<a href="RendererHandler.html#newFromJSON" class="tsd-kind-icon">new<wbr>FromJSON</a>
+								<a href="CtxRendererHandler.html#newFromJSON" class="tsd-kind-icon">new<wbr>FromJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="RendererHandler.html#toString" class="tsd-kind-icon">to<wbr>String</a>
+								<a href="CtxRendererHandler.html#toString" class="tsd-kind-icon">to<wbr>String</a>
 							</li>
 						</ul>
 					</li>
