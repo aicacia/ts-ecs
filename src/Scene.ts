@@ -175,7 +175,7 @@ export class Scene extends ToFromJSONEventEmitter<ISceneEventTypes> {
   getManager<M extends Manager>(Manager: IConstructor<M>): M | null {
     return (this.managerMap.get(Manager) as M) || null;
   }
-  getRequiredManager<M extends Manager>(Manager: IConstructor<M>) {
+  getRequiredManager<M extends Manager>(Manager: IConstructor<M>): M {
     const manager = this.getManager(Manager);
     if (!manager) {
       throw new Error(`Scene required ${Manager} Manager`);
@@ -193,7 +193,7 @@ export class Scene extends ToFromJSONEventEmitter<ISceneEventTypes> {
   getPlugin<P extends Plugin>(Plugin: IConstructor<P>): P | null {
     return (this.pluginsMap.get(Plugin) as P) || null;
   }
-  getRequiredPlugin<P extends Plugin>(Plugin: IConstructor<P>) {
+  getRequiredPlugin<P extends Plugin>(Plugin: IConstructor<P>): P {
     const plugin = this.getPlugin(Plugin);
     if (!plugin) {
       throw new Error(`Scene required ${Plugin} Plugin`);

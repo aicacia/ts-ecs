@@ -48,7 +48,7 @@ export abstract class Manager<
       return null;
     }
   }
-  getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
+  getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P {
     const plugin = this.getPlugin<P>(Plugin);
     if (!plugin) {
       throw new Error(`${this.getConstructor()} required ${Plugin} Plugin`);

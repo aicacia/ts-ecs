@@ -58,7 +58,7 @@ export abstract class Component extends ToFromJSONEventEmitter<IComponentEventTy
     }
     return component;
   }
-  getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
+  getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P | null {
     const scene = this.getScene();
     if (scene) {
       return scene.getPlugin(Plugin);
@@ -66,7 +66,7 @@ export abstract class Component extends ToFromJSONEventEmitter<IComponentEventTy
       return null;
     }
   }
-  getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
+  getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P {
     const plugin = this.getPlugin(Plugin);
     if (!plugin) {
       throw new Error(

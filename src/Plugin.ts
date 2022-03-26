@@ -58,7 +58,7 @@ export abstract class Plugin<
       return null;
     }
   }
-  getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>) {
+  getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>): M {
     const manager = this.getManager<M>(Manager);
     if (!manager) {
       throw new Error(`${this.getConstructor()} required ${Manager} Manager`);
