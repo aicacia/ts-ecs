@@ -5,7 +5,6 @@ dist/
 .vscode/
 coverage/
 docs/
-src/
 node_modules/
 .editorconfig
 .eslintignore
