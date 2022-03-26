@@ -1,10 +1,8 @@
-import { none } from "@aicacia/core";
-import type { Option } from "@aicacia/core";
 import type { IJSON, IJSONObject } from "@aicacia/json";
 import { Asset } from "./Asset";
 
 export class JSONAsset extends Asset {
-  private json: Option<IJSON> = none();
+  private json: IJSON = null;
   private src: RequestInfo;
   private options?: RequestInit;
 
@@ -22,12 +20,12 @@ export class JSONAsset extends Asset {
     return fetch(this.src, this.options)
       .then((response) => response.json())
       .then((json) => {
-        this.json.replace(json);
+        this.json = json;
       });
   }
 
   protected unloadAsset() {
-    this.json.clear();
+    this.json = null;
     return Promise.resolve();
   }
 

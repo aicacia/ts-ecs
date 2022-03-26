@@ -1,12 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JSONAsset = void 0;
-const core_1 = require("@aicacia/core");
 const Asset_1 = require("./Asset");
 class JSONAsset extends Asset_1.Asset {
     constructor(src, options) {
         super();
-        this.json = core_1.none();
+        this.json = null;
         this.src = src;
         this.options = options;
     }
@@ -17,11 +16,11 @@ class JSONAsset extends Asset_1.Asset {
         return fetch(this.src, this.options)
             .then((response) => response.json())
             .then((json) => {
-            this.json.replace(json);
+            this.json = json;
         });
     }
     unloadAsset() {
-        this.json.clear();
+        this.json = null;
         return Promise.resolve();
     }
     toJSON() {

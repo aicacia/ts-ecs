@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpriteSheet = void 0;
-const core_1 = require("@aicacia/core");
 const Component_1 = require("../../Component");
 const Time_1 = require("../../plugins/Time");
 const Sprite_1 = require("./Sprite");
@@ -11,11 +10,11 @@ class SpriteSheet extends Component_1.Component {
         this.currentTime = 0;
         this.currentFrame = 0;
         this.playBack = 1;
-        this.currentName = core_1.none();
+        this.currentName = null;
         this.spriteSheets = {};
-        this.get = (name) => {
-            return core_1.Option.from(this.spriteSheets[name]);
-        };
+    }
+    get(name) {
+        return this.spriteSheets[name];
     }
     set(name, spriteClips) {
         this.spriteSheets[name] = spriteClips;
@@ -32,16 +31,22 @@ class SpriteSheet extends Component_1.Component {
         if (!this.spriteSheets.hasOwnProperty(name)) {
             throw new Error(`SpriteSheet setCurrent(name: string) no SpriteSheet found named ${name}`);
         }
-        this.currentName.replace(name);
+        this.currentName = name;
         this.currentFrame = 0;
         this.currentTime = 0;
         return this;
     }
     getCurrent() {
-        return this.currentName.flatMap(this.get);
+        if (this.currentName) {
+            return this.get(this.currentName);
+        }
+        else {
+            return null;
+        }
     }
     onUpdate() {
-        this.getCurrent().ifSome((clips) => {
+        const clips = this.getCurrent();
+        if (clips) {
             const clip = clips[this.currentFrame];
             if (clip) {
                 const sprite = this.getRequiredComponent(Sprite_1.Sprite);
@@ -59,7 +64,7 @@ class SpriteSheet extends Component_1.Component {
                 this.currentTime +=
                     this.getRequiredPlugin(Time_1.Time).getDelta() * this.playBack;
             }
-        });
+        }
         return this;
     }
 }

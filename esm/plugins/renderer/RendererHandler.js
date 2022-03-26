@@ -1,9 +1,8 @@
-import { none } from "@aicacia/core";
 import { ToFromJSONEventEmitter } from "../../ToFromJSONEventEmitter";
 export class RendererHandler extends ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.renderer = none();
+        this.renderer = null;
         this.enabled = true;
     }
     static getRendererHandlerPriority() {
@@ -23,36 +22,68 @@ export class RendererHandler extends ToFromJSONEventEmitter {
         return Object.getPrototypeOf(this).constructor.getRendererHandlerPriority();
     }
     UNSAFE_setRenderer(renderer) {
-        this.renderer.replace(renderer);
+        this.renderer = renderer;
         return this;
     }
     UNSAFE_removeRenderer() {
-        this.renderer.clear();
+        this.renderer = null;
         return this;
     }
     getRenderer() {
         return this.renderer;
     }
     getRequiredRenderer() {
-        return this.renderer.expect(`${this.getConstructor()} expected to be added to a Renderer first`);
+        if (!this.renderer) {
+            throw new Error(`${this.getConstructor()} expected to be added to a Renderer first`);
+        }
+        return this.renderer;
     }
     getScene() {
-        return this.getRenderer().flatMap((renderer) => renderer.getScene());
+        if (this.renderer) {
+            return this.renderer.getScene();
+        }
+        else {
+            return null;
+        }
     }
     getRequiredScene() {
-        return this.getScene().expect(`${this.getConstructor()} required scene`);
+        const scene = this.getScene();
+        if (!scene) {
+            throw new Error(`${this.getConstructor()} required scene`);
+        }
+        return scene;
     }
     getManager(Manager) {
-        return this.getScene().flatMap((scene) => scene.getManager(Manager));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getManager(Manager);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredManager(Manager) {
-        return this.getManager(Manager).expect(`${this.getConstructor()} required ${Manager} Manager`);
+        const manager = this.getManager(Manager);
+        if (!manager) {
+            throw new Error(`${this.getConstructor()} required ${Manager} Manager`);
+        }
+        return manager;
     }
     getPlugin(Plugin) {
-        return this.getScene().flatMap((scene) => scene.getPlugin(Plugin));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getPlugin(Plugin);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredPlugin(Plugin) {
-        return this.getPlugin(Plugin).expect(`${this.getConstructor()} required ${Plugin} Plugin`);
+        const plugin = this.getPlugin(Plugin);
+        if (!plugin) {
+            throw new Error(`${this.getConstructor()} required ${Plugin} Plugin`);
+        }
+        return plugin;
     }
     onAdd() {
         return this;

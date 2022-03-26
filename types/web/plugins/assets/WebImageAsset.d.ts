@@ -1,11 +1,10 @@
-import { Option } from "@aicacia/core";
 import type { IJSONObject } from "@aicacia/json";
 import { ImageAsset } from "../../../plugins/assets/ImageAsset";
 export declare class WebImageAsset extends ImageAsset {
     private image;
     private src;
     constructor(src: string);
-    getImage(): Option<HTMLImageElement>;
+    getImage(): HTMLImageElement | null;
     getWidth(): number;
     getHeight(): number;
     protected loadAsset(): Promise<void>;

@@ -1,4 +1,3 @@
-import { none, Option } from "@aicacia/core";
 import type { IJSONObject } from "@aicacia/json";
 import type { vec2 } from "gl-matrix";
 import { Assets } from "../../plugins";
@@ -9,7 +8,7 @@ export class Sprite extends RenderableComponent {
   static requiredPlugins = [Assets];
 
   private layer = 0;
-  private imageAsset: Option<ImageAsset> = none();
+  private imageAsset: ImageAsset | null = null;
 
   private clipX = 0;
   private clipY = 0;
@@ -74,18 +73,18 @@ export class Sprite extends RenderableComponent {
     return this.layer;
   }
   setLayer(layer: number) {
-    const managerOption = this.getManager();
-    managerOption.ifSome((manager) => manager.removeComponent(this));
+    const manager = this.getManager();
+    manager?.removeComponent(this);
     this.layer = layer | 0;
-    managerOption.ifSome((manager) => manager.addComponent(this));
+    manager?.addComponent(this);
     return this;
   }
 
-  getImageAsset<T extends ImageAsset = ImageAsset>(): Option<T> {
-    return this.imageAsset as Option<T>;
+  getImageAsset<T extends ImageAsset = ImageAsset>(): T | null {
+    return this.imageAsset as T;
   }
   setImageAsset(imageAsset: ImageAsset) {
-    this.imageAsset.replace(imageAsset);
+    this.imageAsset = imageAsset;
 
     if (imageAsset.isLoaded()) {
       this.onImageLoadHandler();
@@ -97,19 +96,17 @@ export class Sprite extends RenderableComponent {
   }
 
   private onImageLoadHandler = () => {
-    this.imageAsset.ifSome((imageAsset) => {
-      this.clipWidth = imageAsset.getWidth();
-      this.clipHeight = imageAsset.getHeight();
-      imageAsset.off("load", this.onImageLoadHandler);
-    });
+    if (this.imageAsset) {
+      this.clipWidth = this.imageAsset.getWidth();
+      this.clipHeight = this.imageAsset.getHeight();
+      this.imageAsset.off("load", this.onImageLoadHandler);
+    }
   };
 
   toJSON() {
     return {
       ...super.toJSON(),
-      imageAssetUUID: this.imageAsset
-        .map((imageAsset) => imageAsset.getUUID() as string | null)
-        .unwrapOr(null),
+      imageAssetUUID: this.imageAsset ? this.imageAsset.getUUID() : null,
       layer: this.layer,
       clipX: this.clipX,
       clipY: this.clipY,
@@ -123,9 +120,9 @@ export class Sprite extends RenderableComponent {
   fromJSON(json: IJSONObject) {
     const onAddToScene = () => {
       this.setImageAsset(
-        this.getRequiredPlugin(Assets)
-          .getAsset<ImageAsset>(json.imageAssetUUID as string)
-          .expect(`Sprite.fromJSON Failed to get Asset ${json.imageAssetUUID}`)
+        this.getRequiredPlugin(Assets).getRequiredAsset<ImageAsset>(
+          json.imageAssetUUID as string
+        )
       );
       this.off("add-to-scene", onAddToScene);
     };

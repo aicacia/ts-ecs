@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CtxRenderer = void 0;
-const core_1 = require("@aicacia/core");
 const gl_matrix_1 = require("gl-matrix");
 const Camera2D_1 = require("../../../components/Camera2D");
 const math_1 = require("../../../math");
@@ -11,17 +10,12 @@ class CtxRenderer extends Renderer_1.Renderer {
     constructor(element) {
         super();
         this.lineWidth = 1.0;
-        this.camera = core_1.none();
+        this.camera = null;
         this.cameraView = gl_matrix_1.mat2d.create();
         this.cameraProjection = gl_matrix_1.mat2d.create();
         this.cameraViewProjection = gl_matrix_1.mat2d.create();
         this.scale = 1.0;
         this.enabled = true;
-        this.getActiveCamera = () => {
-            return this.getRequiredScene()
-                .getRequiredManager(Camera2D_1.Camera2DManager)
-                .getRequiredActive();
-        };
         this.element = element;
         this.ctx = element.getContext("2d");
     }
@@ -54,15 +48,20 @@ class CtxRenderer extends Renderer_1.Renderer {
         this.lineWidth = lineWidth;
         return this;
     }
+    getActiveCamera() {
+        return this.getRequiredScene()
+            .getRequiredManager(Camera2D_1.Camera2DManager)
+            .getRequiredActive();
+    }
     getCamera() {
-        return this.camera.unwrapOrElse(this.getActiveCamera);
+        return this.camera || this.getActiveCamera();
     }
     setCamera(camera) {
-        this.camera.replace(camera);
+        this.camera = camera;
         return this;
     }
     removeCamera() {
-        this.camera.clear();
+        this.camera = null;
         return this;
     }
     getCanvasSize() {
@@ -98,7 +97,7 @@ class CtxRenderer extends Renderer_1.Renderer {
         this.scale = (1.0 / this.getCanvasSize()) * camera.getZoom();
         this.ctx.save();
         this.ctx.save();
-        this.ctx.fillStyle = math_1.toRgba(camera.getBackground());
+        this.ctx.fillStyle = (0, math_1.toRgba)(camera.getBackground());
         this.ctx.fillRect(0, 0, width, height);
         this.ctx.restore();
         this.ctx.lineWidth = this.getLineWidth() * this.getScale();

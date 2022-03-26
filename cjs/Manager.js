@@ -1,12 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Manager = void 0;
-const core_1 = require("@aicacia/core");
 const ToFromJSONEventEmitter_1 = require("./ToFromJSONEventEmitter");
 class Manager extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.scene = core_1.none();
+        this.scene = null;
     }
     static getManagerPriority() {
         return this.managerPriority;
@@ -15,14 +14,14 @@ class Manager extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
      * @ignore
      */
     UNSAFE_setScene(scene) {
-        this.scene.replace(scene);
+        this.scene = scene;
         return this;
     }
     /**
      * @ignore
      */
     UNSAFE_removeScene() {
-        this.scene.clear();
+        this.scene = null;
         return this;
     }
     getScene() {
@@ -35,16 +34,36 @@ class Manager extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return Object.getPrototypeOf(this).constructor.getManagerPriority();
     }
     getPlugin(Plugin) {
-        return this.getScene().flatMap((scene) => scene.getPlugin(Plugin));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getPlugin(Plugin);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredPlugin(Plugin) {
-        return this.getPlugin(Plugin).expect(() => `${this.getConstructor()} required ${Plugin} Plugin`);
+        const plugin = this.getPlugin(Plugin);
+        if (!plugin) {
+            throw new Error(`${this.getConstructor()} required ${Plugin} Plugin`);
+        }
+        return plugin;
     }
     getManager(Manager) {
-        return this.getScene().flatMap((scene) => scene.getManager(Manager));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getManager(Manager);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredManager(Manager) {
-        return this.getManager(Manager).expect(() => `${this.getConstructor()} required ${Manager} Manager`);
+        const manager = this.getManager(Manager);
+        if (!manager) {
+            throw new Error(`${this.getConstructor()} required ${Manager} Manager`);
+        }
+        return manager;
     }
     onAdd() {
         return this;

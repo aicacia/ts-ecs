@@ -1,4 +1,4 @@
-import { none, Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { ToFromJSONEventEmitter } from "../../ToFromJSONEventEmitter";
 import type { Time } from "../Time";
 import type { Input } from "./Input";
@@ -7,7 +7,7 @@ import type { InputEvent } from "./InputEvent";
 export abstract class EventListener<
   I extends Input = Input
 > extends ToFromJSONEventEmitter {
-  private input: Option<I> = none();
+  private input: I | null = null;
 
   getConstructor(): IConstructor<this> {
     return Object.getPrototypeOf(this).constructor;
@@ -17,33 +17,48 @@ export abstract class EventListener<
    * @ignore
    */
   UNSAFE_setInput(input: I) {
-    this.input.replace(input);
+    this.input = input;
     return this;
   }
   /**
    * @ignore
    */
   UNSAFE_removeInput() {
-    this.input.clear();
+    this.input = null;
     return this;
   }
   getInput() {
-    return this.input as Option<I>;
+    return this.input;
   }
   getRequiredInput() {
-    return this.getInput().expect(
-      `${this.getConstructor()} requires a Input Plugin`
-    );
+    const input = this.getInput();
+    if (!input) {
+      throw new Error(`${this.getConstructor()} requires a Input Plugin`);
+    }
+    return input;
   }
   getScene() {
-    return this.getInput().flatMap((input) => input.getScene());
+    const input = this.getInput();
+    if (input) {
+      return input.getScene();
+    } else {
+      return null;
+    }
   }
   getRequiredScene() {
-    return this.getScene().expect(`${this.getConstructor()} requires a Scene`);
+    const scene = this.getScene();
+    if (!scene) {
+      throw new Error(`${this.getConstructor()} requires a Scene`);
+    }
+    return scene;
   }
 
   queueEvent(event: InputEvent) {
-    return this.getInput().map((input) => input.queueEvent(event));
+    const input = this.getInput();
+    if (input) {
+      input.queueEvent(event);
+    }
+    return this;
   }
   abstract dequeueEvent(event: InputEvent): boolean;
 

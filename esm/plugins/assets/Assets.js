@@ -1,4 +1,3 @@
-import { Option, iter } from "@aicacia/core";
 import { isJSONArray } from "@aicacia/json";
 import { Plugin } from "../../Plugin";
 import { Asset } from "./Asset";
@@ -12,13 +11,13 @@ export class Assets extends Plugin {
         this.unloadingPromises = new Map();
     }
     find(fn) {
-        return iter(this.assets).find(fn);
+        return this.assets.find(fn);
     }
     findWithName(name) {
         return this.find((asset) => asset.getName() === name);
     }
     findAll(fn) {
-        return iter(this.assets).filter(fn).toArray();
+        return this.assets.filter(fn);
     }
     findAllWithName(name) {
         return this.findAll((asset) => asset.getName() === name);
@@ -27,7 +26,14 @@ export class Assets extends Plugin {
         return this.loadingPromises.size > 0;
     }
     getAsset(uuid) {
-        return Option.from(this.assetMap[uuid]);
+        return this.assetMap[uuid] || null;
+    }
+    getRequiredAsset(uuid) {
+        const asset = this.getAsset(uuid);
+        if (!asset) {
+            throw new Error(`Required Asset ${uuid} not found`);
+        }
+        return asset;
     }
     getAssets() {
         return this.assets;

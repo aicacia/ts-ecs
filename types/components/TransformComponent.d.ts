@@ -1,17 +1,16 @@
-import type { Option } from "@aicacia/core";
 import { mat2d, mat4, quat, vec2, vec3 } from "gl-matrix";
 import type { Entity } from "../Entity";
 import { RenderableComponent } from "./RenderableComponent";
 import { TransformComponentManager } from "./TransformComponentManager";
 export declare abstract class TransformComponent extends RenderableComponent {
     static Manager: typeof TransformComponentManager;
-    static getParentTransform(entity: Entity): Option<TransformComponent>;
-    static getTransform(entity: Entity): Option<TransformComponent>;
+    static getParentTransform(entity: Entity): TransformComponent | null;
+    static getTransform(entity: Entity): TransformComponent | null;
     static getRequiredTransform(entity: Entity): TransformComponent;
     private needsUpdate;
     private localNeedsUpdate;
     onDetach(): this;
-    getParentTransform(): Option<TransformComponent>;
+    getParentTransform(): TransformComponent | null;
     setNeedsUpdate(needsUpdate?: boolean): this;
     getNeedsUpdate(): boolean;
     setLocalNeedsUpdate(localNeedsUpdate?: boolean): this;

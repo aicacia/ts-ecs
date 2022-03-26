@@ -14,7 +14,8 @@ const MAT2_0 = mat2d.create(),
 
 export class SpriteCtxRendererHandler extends CtxRendererHandler {
   onRender() {
-    this.getManager(SpriteManager).ifSome((spriteManager) => {
+    const spriteManager = this.getManager(SpriteManager);
+    if (spriteManager) {
       const renderer = this.getRequiredRenderer(),
         cameraAABB2 = this.getCamera().getAABB2(AABB2_0),
         aabb = AABB2_1,
@@ -22,15 +23,12 @@ export class SpriteCtxRendererHandler extends CtxRendererHandler {
         tmp1 = VEC2_1;
 
       for (const sprite of spriteManager.getComponents()) {
-        const imageOption = sprite
-          .getImageAsset<WebImageAsset>()
-          .flatMap((webImageAsset) => webImageAsset.getImage());
+        const image = sprite.getImageAsset<WebImageAsset>()?.getImage();
 
-        if (sprite.getRenderable() && imageOption.isSome()) {
-          const image = imageOption.unwrap(),
-            transform = TransformComponent.getRequiredTransform(
-              sprite.getRequiredEntity()
-            );
+        if (sprite.getRenderable() && image) {
+          const transform = TransformComponent.getRequiredTransform(
+            sprite.getRequiredEntity()
+          );
 
           getAABB2FromRect(
             aabb,
@@ -64,7 +62,7 @@ export class SpriteCtxRendererHandler extends CtxRendererHandler {
           }, transform.getMatrix2d(MAT2_0));
         }
       }
-    });
+    }
 
     return this;
   }

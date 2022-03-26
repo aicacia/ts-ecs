@@ -1,4 +1,4 @@
-import { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { ToFromJSONEventEmitter } from "../../ToFromJSONEventEmitter";
 export declare abstract class InputHandler<I extends Input = Input> extends ToFromJSONEventEmitter {
     private input;
@@ -11,9 +11,9 @@ export declare abstract class InputHandler<I extends Input = Input> extends ToFr
      * @ignore
      */
     UNSAFE_removeInput(): this;
-    getInput(): Option<I>;
+    getInput(): I | null;
     getRequiredInput(): I;
-    getScene(): Option<import("../..").Scene>;
+    getScene(): import("../..").Scene | null;
     getRequiredScene(): import("../..").Scene;
     onAdd(): this;
     onRemove(): this;

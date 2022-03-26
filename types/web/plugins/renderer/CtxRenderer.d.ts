@@ -23,7 +23,7 @@ export declare class CtxRenderer extends Renderer {
     setEnabled(enabled?: boolean): this;
     getLineWidth(): number;
     setLineWidth(lineWidth: number): this;
-    getActiveCamera: () => Camera2D;
+    getActiveCamera(): Camera2D;
     getCamera(): Camera2D;
     setCamera(camera: Camera2D): this;
     removeCamera(): this;

@@ -1,4 +1,3 @@
-import { Option } from "@aicacia/core";
 import { isJSONArray } from "@aicacia/json";
 import { Plugin } from "../../Plugin";
 export class Renderer extends Plugin {
@@ -14,7 +13,7 @@ export class Renderer extends Plugin {
         return this.rendererHandlers;
     }
     getRendererHandler(RendererHandler) {
-        return Option.from(this.rendererHandlerMap.get(RendererHandler));
+        return this.rendererHandlerMap.get(RendererHandler) || null;
     }
     addRendererHandlers(rendererHandlers) {
         for (const rendererHandler of rendererHandlers) {
@@ -63,13 +62,14 @@ export class Renderer extends Plugin {
         return this;
     }
     _removeRendererHandler(RendererHandler) {
-        this.getRendererHandler(RendererHandler).ifSome((rendererHandler) => {
+        const rendererHandler = this.rendererHandlerMap.get(RendererHandler);
+        if (rendererHandler) {
             this.emit("remove-renderer_handler", rendererHandler);
             rendererHandler.onRemove();
             this.rendererHandlers.splice(this.rendererHandlers.indexOf(rendererHandler), 1);
             this.rendererHandlerMap.delete(RendererHandler);
             rendererHandler.UNSAFE_removeRenderer();
-        });
+        }
         return this;
     }
     sortRendererHandlers() {

@@ -1,4 +1,4 @@
-import { none, Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import type { IRequirement } from "./IRequirement";
 import { DefaultManager } from "./DefaultManager";
 import type { Entity } from "./Entity";
@@ -29,8 +29,8 @@ export abstract class Component extends ToFromJSONEventEmitter<IComponentEventTy
     return this.requiredPlugins;
   }
 
-  private entity: Option<Entity> = none();
-  private manager: Option<Manager> = none();
+  private entity: Entity | null = null;
+  private manager: Manager | null = null;
 
   getManagerConstructor<M extends Manager = Manager>(): IConstructor<M> {
     return Object.getPrototypeOf(this).constructor.getManagerConstructor();
@@ -44,94 +44,127 @@ export abstract class Component extends ToFromJSONEventEmitter<IComponentEventTy
 
   getComponent<C extends Component = Component>(
     Component: IConstructor<C>
-  ): Option<C> {
-    return this.getEntity().flatMap((entity) => entity.getComponent(Component));
+  ): C | null {
+    return this.entity ? this.entity.getComponent(Component) : null;
   }
   getRequiredComponent<C extends Component = Component>(
     Component: IConstructor<C>
   ): C {
-    return this.getComponent(Component).expect(
-      () => `${this.getConstructor()} Component requires ${Component} Component`
-    );
+    const component = this.getComponent(Component);
+    if (!component) {
+      throw new Error(
+        `${this.getConstructor()} Component requires ${Component} Component`
+      );
+    }
+    return component;
   }
   getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
-    return this.getScene().flatMap((scene) => scene.getPlugin(Plugin));
+    const scene = this.getScene();
+    if (scene) {
+      return scene.getPlugin(Plugin);
+    } else {
+      return null;
+    }
   }
   getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
-    return this.getPlugin(Plugin).expect(
-      () => `${this.getConstructor()} Component requires ${Plugin} Plugin`
-    );
+    const plugin = this.getPlugin(Plugin);
+    if (!plugin) {
+      throw new Error(
+        `${this.getConstructor()} Component requires ${Plugin} Plugin`
+      );
+    }
+    return plugin;
   }
 
   /**
    * @ignore
    */
   UNSAFE_setEntity(entity: Entity) {
-    this.entity.replace(entity);
+    this.entity = entity;
     return this;
   }
   /**
    * @ignore
    */
   UNSAFE_removeEntity() {
-    this.entity.clear();
+    this.entity = null;
     return this;
   }
   getEntity() {
     return this.entity;
   }
   getRequiredEntity() {
-    return this.getEntity().expect(
-      () => `${this.getConstructor()} Component requires an Entity`
-    );
+    const entity = this.getEntity();
+    if (!entity) {
+      throw new Error(`${this.getConstructor()} Component requires an Entity`);
+    }
+    return entity;
   }
 
   getScene() {
-    return this.entity.flatMap((entity) => entity.getScene());
+    const entity = this.entity;
+    if (entity) {
+      return entity.getScene();
+    } else {
+      return null;
+    }
   }
   getRequiredScene() {
-    return this.getScene().expect(
-      () => `${this.getConstructor()} Component requires a Scene`
-    );
+    const svene = this.getScene();
+    if (!svene) {
+      throw new Error(`${this.getConstructor()} Component requires a Scene`);
+    }
+    return svene;
   }
   /**
    * @ignore
    */
   UNSAFE_setManager(manager: Manager) {
-    this.manager.replace(manager);
+    this.manager = manager;
     return this;
   }
   /**
    * @ignore
    */
   UNSAFE_removeManager() {
-    this.manager.clear();
+    this.manager = null;
     return this;
   }
-  getManager<M extends Manager = Manager>() {
-    return this.manager as Option<M>;
+  getManager<M extends Manager = Manager>(): M | null {
+    return this.manager as M;
   }
-  getRequiredManager<M extends Manager = Manager>() {
-    return this.getManager<M>().expect(
-      () =>
+  getRequiredManager<M extends Manager = Manager>(): M {
+    const manager = this.getManager();
+    if (!manager) {
+      throw new Error(
         `${this.getConstructor()} Component is not part of a Manager ${Object.getPrototypeOf(
           this
         ).getManagerConstructor()} Manager`
-    );
+      );
+    }
+    return manager as M;
   }
 
   getSceneManager<M extends Manager = Manager>(Manager: IConstructor<M>) {
-    return this.getScene().flatMap((scene) => scene.getManager(Manager));
+    const scene = this.getScene();
+    if (scene) {
+      return scene.getManager(Manager);
+    } else {
+      return null;
+    }
   }
   getRequiredSceneManager<M extends Manager = Manager>(
     Manager: IConstructor<M>
   ) {
-    return this.getSceneManager(Manager).expect(
-      () =>
+    const manager = this.getSceneManager(Manager);
+    if (!manager) {
+      throw new Error(
         `${this.getConstructor()} Component requires ${Object.getPrototypeOf(
           this
         ).getManagerConstructor()} Manager`
-    );
+      );
+    }
+    return manager;
   }
 
   onInit() {

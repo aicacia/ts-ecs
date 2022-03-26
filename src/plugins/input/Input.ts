@@ -1,4 +1,3 @@
-import { Option } from "@aicacia/core";
 import type { IConstructor } from "@aicacia/core";
 import { Plugin } from "../../Plugin";
 import { Time } from "../Time";
@@ -66,43 +65,54 @@ export class Input extends Plugin<IInputEventTypes> {
   addAxis(...axes: InputAxis[]) {
     return this.addAxes(axes);
   }
-  getAxis(name: string) {
-    return Option.from(this.axes[name]);
+  getAxis(name: string): InputAxis | null {
+    return this.axes[name] || null;
   }
   getAxisValue(name: string) {
-    return this.getAxis(name)
-      .map((axis) => axis.getValue())
-      .unwrapOr(0.0);
+    const axis = this.getAxis(name);
+    if (axis) {
+      return axis.getValue();
+    } else {
+      return 0.0;
+    }
   }
 
   getRequiredAxis(name: string) {
-    return this.getAxis(name).expect(`Failed to get Required Axis ${name}`);
+    const axis = this.getAxis(name);
+    if (!axis) {
+      throw new Error(`Failed to get Required Axis ${name}`);
+    }
+    return axis;
   }
 
   getInputHandler<I extends InputHandler = InputHandler>(
     InputHandler: IConstructor<I>
-  ) {
-    return Option.from(this.inputHandlerMap.get(InputHandler));
+  ): I | null {
+    return (this.inputHandlerMap.get(InputHandler) as I) || null;
   }
   getRequiredInputHandler<I extends InputHandler = InputHandler>(
     InputHandler: IConstructor<I>
   ) {
-    return this.getInputHandler(InputHandler).expect(
-      `Failed to get Required InputHandler ${InputHandler}`
-    );
+    const inputHandler = this.getInputHandler(InputHandler);
+    if (!inputHandler) {
+      throw new Error(`Failed to get Required InputHandler ${InputHandler}`);
+    }
+    return inputHandler;
   }
 
   getEventListener<I extends EventListener = EventListener>(
     EventListener: IConstructor<I>
-  ) {
-    return Option.from(this.eventListenerMap.get(EventListener));
+  ): I | null {
+    return (this.eventListenerMap.get(EventListener) as I) || null;
   }
   getRequiredEventListener<I extends EventListener = EventListener>(
     EventListener: IConstructor<I>
   ) {
-    return this.getEventListener(EventListener).expect(
-      `Failed to get Required EventListener ${EventListener}`
-    );
+    const eventListener = this.getEventListener(EventListener);
+    if (!eventListener) {
+      throw new Error(`Failed to get Required EventListener ${EventListener}`);
+    }
+    return eventListener;
   }
 
   removeAxes(axes: InputAxis[]) {
@@ -166,34 +176,33 @@ export class Input extends Plugin<IInputEventTypes> {
       return newButton;
     }
   }
-  getButton(name: string) {
-    return Option.from(this.buttons[name]);
+  getButton(name: string): InputButton | null {
+    return this.buttons[name] || null;
   }
   getButtonValue(name: string) {
-    return this.getButton(name)
-      .map((button) => button.getValue())
-      .unwrapOr(0.0);
+    const button = this.getButton(name);
+    if (button) {
+      return button.getValue();
+    } else {
+      return 0.0;
+    }
   }
 
   isDownCurrentFrame(name: string) {
-    return this.getButton(name)
-      .map(
-        (button) =>
-          button.getFrameDown() === this.getRequiredPlugin(Time).getFrame()
-      )
-      .unwrapOr(false);
+    return (
+      this.getButton(name)?.getFrameDown() ===
+      this.getRequiredPlugin(Time).getFrame()
+    );
   }
   isDown(name: string) {
     return !this.isUp(name);
   }
 
   isUpCurrentFrame(name: string) {
-    return this.getButton(name)
-      .map(
-        (button) =>
-          button.getFrameUp() === this.getRequiredPlugin(Time).getFrame()
-      )
-      .unwrapOr(false);
+    return (
+      this.getButton(name)?.getFrameUp() ===
+      this.getRequiredPlugin(Time).getFrame()
+    );
   }
   isUp(name: string) {
     return this.getButtonValue(name) == 0.0;
@@ -289,14 +298,15 @@ export class Input extends Plugin<IInputEventTypes> {
   private _removeInputHandler<I extends InputHandler = InputHandler>(
     InputHandler: IConstructor<I>
   ) {
-    this.getInputHandler(InputHandler).ifSome((inputHandler) => {
+    const inputHandler = this.getInputHandler(InputHandler);
+    if (inputHandler) {
       this.emit("remove-input_handler", inputHandler);
       inputHandler.onRemove();
 
       this.inputHandlers.splice(this.inputHandlers.indexOf(inputHandler), 1);
       this.inputHandlerMap.delete(InputHandler);
       inputHandler.UNSAFE_removeInput();
-    });
+    }
     return this;
   }
 
@@ -318,14 +328,15 @@ export class Input extends Plugin<IInputEventTypes> {
   private _removeEventListener<E extends EventListener = EventListener>(
     EventListener: IConstructor<E>
   ) {
-    this.getEventListener(EventListener).ifSome((eventListener) => {
+    const eventListener = this.getEventListener(EventListener);
+    if (eventListener) {
       this.emit("remove-event_listener", eventListener);
       eventListener.onRemove();
 
       this.eventListeners.splice(this.eventListeners.indexOf(eventListener), 1);
       this.eventListenerMap.delete(EventListener);
       eventListener.UNSAFE_removeInput();
-    });
+    }
     return this;
   }
 

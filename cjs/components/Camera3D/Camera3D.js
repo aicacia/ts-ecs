@@ -108,9 +108,13 @@ class Camera3D extends RenderableComponent_1.RenderableComponent {
         return this.setNeedsUpdate();
     }
     getView() {
-        this.getEntity().ifSome((entity) => TransformComponent_1.TransformComponent.getTransform(entity).ifSome((transform) => {
-            gl_matrix_1.mat4.invert(this.view, transform.getMatrix4(MAT4_0));
-        }));
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent_1.TransformComponent.getTransform(entity);
+            if (transform) {
+                gl_matrix_1.mat4.invert(this.view, transform.getMatrix4(MAT4_0));
+            }
+        }
         return this.view;
     }
     getProjection() {
@@ -129,10 +133,7 @@ class Camera3D extends RenderableComponent_1.RenderableComponent {
         }
     }
     isActive() {
-        return this.getRequiredManager()
-            .getActive()
-            .map((active) => active === this)
-            .unwrapOr(false);
+        return this.getRequiredManager().getActive() === this;
     }
     setActive() {
         this.getRequiredManager().setActive(this);

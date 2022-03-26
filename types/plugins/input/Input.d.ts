@@ -1,4 +1,3 @@
-import { Option } from "@aicacia/core";
 import type { IConstructor } from "@aicacia/core";
 import { Plugin } from "../../Plugin";
 import { InputAxis } from "./InputAxis";
@@ -27,13 +26,13 @@ export declare class Input extends Plugin<IInputEventTypes> {
     queueEvent(event: InputEvent): this;
     addAxes(axes: InputAxis[]): this;
     addAxis(...axes: InputAxis[]): this;
-    getAxis(name: string): Option<InputAxis>;
+    getAxis(name: string): InputAxis | null;
     getAxisValue(name: string): number;
     getRequiredAxis(name: string): InputAxis;
-    getInputHandler<I extends InputHandler = InputHandler>(InputHandler: IConstructor<I>): Option<InputHandler<Input>>;
-    getRequiredInputHandler<I extends InputHandler = InputHandler>(InputHandler: IConstructor<I>): InputHandler<Input>;
-    getEventListener<I extends EventListener = EventListener>(EventListener: IConstructor<I>): Option<EventListener<Input>>;
-    getRequiredEventListener<I extends EventListener = EventListener>(EventListener: IConstructor<I>): EventListener<Input>;
+    getInputHandler<I extends InputHandler = InputHandler>(InputHandler: IConstructor<I>): I | null;
+    getRequiredInputHandler<I extends InputHandler = InputHandler>(InputHandler: IConstructor<I>): I;
+    getEventListener<I extends EventListener = EventListener>(EventListener: IConstructor<I>): I | null;
+    getRequiredEventListener<I extends EventListener = EventListener>(EventListener: IConstructor<I>): I;
     removeAxes(axes: InputAxis[]): this;
     removeAxis(...axes: InputAxis[]): this;
     addInputHandlers(inputHandlers: InputHandler[]): this;
@@ -45,7 +44,7 @@ export declare class Input extends Plugin<IInputEventTypes> {
     removeEventListeners(EventListeners: IConstructor<EventListener>[]): this;
     removeEventListener(...eventListeners: IConstructor<EventListener>[]): this;
     getOrCreateButton(name: string): InputButton;
-    getButton(name: string): Option<InputButton>;
+    getButton(name: string): InputButton | null;
     getButtonValue(name: string): number;
     isDownCurrentFrame(name: string): boolean;
     isDown(name: string): boolean;

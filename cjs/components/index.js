@@ -27,13 +27,12 @@ Object.defineProperty(exports, "RunOnUpdateComponent", { enumerable: true, get: 
 var TransformComponentManager_1 = require("./TransformComponentManager");
 Object.defineProperty(exports, "TransformComponentManager", { enumerable: true, get: function () { return TransformComponentManager_1.TransformComponentManager; } });
 TransformComponent_1.TransformComponent.getTransform = function getTransform(entity) {
-    const entityTransform = entity
-        .getComponent(Transform2D_1.Transform2D)
-        .orElse(() => entity.getComponent(Transform3D_1.Transform3D));
-    if (entityTransform.isNone()) {
-        return TransformComponent_1.TransformComponent.getParentTransform(entity);
+    const entityTransform = entity.getComponent(Transform2D_1.Transform2D) ||
+        entity.getComponent(Transform3D_1.Transform3D);
+    if (entityTransform) {
+        return entityTransform;
     }
     else {
-        return entityTransform;
+        return TransformComponent_1.TransformComponent.getParentTransform(entity);
     }
 };

@@ -1,16 +1,15 @@
 import { isJSONArray } from "@aicacia/json";
-import { none, Option, some } from "@aicacia/core";
 import { filterRequirements, requirementToString, } from "./IRequirement";
 import { Component } from "./Component";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export class Entity extends ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.name = none();
+        this.name = null;
         this.depth = 0;
-        this.scene = none();
+        this.scene = null;
         this.root = this;
-        this.parent = none();
+        this.parent = null;
         this.tags = new Set();
         this.children = [];
         this.components = new Map();
@@ -19,11 +18,11 @@ export class Entity extends ToFromJSONEventEmitter {
         return this.name;
     }
     setName(name) {
-        this.name.replace(name);
+        this.name = name;
         return this;
     }
     removeName() {
-        this.name.take();
+        this.name = null;
         return this;
     }
     hasTags(tags) {
@@ -67,25 +66,29 @@ export class Entity extends ToFromJSONEventEmitter {
         return this.root === this;
     }
     hasParent() {
-        return this.parent.isSome();
+        return this.parent !== null;
     }
     getParent() {
         return this.parent;
     }
     hasScene() {
-        return this.scene.isSome();
+        return this.scene !== null;
     }
     getScene() {
         return this.scene;
     }
     getRequiredScene() {
-        return this.getScene().expect("Entity expected to have a Scene");
+        const scene = this.getScene();
+        if (!scene) {
+            throw new Error("Entity expected to have a Scene");
+        }
+        return scene;
     }
     /**
      * @ignore
      */
     UNSAFE_setScene(scene, recur = false) {
-        this.scene.replace(scene);
+        this.scene = scene;
         if (recur) {
             for (const child of this.children) {
                 child.UNSAFE_setScene(scene, recur);
@@ -97,7 +100,7 @@ export class Entity extends ToFromJSONEventEmitter {
      * @ignore
      */
     UNSAFE_removeScene() {
-        this.scene.clear();
+        this.scene = null;
         return this;
     }
     forEachChild(fn, recur = true) {
@@ -114,19 +117,19 @@ export class Entity extends ToFromJSONEventEmitter {
     find(fn, recur = true) {
         for (const child of this.getChildren()) {
             if (fn(child)) {
-                return some(child);
+                return child;
             }
             else if (recur) {
                 const found = child.find(fn, recur);
-                if (found.isSome()) {
+                if (found) {
                     return found;
                 }
             }
         }
-        return none();
+        return undefined;
     }
     findWithName(name) {
-        return this.find((child) => child.name.map((childName) => childName === name).unwrapOr(false));
+        return this.find((child) => child.name === name);
     }
     findWithTag(...tags) {
         return this.find((entity) => entity.hasTags(tags));
@@ -135,7 +138,7 @@ export class Entity extends ToFromJSONEventEmitter {
         return this.findWithTag(...tags);
     }
     findWithComponent(Component) {
-        return this.find((entity) => entity.getComponent(Component).isSome());
+        return this.find((entity) => entity.getComponent(Component) !== null);
     }
     findAll(fn, recur = true) {
         const children = this.getChildren(), matching = [];
@@ -150,7 +153,7 @@ export class Entity extends ToFromJSONEventEmitter {
         return matching;
     }
     findAllWithName(name, recur = true) {
-        return this.findAll((child) => child.name.map((childName) => childName === name).unwrapOr(false), recur);
+        return this.findAll((child) => name === child.name, recur);
     }
     findAllWithTag(...tags) {
         return this.findAll((entity) => entity.hasTags(tags));
@@ -159,37 +162,45 @@ export class Entity extends ToFromJSONEventEmitter {
         return this.findAllWithTag(...tags);
     }
     findAllWithComponent(Component, recur = true) {
-        return this.findAll((entity) => entity.getComponent(Component).isSome(), recur);
+        return this.findAll((entity) => entity.getComponent(Component) !== null, recur);
     }
     findParent(fn) {
-        return this.getParent().flatMap((parent) => {
+        const parent = this.getParent();
+        if (parent) {
             if (fn(parent)) {
-                return some(parent);
+                return parent;
             }
             else {
                 return parent.findParent(fn);
             }
-        });
+        }
+        else {
+            return undefined;
+        }
     }
     getComponents() {
         return this.components;
     }
     hasComponent(Component) {
-        return this.getComponent(Component).isSome();
+        return this.getComponent(Component) !== null;
     }
     getComponent(Component) {
-        return Option.from(this.components.get(Component));
+        return this.components.get(Component) || null;
     }
     getRequiredComponent(Component) {
-        return this.getComponent(Component).expect(() => `Entity expected to have a ${Component} Component`);
+        const component = this.getComponent(Component);
+        if (!component) {
+            throw new Error(`Entity expected to have a ${Component} Component`);
+        }
+        return component;
     }
     getComponentInstanceOf(Component) {
         for (const component of this.components.values()) {
             if (component instanceof Component) {
-                return some(component);
+                return component;
             }
         }
-        return none();
+        return null;
     }
     getComponentsInstanceOf(Component) {
         return Array.from(this.components.values()).filter((component) => component instanceof Component);
@@ -213,18 +224,23 @@ export class Entity extends ToFromJSONEventEmitter {
         return this.removeComponents(components);
     }
     removeFromScene() {
-        this.scene.ifSome((scene) => {
+        const scene = this.scene;
+        if (scene) {
             scene.removeEntity(this);
-        });
+        }
     }
     detach() {
-        this.parent.ifSome((parent) => {
+        const parent = this.parent;
+        if (parent) {
             parent._removeChild(this);
-            this.scene.ifSome((scene) => scene.addEntity(this));
+            const scene = this.scene;
+            if (scene) {
+                scene.addEntity(this);
+            }
             for (const component of this.components.values()) {
                 component.onDetach();
             }
-        });
+        }
     }
     getChildren() {
         return this.children;
@@ -274,42 +290,46 @@ export class Entity extends ToFromJSONEventEmitter {
         }
     }
     _addComponent(component) {
+        var _a;
         const Component = component.getConstructor();
         if (!this.components.has(Component)) {
             component.UNSAFE_setEntity(this);
             this.components.set(Component, component);
-            this.scene.ifSome((scene) => scene.UNSAFE_addComponent(component));
+            (_a = this.scene) === null || _a === void 0 ? void 0 : _a.UNSAFE_addComponent(component);
             this.emit("add-component", component);
         }
         return this;
     }
     _removeComponent(Component) {
-        const componentOption = this.getComponent(Component);
-        componentOption.ifSome((component) => {
+        var _a;
+        const component = this.getComponent(Component);
+        if (component) {
             this.emit("remove-component", component);
             component.UNSAFE_removeEntity();
             this.components.delete(Component);
-            this.scene.ifSome((scene) => scene.UNSAFE_removeComponent(component));
-        });
+            (_a = this.scene) === null || _a === void 0 ? void 0 : _a.UNSAFE_removeComponent(component);
+        }
         return this;
     }
     _addChild(child) {
+        var _a, _b, _c;
         if (this.children.indexOf(child) === -1) {
             if (child.isRoot()) {
-                child.scene.ifSome((scene) => scene.removeEntity(child));
+                (_a = child.scene) === null || _a === void 0 ? void 0 : _a.removeEntity(child);
             }
-            child.parent.ifSome((parent) => parent._removeChild(child));
+            (_b = child.parent) === null || _b === void 0 ? void 0 : _b._removeChild(child);
             this.children.push(child);
-            child.parent.replace(this);
+            child.parent = this;
             child.root = this.root;
             child.setDepth(this.depth + 1);
-            this.scene.ifSome((scene) => scene.UNSAFE_addEntityNow(child, true));
+            (_c = this.scene) === null || _c === void 0 ? void 0 : _c.UNSAFE_addEntityNow(child, true);
             this.emit("add-child", child);
         }
         return this;
     }
     _removeChild(child) {
-        this.scene.ifSome((scene) => scene.UNSAFE_removeEntityNow(child));
+        var _a;
+        (_a = this.scene) === null || _a === void 0 ? void 0 : _a.UNSAFE_removeEntityNow(child);
         this.UNSAFE_removeChild(child);
         return this;
     }
@@ -321,8 +341,8 @@ export class Entity extends ToFromJSONEventEmitter {
         if (index !== -1) {
             this.emit("remove-child", child);
             this.children.splice(index, 1);
-            child.scene.clear();
-            child.parent.clear();
+            child.scene = null;
+            child.parent = null;
             child.root = child;
             child.setDepth(0);
         }
@@ -336,12 +356,12 @@ export class Entity extends ToFromJSONEventEmitter {
         return this;
     }
     toJSON() {
-        return Object.assign(Object.assign({}, super.toJSON()), { name: this.name.unwrapOr(null), tags: [...this.tags.values()], children: this.children.map((child) => child.toJSON()), components: [...this.components.values()].map((component) => component.toJSON()) });
+        return Object.assign(Object.assign({}, super.toJSON()), { name: this.name, tags: [...this.tags.values()], children: this.children.map((child) => child.toJSON()), components: [...this.components.values()].map((component) => component.toJSON()) });
     }
     fromJSON(json) {
         super.fromJSON(json);
         if (json.name) {
-            this.name.replace(json.name);
+            this.name = json.name;
         }
         if (isJSONArray(json.tags)) {
             this.addTags(json.tags);

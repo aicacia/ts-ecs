@@ -81,22 +81,34 @@ export class Camera2D extends RenderableComponent {
         return this.setNeedsUpdate();
     }
     setZoom(zoom) {
-        this.getEntity()
-            .flatMap(TransformComponent.getTransform)
-            .ifSome((transform) => transform.setLocalScale2(vec2.set(VEC2_0, zoom, zoom)));
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent.getTransform(entity);
+            if (transform) {
+                transform.setLocalScale2(vec2.set(VEC2_0, zoom, zoom));
+            }
+        }
         return this;
     }
     getZoom() {
-        return this.getEntity()
-            .flatMap(TransformComponent.getTransform)
-            .map((transform) => vec2.len(extractScale(VEC2_0, transform.getMatrix2d(MAT2D_0))) *
-            this.size)
-            .unwrapOr(this.size);
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent.getTransform(entity);
+            if (transform) {
+                return (vec2.len(extractScale(VEC2_0, transform.getMatrix2d(MAT2D_0))) *
+                    this.size);
+            }
+        }
+        return this.size;
     }
     getView() {
-        this.getEntity()
-            .flatMap(TransformComponent.getTransform)
-            .ifSome((transform) => mat2d.invert(this.view, transform.getMatrix2d(MAT2D_0)));
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent.getTransform(entity);
+            if (transform) {
+                mat2d.invert(this.view, transform.getMatrix2d(MAT2D_0));
+            }
+        }
         return this.view;
     }
     getProjection() {
@@ -132,10 +144,7 @@ export class Camera2D extends RenderableComponent {
         }
     }
     isActive() {
-        return this.getRequiredManager()
-            .getActive()
-            .map((active) => active === this)
-            .unwrapOr(false);
+        return this.getRequiredManager().getActive() === this;
     }
     setActive() {
         this.getRequiredManager().setActive(this);

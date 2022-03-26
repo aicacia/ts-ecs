@@ -17,15 +17,17 @@ export { RenderableComponent } from "./RenderableComponent";
 export { RunOnUpdateComponent } from "./RunOnUpdateComponent";
 export { TransformComponentManager } from "./TransformComponentManager";
 
-TransformComponent.getTransform = function getTransform(entity: Entity) {
-  const entityTransform = entity
-    .getComponent<TransformComponent>(Transform2D)
-    .orElse(() => entity.getComponent<TransformComponent>(Transform3D));
+TransformComponent.getTransform = function getTransform(
+  entity: Entity
+): TransformComponent | null {
+  const entityTransform =
+    entity.getComponent<TransformComponent>(Transform2D) ||
+    entity.getComponent<TransformComponent>(Transform3D);
 
-  if (entityTransform.isNone()) {
-    return TransformComponent.getParentTransform(entity);
-  } else {
+  if (entityTransform) {
     return entityTransform;
+  } else {
+    return TransformComponent.getParentTransform(entity);
   }
 };
 

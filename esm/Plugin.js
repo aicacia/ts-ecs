@@ -1,10 +1,9 @@
-import { none } from "@aicacia/core";
 import { filterRequirements, requirementToString, } from "./IRequirement";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export class Plugin extends ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.scene = none();
+        this.scene = null;
     }
     static getPluginPriority() {
         return this.pluginPriority;
@@ -22,16 +21,36 @@ export class Plugin extends ToFromJSONEventEmitter {
         return Object.getPrototypeOf(this).constructor.requiredPlugins;
     }
     getPlugin(Plugin) {
-        return this.getScene().flatMap((scene) => scene.getPlugin(Plugin));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getPlugin(Plugin);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredPlugin(Plugin) {
-        return this.getPlugin(Plugin).expect(() => `${this.getConstructor()} required ${Plugin} Plugin`);
+        const plugin = this.getPlugin(Plugin);
+        if (!plugin) {
+            throw new Error(`${this.getConstructor()} required ${Plugin} Plugin`);
+        }
+        return plugin;
     }
     getManager(Manager) {
-        return this.getScene().flatMap((scene) => scene.getManager(Manager));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getManager(Manager);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredManager(Manager) {
-        return this.getManager(Manager).expect(() => `${this.getConstructor()} required ${Manager} Manager`);
+        const manager = this.getManager(Manager);
+        if (!manager) {
+            throw new Error(`${this.getConstructor()} required ${Manager} Manager`);
+        }
+        return manager;
     }
     validateRequirements() {
         const missingPlugins = [];
@@ -52,21 +71,25 @@ export class Plugin extends ToFromJSONEventEmitter {
      * @ignore
      */
     UNSAFE_setScene(scene) {
-        this.scene.replace(scene);
+        this.scene = scene;
         return this;
     }
     /**
      * @ignore
      */
     UNSAFE_removeScene() {
-        this.scene.clear();
+        this.scene = null;
         return this;
     }
     getScene() {
         return this.scene;
     }
     getRequiredScene() {
-        return this.getScene().expect(() => `${this.getConstructor()} required a Scene`);
+        const scene = this.getScene();
+        if (!scene) {
+            throw new Error(`${this.getConstructor()} required a Scene`);
+        }
+        return scene;
     }
     onInit() {
         return this;

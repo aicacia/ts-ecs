@@ -105,9 +105,13 @@ export class Camera3D extends RenderableComponent {
         return this.setNeedsUpdate();
     }
     getView() {
-        this.getEntity().ifSome((entity) => TransformComponent.getTransform(entity).ifSome((transform) => {
-            mat4.invert(this.view, transform.getMatrix4(MAT4_0));
-        }));
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent.getTransform(entity);
+            if (transform) {
+                mat4.invert(this.view, transform.getMatrix4(MAT4_0));
+            }
+        }
         return this.view;
     }
     getProjection() {
@@ -126,10 +130,7 @@ export class Camera3D extends RenderableComponent {
         }
     }
     isActive() {
-        return this.getRequiredManager()
-            .getActive()
-            .map((active) => active === this)
-            .unwrapOr(false);
+        return this.getRequiredManager().getActive() === this;
     }
     setActive() {
         this.getRequiredManager().setActive(this);

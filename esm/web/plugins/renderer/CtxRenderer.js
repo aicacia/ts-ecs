@@ -1,4 +1,3 @@
-import { none } from "@aicacia/core";
 import { mat2d } from "gl-matrix";
 import { Camera2DManager } from "../../../components/Camera2D";
 import { toRgba } from "../../../math";
@@ -8,17 +7,12 @@ export class CtxRenderer extends Renderer {
     constructor(element) {
         super();
         this.lineWidth = 1.0;
-        this.camera = none();
+        this.camera = null;
         this.cameraView = mat2d.create();
         this.cameraProjection = mat2d.create();
         this.cameraViewProjection = mat2d.create();
         this.scale = 1.0;
         this.enabled = true;
-        this.getActiveCamera = () => {
-            return this.getRequiredScene()
-                .getRequiredManager(Camera2DManager)
-                .getRequiredActive();
-        };
         this.element = element;
         this.ctx = element.getContext("2d");
     }
@@ -51,15 +45,20 @@ export class CtxRenderer extends Renderer {
         this.lineWidth = lineWidth;
         return this;
     }
+    getActiveCamera() {
+        return this.getRequiredScene()
+            .getRequiredManager(Camera2DManager)
+            .getRequiredActive();
+    }
     getCamera() {
-        return this.camera.unwrapOrElse(this.getActiveCamera);
+        return this.camera || this.getActiveCamera();
     }
     setCamera(camera) {
-        this.camera.replace(camera);
+        this.camera = camera;
         return this;
     }
     removeCamera() {
-        this.camera.clear();
+        this.camera = null;
         return this;
     }
     getCanvasSize() {

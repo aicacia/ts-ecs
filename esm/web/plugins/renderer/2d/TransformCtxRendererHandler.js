@@ -4,7 +4,8 @@ import { mat2d } from "gl-matrix";
 const MAT2D_0 = mat2d.create();
 export class TransformCtxRendererHandler extends CtxRendererHandler {
     onRender() {
-        this.getManager(TransformComponentManager).ifSome((transformComponentManager) => {
+        const transformComponentManager = this.getManager(TransformComponentManager);
+        if (transformComponentManager) {
             const renderer = this.getRequiredRenderer(), scale = renderer.getScale();
             for (const transform of transformComponentManager.getComponents()) {
                 if (transform.getRenderable()) {
@@ -25,7 +26,7 @@ export class TransformCtxRendererHandler extends CtxRendererHandler {
                     }, transform.getMatrix2d(MAT2D_0));
                 }
             }
-        });
+        }
         return this;
     }
 }

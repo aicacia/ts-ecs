@@ -1,5 +1,5 @@
 import { IJSONObject, isJSONArray } from "@aicacia/json";
-import { none, Option, some, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import {
   filterRequirements,
   IRequirement,
@@ -18,11 +18,11 @@ export interface IEntityEventTypes {
 }
 
 export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
-  private name: Option<string> = none();
+  private name: string | null = null;
   private depth = 0;
-  private scene: Option<Scene> = none();
+  private scene: Scene | null = null;
   private root: Entity = this;
-  private parent: Option<Entity> = none();
+  private parent: Entity | null = null;
   private tags: Set<string> = new Set();
   private children: Entity[] = [];
   private components: Map<IConstructor<Component>, Component> = new Map();
@@ -31,11 +31,11 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     return this.name;
   }
   setName(name: string) {
-    this.name.replace(name);
+    this.name = name;
     return this;
   }
   removeName() {
-    this.name.take();
+    this.name = null;
     return this;
   }
 
@@ -82,26 +82,30 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
   }
 
   hasParent(): boolean {
-    return this.parent.isSome();
+    return this.parent !== null;
   }
-  getParent(): Option<Entity> {
+  getParent() {
     return this.parent;
   }
 
   hasScene() {
-    return this.scene.isSome();
+    return this.scene !== null;
   }
-  getScene(): Option<Scene> {
+  getScene() {
     return this.scene;
   }
   getRequiredScene() {
-    return this.getScene().expect("Entity expected to have a Scene");
+    const scene = this.getScene();
+    if (!scene) {
+      throw new Error("Entity expected to have a Scene");
+    }
+    return scene;
   }
   /**
    * @ignore
    */
   UNSAFE_setScene(scene: Scene, recur = false) {
-    this.scene.replace(scene);
+    this.scene = scene;
     if (recur) {
       for (const child of this.children) {
         child.UNSAFE_setScene(scene, recur);
@@ -113,7 +117,7 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
    * @ignore
    */
   UNSAFE_removeScene() {
-    this.scene.clear();
+    this.scene = null;
     return this;
   }
 
@@ -129,25 +133,23 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     }
     return this;
   }
-  find(fn: (entity: Entity) => boolean, recur = true): Option<Entity> {
+  find(fn: (entity: Entity) => boolean, recur = true): Entity | undefined {
     for (const child of this.getChildren()) {
       if (fn(child)) {
-        return some(child);
+        return child;
       } else if (recur) {
         const found = child.find(fn, recur);
 
-        if (found.isSome()) {
+        if (found) {
           return found;
         }
       }
     }
 
-    return none();
+    return undefined;
   }
   findWithName(name: string) {
-    return this.find((child) =>
-      child.name.map((childName) => childName === name).unwrapOr(false)
-    );
+    return this.find((child) => child.name === name);
   }
   findWithTag(...tags: string[]) {
     return this.find((entity) => entity.hasTags(tags));
@@ -156,7 +158,7 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     return this.findWithTag(...tags);
   }
   findWithComponent<C extends Component>(Component: IConstructor<C>) {
-    return this.find((entity) => entity.getComponent(Component).isSome());
+    return this.find((entity) => entity.getComponent(Component) !== null);
   }
 
   findAll(fn: (entity: Entity) => boolean, recur = true): Entity[] {
@@ -174,11 +176,7 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     return matching;
   }
   findAllWithName(name: string, recur = true) {
-    return this.findAll(
-      (child) =>
-        child.name.map((childName) => childName === name).unwrapOr(false),
-      recur
-    );
+    return this.findAll((child) => name === child.name, recur);
   }
   findAllWithTag(...tags: string[]) {
     return this.findAll((entity) => entity.hasTags(tags));
@@ -191,48 +189,54 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     recur = true
   ) {
     return this.findAll(
-      (entity) => entity.getComponent(Component).isSome(),
+      (entity) => entity.getComponent(Component) !== null,
       recur
     );
   }
 
-  findParent(fn: (entity: Entity) => boolean): Option<Entity> {
-    return this.getParent().flatMap((parent) => {
+  findParent(fn: (entity: Entity) => boolean): Entity | undefined {
+    const parent = this.getParent();
+
+    if (parent) {
       if (fn(parent)) {
-        return some(parent);
+        return parent;
       } else {
         return parent.findParent(fn);
       }
-    });
+    } else {
+      return undefined;
+    }
   }
 
   getComponents() {
     return this.components;
   }
   hasComponent<C extends Component = Component>(Component: IConstructor<C>) {
-    return this.getComponent(Component).isSome();
+    return this.getComponent(Component) !== null;
   }
   getComponent<C extends Component = Component>(
     Component: IConstructor<C>
-  ): Option<C> {
-    return Option.from(this.components.get(Component) as C);
+  ): C | null {
+    return (this.components.get(Component) as C) || null;
   }
   getRequiredComponent<C extends Component = Component>(
     Component: IConstructor<C>
   ) {
-    return this.getComponent(Component).expect(
-      () => `Entity expected to have a ${Component} Component`
-    );
+    const component = this.getComponent(Component);
+    if (!component) {
+      throw new Error(`Entity expected to have a ${Component} Component`);
+    }
+    return component;
   }
   getComponentInstanceOf<C extends Component = Component>(
     Component: IConstructor<C>
-  ): Option<C> {
+  ): C | null {
     for (const component of this.components.values()) {
       if (component instanceof Component) {
-        return some(component);
+        return component;
       }
     }
-    return none();
+    return null;
   }
   getComponentsInstanceOf<C extends Component = Component>(
     Component: IConstructor<C>
@@ -263,18 +267,24 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
   }
 
   removeFromScene() {
-    this.scene.ifSome((scene) => {
+    const scene = this.scene;
+    if (scene) {
       scene.removeEntity(this);
-    });
+    }
   }
   detach() {
-    this.parent.ifSome((parent) => {
+    const parent = this.parent;
+    if (parent) {
       parent._removeChild(this);
-      this.scene.ifSome((scene) => scene.addEntity(this));
+      const scene = this.scene;
+
+      if (scene) {
+        scene.addEntity(this);
+      }
       for (const component of this.components.values()) {
         component.onDetach();
       }
-    });
+    }
   }
   getChildren(): readonly Entity[] {
     return this.children;
@@ -370,47 +380,45 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
       component.UNSAFE_setEntity(this);
 
       this.components.set(Component, component);
-
-      this.scene.ifSome((scene) => scene.UNSAFE_addComponent(component));
+      this.scene?.UNSAFE_addComponent(component);
       this.emit("add-component", component);
     }
     return this;
   }
 
   private _removeComponent<C extends Component>(Component: IConstructor<C>) {
-    const componentOption = this.getComponent(Component);
+    const component = this.getComponent(Component);
 
-    componentOption.ifSome((component) => {
+    if (component) {
       this.emit("remove-component", component);
       component.UNSAFE_removeEntity();
 
       this.components.delete(Component);
-
-      this.scene.ifSome((scene) => scene.UNSAFE_removeComponent(component));
-    });
+      this.scene?.UNSAFE_removeComponent(component);
+    }
     return this;
   }
 
   private _addChild(child: Entity) {
     if (this.children.indexOf(child) === -1) {
       if (child.isRoot()) {
-        child.scene.ifSome((scene) => scene.removeEntity(child));
+        child.scene?.removeEntity(child);
       }
-      child.parent.ifSome((parent) => parent._removeChild(child));
+      child.parent?._removeChild(child);
 
       this.children.push(child);
 
-      child.parent.replace(this);
+      child.parent = this;
       child.root = this.root;
       child.setDepth(this.depth + 1);
-      this.scene.ifSome((scene) => scene.UNSAFE_addEntityNow(child, true));
+      this.scene?.UNSAFE_addEntityNow(child, true);
 
       this.emit("add-child", child);
     }
     return this;
   }
   private _removeChild(child: Entity) {
-    this.scene.ifSome((scene) => scene.UNSAFE_removeEntityNow(child));
+    this.scene?.UNSAFE_removeEntityNow(child);
     this.UNSAFE_removeChild(child);
     return this;
   }
@@ -424,8 +432,8 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
       this.emit("remove-child", child);
       this.children.splice(index, 1);
 
-      child.scene.clear();
-      child.parent.clear();
+      child.scene = null;
+      child.parent = null;
       child.root = child;
       child.setDepth(0);
     }
@@ -443,7 +451,7 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
   toJSON(): IJSONObject {
     return {
       ...super.toJSON(),
-      name: this.name.unwrapOr(null as any),
+      name: this.name,
       tags: [...this.tags.values()],
       children: this.children.map((child) => child.toJSON()),
       components: [...this.components.values()].map((component) =>
@@ -454,7 +462,7 @@ export class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
   fromJSON(json: IJSONObject) {
     super.fromJSON(json);
     if (json.name) {
-      this.name.replace(json.name as string);
+      this.name = json.name as string;
     }
     if (isJSONArray(json.tags)) {
       this.addTags(json.tags as string[]);

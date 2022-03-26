@@ -1,4 +1,4 @@
-import type { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import type { Plugin } from "../../Plugin";
 import type { Manager } from "../../Manager";
 import { ToFromJSONEventEmitter } from "../../ToFromJSONEventEmitter";
@@ -15,13 +15,13 @@ export declare abstract class RendererHandler<R extends Renderer = Renderer> ext
     getRendererHandlerPriority(): number;
     UNSAFE_setRenderer(renderer: R): this;
     UNSAFE_removeRenderer(): this;
-    getRenderer(): Option<R>;
+    getRenderer(): R | null;
     getRequiredRenderer(): R;
-    getScene(): Option<import("../..").Scene>;
+    getScene(): import("../..").Scene | null;
     getRequiredScene(): import("../..").Scene;
-    getManager<M extends Manager>(Manager: IConstructor<M>): Option<M>;
+    getManager<M extends Manager>(Manager: IConstructor<M>): M | null;
     getRequiredManager<M extends Manager>(Manager: IConstructor<M>): M;
-    getPlugin<P extends Plugin>(Plugin: new (...args: any[]) => P): Option<P>;
+    getPlugin<P extends Plugin>(Plugin: new (...args: any[]) => P): P | null;
     getRequiredPlugin<P extends Plugin>(Plugin: new (...args: any[]) => P): P;
     onAdd(): this;
     onRemove(): this;

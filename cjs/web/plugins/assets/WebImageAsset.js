@@ -1,28 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebImageAsset = void 0;
-const core_1 = require("@aicacia/core");
 const ImageAsset_1 = require("../../../plugins/assets/ImageAsset");
 class WebImageAsset extends ImageAsset_1.ImageAsset {
     constructor(src) {
         super();
-        this.image = core_1.none();
+        this.image = null;
         this.src = src;
     }
     getImage() {
         return this.image;
     }
     getWidth() {
-        return this.image.map((image) => image.width).unwrapOr(0);
+        var _a, _b;
+        return (_b = (_a = this.image) === null || _a === void 0 ? void 0 : _a.width) !== null && _b !== void 0 ? _b : 0;
     }
     getHeight() {
-        return this.image.map((image) => image.height).unwrapOr(0);
+        var _a, _b;
+        return (_b = (_a = this.image) === null || _a === void 0 ? void 0 : _a.height) !== null && _b !== void 0 ? _b : 0;
     }
     loadAsset() {
         return new Promise((resolve, reject) => {
             const image = new Image();
             image.addEventListener("load", () => {
-                this.image.replace(image);
+                this.image = image;
                 resolve();
             });
             image.addEventListener("error", (error) => reject(error));
@@ -30,7 +31,7 @@ class WebImageAsset extends ImageAsset_1.ImageAsset {
         });
     }
     unloadAsset() {
-        this.image.clear();
+        this.image = null;
         return Promise.resolve();
     }
     toJSON() {

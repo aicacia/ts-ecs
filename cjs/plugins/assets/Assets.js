@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Assets = void 0;
-const core_1 = require("@aicacia/core");
 const json_1 = require("@aicacia/json");
 const Plugin_1 = require("../../Plugin");
 const Asset_1 = require("./Asset");
@@ -15,13 +14,13 @@ class Assets extends Plugin_1.Plugin {
         this.unloadingPromises = new Map();
     }
     find(fn) {
-        return core_1.iter(this.assets).find(fn);
+        return this.assets.find(fn);
     }
     findWithName(name) {
         return this.find((asset) => asset.getName() === name);
     }
     findAll(fn) {
-        return core_1.iter(this.assets).filter(fn).toArray();
+        return this.assets.filter(fn);
     }
     findAllWithName(name) {
         return this.findAll((asset) => asset.getName() === name);
@@ -30,7 +29,14 @@ class Assets extends Plugin_1.Plugin {
         return this.loadingPromises.size > 0;
     }
     getAsset(uuid) {
-        return core_1.Option.from(this.assetMap[uuid]);
+        return this.assetMap[uuid] || null;
+    }
+    getRequiredAsset(uuid) {
+        const asset = this.getAsset(uuid);
+        if (!asset) {
+            throw new Error(`Required Asset ${uuid} not found`);
+        }
+        return asset;
     }
     getAssets() {
         return this.assets;
@@ -168,7 +174,7 @@ class Assets extends Plugin_1.Plugin {
     }
     fromJSON(json) {
         super.fromJSON(json);
-        if (json_1.isJSONArray(json.assets)) {
+        if ((0, json_1.isJSONArray)(json.assets)) {
             this.addAssets(json.assets.map((json) => Asset_1.Asset.newFromJSON(json)));
         }
         return this;

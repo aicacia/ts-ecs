@@ -120,31 +120,32 @@ class Transform2D extends TransformComponent_1.TransformComponent {
         return this.updateLocalMatrixIfNeeded().localMatrix;
     }
     updateLocalMatrix() {
-        math_1.composeMat2d(this.localMatrix, this.localPosition, this.localScale, this.localRotation);
+        (0, math_1.composeMat2d)(this.localMatrix, this.localPosition, this.localScale, this.localRotation);
         return this;
     }
     updateMatrix() {
-        this.updateLocalMatrixIfNeeded()
-            .getParentTransform()
-            .mapOrElse((parentTransform) => {
+        this.updateLocalMatrixIfNeeded();
+        const parentTransform = this.getParentTransform();
+        if (parentTransform) {
             gl_matrix_1.mat2d.mul(this.matrix, parentTransform.getMatrix2d(MAT2_0), this.localMatrix);
-            this.rotation = math_1.decomposeMat2d(this.matrix, this.position, this.scale);
-        }, () => {
+            this.rotation = (0, math_1.decomposeMat2d)(this.matrix, this.position, this.scale);
+        }
+        else {
             gl_matrix_1.mat2d.copy(this.matrix, this.localMatrix);
             gl_matrix_1.vec2.copy(this.position, this.localPosition);
             gl_matrix_1.vec2.copy(this.scale, this.localScale);
             this.rotation = this.localRotation;
-        });
+        }
         return this;
     }
     getMatrix4(out) {
-        return math_1.mat4FromMat2d(out, this.getMatrix());
+        return (0, math_1.mat4FromMat2d)(out, this.getMatrix());
     }
     getMatrix2d(out) {
         return gl_matrix_1.mat2d.copy(out, this.getMatrix());
     }
     getLocalMatrix4(out) {
-        return math_1.mat4FromMat2d(out, this.getLocalMatrix());
+        return (0, math_1.mat4FromMat2d)(out, this.getLocalMatrix());
     }
     getLocalMatrix2d(out) {
         return gl_matrix_1.mat2d.copy(out, this.getLocalMatrix());
@@ -153,7 +154,7 @@ class Transform2D extends TransformComponent_1.TransformComponent {
         return gl_matrix_1.vec2.sub(out, position, this.getPosition());
     }
     lookAt(position) {
-        return this.setLocalRotation(math_1.getAngleBetweenPoints(this.localPosition, this.toLocalPosition(VEC2_0, position)) - math_1.HALF_PI);
+        return this.setLocalRotation((0, math_1.getAngleBetweenPoints)(this.localPosition, this.toLocalPosition(VEC2_0, position)) - math_1.HALF_PI);
     }
     toJSON() {
         return Object.assign(Object.assign({}, super.toJSON()), { localPosition: this.localPosition, localScale: this.localScale, localRotation: this.localRotation });

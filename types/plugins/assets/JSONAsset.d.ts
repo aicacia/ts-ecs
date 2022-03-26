@@ -1,4 +1,3 @@
-import type { Option } from "@aicacia/core";
 import type { IJSON, IJSONObject } from "@aicacia/json";
 import { Asset } from "./Asset";
 export declare class JSONAsset extends Asset {
@@ -6,7 +5,7 @@ export declare class JSONAsset extends Asset {
     private src;
     private options?;
     constructor(src: RequestInfo, options?: RequestInit);
-    getJSON(): Option<IJSON>;
+    getJSON(): IJSON;
     protected loadAsset(): Promise<void>;
     protected unloadAsset(): Promise<void>;
     toJSON(): {

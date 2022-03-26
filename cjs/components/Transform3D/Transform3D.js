@@ -126,32 +126,33 @@ class Transform3D extends TransformComponent_1.TransformComponent {
         return this;
     }
     updateMatrix() {
-        this.updateLocalMatrixIfNeeded()
-            .getParentTransform()
-            .mapOrElse((parentTransform) => {
+        this.updateLocalMatrixIfNeeded();
+        const parentTransform = this.getParentTransform();
+        if (parentTransform) {
             gl_matrix_1.mat4.mul(this.matrix, parentTransform.getMatrix4(MAT4_0), this.localMatrix);
             gl_matrix_1.mat4.getRotation(this.rotation, this.matrix);
             gl_matrix_1.mat4.getScaling(this.scale, this.matrix);
             gl_matrix_1.mat4.getTranslation(this.position, this.matrix);
-        }, () => {
+        }
+        else {
             gl_matrix_1.mat4.copy(this.matrix, this.localMatrix);
             gl_matrix_1.vec3.copy(this.position, this.localPosition);
             gl_matrix_1.vec3.copy(this.scale, this.localScale);
             gl_matrix_1.quat.copy(this.rotation, this.localRotation);
-        });
+        }
         return this;
     }
     getMatrix4(out) {
         return gl_matrix_1.mat4.copy(out, this.getMatrix());
     }
     getMatrix2d(out) {
-        return math_1.mat2dFromMat4(out, this.getMatrix());
+        return (0, math_1.mat2dFromMat4)(out, this.getMatrix());
     }
     getLocalMatrix4(out) {
         return gl_matrix_1.mat4.copy(out, this.getLocalMatrix());
     }
     getLocalMatrix2d(out) {
-        return math_1.mat2dFromMat4(out, this.getLocalMatrix());
+        return (0, math_1.mat2dFromMat4)(out, this.getLocalMatrix());
     }
     toLocalPosition(out, position) {
         return gl_matrix_1.vec3.sub(out, position, this.getPosition());

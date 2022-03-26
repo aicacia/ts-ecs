@@ -1,4 +1,4 @@
-import { none, Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import {
   IRequirement,
   filterRequirements,
@@ -22,7 +22,7 @@ export abstract class Plugin<
     return this.requiredPlugins;
   }
 
-  private scene: Option<Scene> = none();
+  private scene: Scene | null = null;
 
   getConstructor(): IConstructor<this> {
     return Object.getPrototypeOf(this).constructor;
@@ -34,22 +34,36 @@ export abstract class Plugin<
     return Object.getPrototypeOf(this).constructor.requiredPlugins;
   }
 
-  getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): Option<P> {
-    return this.getScene().flatMap((scene) => scene.getPlugin(Plugin));
+  getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P | null {
+    const scene = this.getScene();
+    if (scene) {
+      return scene.getPlugin(Plugin);
+    } else {
+      return null;
+    }
   }
-  getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
-    return this.getPlugin(Plugin).expect(
-      () => `${this.getConstructor()} required ${Plugin} Plugin`
-    );
+  getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P {
+    const plugin = this.getPlugin<P>(Plugin);
+    if (!plugin) {
+      throw new Error(`${this.getConstructor()} required ${Plugin} Plugin`);
+    }
+    return plugin;
   }
 
-  getManager<M extends Manager = Manager>(Manager: IConstructor<M>): Option<M> {
-    return this.getScene().flatMap((scene) => scene.getManager(Manager));
+  getManager<M extends Manager = Manager>(Manager: IConstructor<M>): M | null {
+    const scene = this.getScene();
+    if (scene) {
+      return scene.getManager(Manager);
+    } else {
+      return null;
+    }
   }
   getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>) {
-    return this.getManager(Manager).expect(
-      () => `${this.getConstructor()} required ${Manager} Manager`
-    );
+    const manager = this.getManager<M>(Manager);
+    if (!manager) {
+      throw new Error(`${this.getConstructor()} required ${Manager} Manager`);
+    }
+    return manager;
   }
 
   validateRequirements() {
@@ -86,23 +100,25 @@ export abstract class Plugin<
    * @ignore
    */
   UNSAFE_setScene(scene: Scene) {
-    this.scene.replace(scene);
+    this.scene = scene;
     return this;
   }
   /**
    * @ignore
    */
   UNSAFE_removeScene() {
-    this.scene.clear();
+    this.scene = null;
     return this;
   }
   getScene() {
     return this.scene;
   }
   getRequiredScene() {
-    return this.getScene().expect(
-      () => `${this.getConstructor()} required a Scene`
-    );
+    const scene = this.getScene();
+    if (!scene) {
+      throw new Error(`${this.getConstructor()} required a Scene`);
+    }
+    return scene;
   }
 
   onInit() {

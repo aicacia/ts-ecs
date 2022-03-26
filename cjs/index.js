@@ -73,6 +73,7 @@ var ToFromJSONEventEmitter_1 = require("./ToFromJSONEventEmitter");
 Object.defineProperty(exports, "ToFromJSONEventEmitter", { enumerable: true, get: function () { return ToFromJSONEventEmitter_1.ToFromJSONEventEmitter; } });
 var Canvas_1 = require("./Canvas");
 Object.defineProperty(exports, "Canvas", { enumerable: true, get: function () { return Canvas_1.Canvas; } });
+var IRunOnUpdateFn_1 = require("./IRunOnUpdateFn");
 var math_1 = require("./math");
 Object.defineProperty(exports, "composeMat2d", { enumerable: true, get: function () { return math_1.composeMat2d; } });
 Object.defineProperty(exports, "decomposeMat2d", { enumerable: true, get: function () { return math_1.decomposeMat2d; } });

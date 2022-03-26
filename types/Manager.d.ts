@@ -1,4 +1,4 @@
-import { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import type { Component } from "./Component";
 import type { Plugin } from "./Plugin";
 import type { Scene } from "./Scene";
@@ -6,7 +6,7 @@ import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export declare abstract class Manager<C extends Component = Component> extends ToFromJSONEventEmitter {
     static managerPriority: number;
     static getManagerPriority(): number;
-    protected scene: Option<Scene>;
+    protected scene: Scene | null;
     /**
      * @ignore
      */
@@ -15,12 +15,12 @@ export declare abstract class Manager<C extends Component = Component> extends T
      * @ignore
      */
     UNSAFE_removeScene(): this;
-    getScene(): Option<Scene>;
+    getScene(): Scene | null;
     getConstructor(): IConstructor<this>;
     getManagerPriority(): number;
-    getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): Option<P>;
+    getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P | null;
     getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P;
-    getManager<M extends Manager = Manager>(Manager: IConstructor<M>): Option<M>;
+    getManager<M extends Manager = Manager>(Manager: IConstructor<M>): M | null;
     getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>): M;
     onAdd(): this;
     onRemove(): this;

@@ -1,4 +1,4 @@
-import { none, Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import type { Component } from "./Component";
 import type { Plugin } from "./Plugin";
 import type { Scene } from "./Scene";
@@ -13,23 +13,23 @@ export abstract class Manager<
     return this.managerPriority;
   }
 
-  protected scene: Option<Scene> = none();
+  protected scene: Scene | null = null;
 
   /**
    * @ignore
    */
   UNSAFE_setScene(scene: Scene) {
-    this.scene.replace(scene);
+    this.scene = scene;
     return this;
   }
   /**
    * @ignore
    */
   UNSAFE_removeScene() {
-    this.scene.clear();
+    this.scene = null;
     return this;
   }
-  getScene(): Option<Scene> {
+  getScene() {
     return this.scene;
   }
 
@@ -40,22 +40,36 @@ export abstract class Manager<
     return Object.getPrototypeOf(this).constructor.getManagerPriority();
   }
 
-  getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): Option<P> {
-    return this.getScene().flatMap((scene) => scene.getPlugin(Plugin));
+  getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P | null {
+    const scene = this.getScene();
+    if (scene) {
+      return scene.getPlugin(Plugin);
+    } else {
+      return null;
+    }
   }
   getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>) {
-    return this.getPlugin(Plugin).expect(
-      () => `${this.getConstructor()} required ${Plugin} Plugin`
-    );
+    const plugin = this.getPlugin<P>(Plugin);
+    if (!plugin) {
+      throw new Error(`${this.getConstructor()} required ${Plugin} Plugin`);
+    }
+    return plugin;
   }
 
-  getManager<M extends Manager = Manager>(Manager: IConstructor<M>): Option<M> {
-    return this.getScene().flatMap((scene) => scene.getManager(Manager));
+  getManager<M extends Manager = Manager>(Manager: IConstructor<M>): M | null {
+    const scene = this.getScene();
+    if (scene) {
+      return scene.getManager(Manager);
+    } else {
+      return null;
+    }
   }
   getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>): M {
-    return this.getManager(Manager).expect(
-      () => `${this.getConstructor()} required ${Manager} Manager`
-    );
+    const manager = this.getManager(Manager);
+    if (!manager) {
+      throw new Error(`${this.getConstructor()} required ${Manager} Manager`);
+    }
+    return manager;
   }
 
   onAdd() {

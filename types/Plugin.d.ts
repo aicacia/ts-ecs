@@ -1,4 +1,4 @@
-import { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { IRequirement } from "./IRequirement";
 import type { Manager } from "./Manager";
 import type { Scene } from "./Scene";
@@ -13,9 +13,9 @@ export declare abstract class Plugin<EventTypes extends ValidEventTypes = any> e
     getConstructor(): IConstructor<this>;
     getPluginPriority(): number;
     getRequiredPlugins(): IConstructor<Plugin>[];
-    getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): Option<P>;
+    getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P | null;
     getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P;
-    getManager<M extends Manager = Manager>(Manager: IConstructor<M>): Option<M>;
+    getManager<M extends Manager = Manager>(Manager: IConstructor<M>): M | null;
     getRequiredManager<M extends Manager = Manager>(Manager: IConstructor<M>): M;
     validateRequirements(): void;
     /**
@@ -26,7 +26,7 @@ export declare abstract class Plugin<EventTypes extends ValidEventTypes = any> e
      * @ignore
      */
     UNSAFE_removeScene(): this;
-    getScene(): Option<Scene>;
+    getScene(): Scene | null;
     getRequiredScene(): Scene;
     onInit(): this;
     onAdd(): this;

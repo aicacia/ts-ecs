@@ -119,11 +119,13 @@ export class Camera3D extends RenderableComponent {
   }
 
   getView() {
-    this.getEntity().ifSome((entity) =>
-      TransformComponent.getTransform(entity).ifSome((transform) => {
+    const entity = this.getEntity();
+    if (entity) {
+      const transform = TransformComponent.getTransform(entity);
+      if (transform) {
         mat4.invert(this.view, transform.getMatrix4(MAT4_0));
-      })
-    );
+      }
+    }
     return this.view;
   }
 
@@ -145,10 +147,7 @@ export class Camera3D extends RenderableComponent {
   }
 
   isActive(): boolean {
-    return this.getRequiredManager<Camera3DManager>()
-      .getActive()
-      .map((active) => active === this)
-      .unwrapOr(false);
+    return this.getRequiredManager<Camera3DManager>().getActive() === this;
   }
   setActive() {
     this.getRequiredManager<Camera3DManager>().setActive(this);

@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Input = void 0;
-const core_1 = require("@aicacia/core");
 const Plugin_1 = require("../../Plugin");
 const Time_1 = require("../Time");
 const InputAxis_1 = require("./InputAxis");
@@ -40,27 +39,43 @@ class Input extends Plugin_1.Plugin {
         return this.addAxes(axes);
     }
     getAxis(name) {
-        return core_1.Option.from(this.axes[name]);
+        return this.axes[name] || null;
     }
     getAxisValue(name) {
-        return this.getAxis(name)
-            .map((axis) => axis.getValue())
-            .unwrapOr(0.0);
+        const axis = this.getAxis(name);
+        if (axis) {
+            return axis.getValue();
+        }
+        else {
+            return 0.0;
+        }
     }
     getRequiredAxis(name) {
-        return this.getAxis(name).expect(`Failed to get Required Axis ${name}`);
+        const axis = this.getAxis(name);
+        if (!axis) {
+            throw new Error(`Failed to get Required Axis ${name}`);
+        }
+        return axis;
     }
     getInputHandler(InputHandler) {
-        return core_1.Option.from(this.inputHandlerMap.get(InputHandler));
+        return this.inputHandlerMap.get(InputHandler) || null;
     }
     getRequiredInputHandler(InputHandler) {
-        return this.getInputHandler(InputHandler).expect(`Failed to get Required InputHandler ${InputHandler}`);
+        const inputHandler = this.getInputHandler(InputHandler);
+        if (!inputHandler) {
+            throw new Error(`Failed to get Required InputHandler ${InputHandler}`);
+        }
+        return inputHandler;
     }
     getEventListener(EventListener) {
-        return core_1.Option.from(this.eventListenerMap.get(EventListener));
+        return this.eventListenerMap.get(EventListener) || null;
     }
     getRequiredEventListener(EventListener) {
-        return this.getEventListener(EventListener).expect(`Failed to get Required EventListener ${EventListener}`);
+        const eventListener = this.getEventListener(EventListener);
+        if (!eventListener) {
+            throw new Error(`Failed to get Required EventListener ${EventListener}`);
+        }
+        return eventListener;
     }
     removeAxes(axes) {
         for (const axis of axes) {
@@ -119,25 +134,29 @@ class Input extends Plugin_1.Plugin {
         }
     }
     getButton(name) {
-        return core_1.Option.from(this.buttons[name]);
+        return this.buttons[name] || null;
     }
     getButtonValue(name) {
-        return this.getButton(name)
-            .map((button) => button.getValue())
-            .unwrapOr(0.0);
+        const button = this.getButton(name);
+        if (button) {
+            return button.getValue();
+        }
+        else {
+            return 0.0;
+        }
     }
     isDownCurrentFrame(name) {
-        return this.getButton(name)
-            .map((button) => button.getFrameDown() === this.getRequiredPlugin(Time_1.Time).getFrame())
-            .unwrapOr(false);
+        var _a;
+        return (((_a = this.getButton(name)) === null || _a === void 0 ? void 0 : _a.getFrameDown()) ===
+            this.getRequiredPlugin(Time_1.Time).getFrame());
     }
     isDown(name) {
         return !this.isUp(name);
     }
     isUpCurrentFrame(name) {
-        return this.getButton(name)
-            .map((button) => button.getFrameUp() === this.getRequiredPlugin(Time_1.Time).getFrame())
-            .unwrapOr(false);
+        var _a;
+        return (((_a = this.getButton(name)) === null || _a === void 0 ? void 0 : _a.getFrameUp()) ===
+            this.getRequiredPlugin(Time_1.Time).getFrame());
     }
     isUp(name) {
         return this.getButtonValue(name) == 0.0;
@@ -212,13 +231,14 @@ class Input extends Plugin_1.Plugin {
         return this;
     }
     _removeInputHandler(InputHandler) {
-        this.getInputHandler(InputHandler).ifSome((inputHandler) => {
+        const inputHandler = this.getInputHandler(InputHandler);
+        if (inputHandler) {
             this.emit("remove-input_handler", inputHandler);
             inputHandler.onRemove();
             this.inputHandlers.splice(this.inputHandlers.indexOf(inputHandler), 1);
             this.inputHandlerMap.delete(InputHandler);
             inputHandler.UNSAFE_removeInput();
-        });
+        }
         return this;
     }
     _addEventListener(eventListener) {
@@ -233,13 +253,14 @@ class Input extends Plugin_1.Plugin {
         return this;
     }
     _removeEventListener(EventListener) {
-        this.getEventListener(EventListener).ifSome((eventListener) => {
+        const eventListener = this.getEventListener(EventListener);
+        if (eventListener) {
             this.emit("remove-event_listener", eventListener);
             eventListener.onRemove();
             this.eventListeners.splice(this.eventListeners.indexOf(eventListener), 1);
             this.eventListenerMap.delete(EventListener);
             eventListener.UNSAFE_removeInput();
-        });
+        }
         return this;
     }
     toJSON() {
@@ -247,19 +268,19 @@ class Input extends Plugin_1.Plugin {
     }
     fromJSON(json) {
         super.fromJSON(json);
-        if (json_1.isJSONArray(json.buttons)) {
+        if ((0, json_1.isJSONArray)(json.buttons)) {
             for (const value of json.buttons) {
                 const buttonJSON = value, button = new InputButton_1.InputButton(buttonJSON.name).fromJSON(buttonJSON);
                 this.buttons[button.getName()] = button;
             }
         }
-        if (json_1.isJSONArray(json.axes)) {
+        if ((0, json_1.isJSONArray)(json.axes)) {
             this.addAxes(json.axes.map((json) => {
                 const axisJSON = json;
                 return new InputAxis_1.InputAxis(axisJSON.name, axisJSON.negButton, axisJSON.posButton).fromJSON(axisJSON);
             }));
         }
-        if (json_1.isJSONArray(json.inputHandlers)) {
+        if ((0, json_1.isJSONArray)(json.inputHandlers)) {
             this.addInputHandlers(json.inputHandlers.map((json) => InputHandler_1.InputHandler.newFromJSON(json)));
         }
         return this;

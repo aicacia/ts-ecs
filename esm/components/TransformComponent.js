@@ -9,31 +9,48 @@ export class TransformComponent extends RenderableComponent {
         this.localNeedsUpdate = true;
     }
     static getParentTransform(entity) {
-        return entity.getParent().andThen(TransformComponent.getTransform);
+        const parent = entity.getParent();
+        if (parent) {
+            return TransformComponent.getTransform(parent);
+        }
+        else {
+            return null;
+        }
     }
     static getTransform(_entity) {
         return undefined;
     }
     static getRequiredTransform(entity) {
-        return TransformComponent.getTransform(entity).expect(`Entity required a TransformComponent`);
+        const transform = TransformComponent.getTransform(entity);
+        if (!transform) {
+            throw new Error(`Entity required a TransformComponent`);
+        }
+        return transform;
     }
     onDetach() {
         return this.setNeedsUpdate();
     }
     getParentTransform() {
-        return this.getEntity().flatMap(TransformComponent.getParentTransform);
+        const entity = this.getEntity();
+        if (entity) {
+            return TransformComponent.getParentTransform(entity);
+        }
+        else {
+            return null;
+        }
     }
     setNeedsUpdate(needsUpdate = true) {
         this.setLocalNeedsUpdate(needsUpdate);
         if (needsUpdate !== this.needsUpdate) {
             this.needsUpdate = needsUpdate;
-            this.getEntity().ifSome((entity) => {
+            const entity = this.getEntity();
+            if (entity) {
                 for (const child of entity.getChildren()) {
                     for (const transform of child.getComponentsInstanceOf(TransformComponent)) {
                         transform.setNeedsUpdate(needsUpdate);
                     }
                 }
-            });
+            }
         }
         return this;
     }

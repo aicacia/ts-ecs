@@ -1,4 +1,3 @@
-import { Option } from "@aicacia/core";
 import { Plugin } from "../../Plugin";
 import { Time } from "../Time";
 import { InputAxis } from "./InputAxis";
@@ -37,27 +36,43 @@ export class Input extends Plugin {
         return this.addAxes(axes);
     }
     getAxis(name) {
-        return Option.from(this.axes[name]);
+        return this.axes[name] || null;
     }
     getAxisValue(name) {
-        return this.getAxis(name)
-            .map((axis) => axis.getValue())
-            .unwrapOr(0.0);
+        const axis = this.getAxis(name);
+        if (axis) {
+            return axis.getValue();
+        }
+        else {
+            return 0.0;
+        }
     }
     getRequiredAxis(name) {
-        return this.getAxis(name).expect(`Failed to get Required Axis ${name}`);
+        const axis = this.getAxis(name);
+        if (!axis) {
+            throw new Error(`Failed to get Required Axis ${name}`);
+        }
+        return axis;
     }
     getInputHandler(InputHandler) {
-        return Option.from(this.inputHandlerMap.get(InputHandler));
+        return this.inputHandlerMap.get(InputHandler) || null;
     }
     getRequiredInputHandler(InputHandler) {
-        return this.getInputHandler(InputHandler).expect(`Failed to get Required InputHandler ${InputHandler}`);
+        const inputHandler = this.getInputHandler(InputHandler);
+        if (!inputHandler) {
+            throw new Error(`Failed to get Required InputHandler ${InputHandler}`);
+        }
+        return inputHandler;
     }
     getEventListener(EventListener) {
-        return Option.from(this.eventListenerMap.get(EventListener));
+        return this.eventListenerMap.get(EventListener) || null;
     }
     getRequiredEventListener(EventListener) {
-        return this.getEventListener(EventListener).expect(`Failed to get Required EventListener ${EventListener}`);
+        const eventListener = this.getEventListener(EventListener);
+        if (!eventListener) {
+            throw new Error(`Failed to get Required EventListener ${EventListener}`);
+        }
+        return eventListener;
     }
     removeAxes(axes) {
         for (const axis of axes) {
@@ -116,25 +131,29 @@ export class Input extends Plugin {
         }
     }
     getButton(name) {
-        return Option.from(this.buttons[name]);
+        return this.buttons[name] || null;
     }
     getButtonValue(name) {
-        return this.getButton(name)
-            .map((button) => button.getValue())
-            .unwrapOr(0.0);
+        const button = this.getButton(name);
+        if (button) {
+            return button.getValue();
+        }
+        else {
+            return 0.0;
+        }
     }
     isDownCurrentFrame(name) {
-        return this.getButton(name)
-            .map((button) => button.getFrameDown() === this.getRequiredPlugin(Time).getFrame())
-            .unwrapOr(false);
+        var _a;
+        return (((_a = this.getButton(name)) === null || _a === void 0 ? void 0 : _a.getFrameDown()) ===
+            this.getRequiredPlugin(Time).getFrame());
     }
     isDown(name) {
         return !this.isUp(name);
     }
     isUpCurrentFrame(name) {
-        return this.getButton(name)
-            .map((button) => button.getFrameUp() === this.getRequiredPlugin(Time).getFrame())
-            .unwrapOr(false);
+        var _a;
+        return (((_a = this.getButton(name)) === null || _a === void 0 ? void 0 : _a.getFrameUp()) ===
+            this.getRequiredPlugin(Time).getFrame());
     }
     isUp(name) {
         return this.getButtonValue(name) == 0.0;
@@ -209,13 +228,14 @@ export class Input extends Plugin {
         return this;
     }
     _removeInputHandler(InputHandler) {
-        this.getInputHandler(InputHandler).ifSome((inputHandler) => {
+        const inputHandler = this.getInputHandler(InputHandler);
+        if (inputHandler) {
             this.emit("remove-input_handler", inputHandler);
             inputHandler.onRemove();
             this.inputHandlers.splice(this.inputHandlers.indexOf(inputHandler), 1);
             this.inputHandlerMap.delete(InputHandler);
             inputHandler.UNSAFE_removeInput();
-        });
+        }
         return this;
     }
     _addEventListener(eventListener) {
@@ -230,13 +250,14 @@ export class Input extends Plugin {
         return this;
     }
     _removeEventListener(EventListener) {
-        this.getEventListener(EventListener).ifSome((eventListener) => {
+        const eventListener = this.getEventListener(EventListener);
+        if (eventListener) {
             this.emit("remove-event_listener", eventListener);
             eventListener.onRemove();
             this.eventListeners.splice(this.eventListeners.indexOf(eventListener), 1);
             this.eventListenerMap.delete(EventListener);
             eventListener.UNSAFE_removeInput();
-        });
+        }
         return this;
     }
     toJSON() {

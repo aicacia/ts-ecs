@@ -10,9 +10,11 @@ export class ToFromJSONEventEmitter extends EventEmitter {
         return !!this.toFromJSONEnabled;
     }
     static getConstructorFromJSON(json) {
-        return globalJSONClassRegistry
-            .getById(json.typeId)
-            .expect(() => `Failed to get class ${json.typeId} from globalJSONClassRegistry make sure the Component was added`);
+        const constructor = globalJSONClassRegistry.getById(json.typeId);
+        if (!constructor) {
+            throw new Error(`Failed to get class ${json.typeId} from globalJSONClassRegistry make sure the Component was added`);
+        }
+        return constructor;
     }
     static newFromJSON(json) {
         const ComponentClass = this.getConstructorFromJSON(json);

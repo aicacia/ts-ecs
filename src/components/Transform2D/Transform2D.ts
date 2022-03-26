@@ -152,29 +152,21 @@ export class Transform2D extends TransformComponent {
   }
 
   updateMatrix() {
-    this.updateLocalMatrixIfNeeded()
-      .getParentTransform()
-      .mapOrElse(
-        (parentTransform) => {
-          mat2d.mul(
-            this.matrix,
-            parentTransform.getMatrix2d(MAT2_0),
-            this.localMatrix
-          );
-          this.rotation = decomposeMat2d(
-            this.matrix,
-            this.position,
-            this.scale
-          );
-        },
-        () => {
-          mat2d.copy(this.matrix, this.localMatrix);
-          vec2.copy(this.position, this.localPosition);
-          vec2.copy(this.scale, this.localScale);
-          this.rotation = this.localRotation;
-        }
+    this.updateLocalMatrixIfNeeded();
+    const parentTransform = this.getParentTransform();
+    if (parentTransform) {
+      mat2d.mul(
+        this.matrix,
+        parentTransform.getMatrix2d(MAT2_0),
+        this.localMatrix
       );
-
+      this.rotation = decomposeMat2d(this.matrix, this.position, this.scale);
+    } else {
+      mat2d.copy(this.matrix, this.localMatrix);
+      vec2.copy(this.position, this.localPosition);
+      vec2.copy(this.scale, this.localScale);
+      this.rotation = this.localRotation;
+    }
     return this;
   }
 

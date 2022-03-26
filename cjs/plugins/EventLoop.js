@@ -34,7 +34,7 @@ class EventLoop extends Plugin_1.Plugin {
     stop() {
         this.running = false;
         if (this.id !== null) {
-            requestAnimationFrame_1.cancelAnimationFrame(this.id);
+            (0, requestAnimationFrame_1.cancelAnimationFrame)(this.id);
             this.id = null;
         }
         return this;
@@ -43,7 +43,7 @@ class EventLoop extends Plugin_1.Plugin {
         return this.running === false;
     }
     request() {
-        this.id = requestAnimationFrame_1.requestAnimationFrame(this.run);
+        this.id = (0, requestAnimationFrame_1.requestAnimationFrame)(this.run);
         return this;
     }
 }

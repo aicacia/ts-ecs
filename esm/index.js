@@ -11,5 +11,6 @@ export { Plugin } from "./Plugin";
 export { Scene } from "./Scene";
 export { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export { Canvas } from "./Canvas";
+export {} from "./IRunOnUpdateFn";
 export { composeMat2d, decomposeMat2d, degToRad, radToDeg, DEG_TO_RAD, RAD_TO_DEG, EPSILON, TAU, HALF_PI, toHex, toRgb, toRgba, clamp, angleVec2, vec2FromAngle, getRotationFromMat2d, getAngleBetweenPoints, getAngleFromPoint, getPointFromAngle, getTangentAngle, sign, projectPointOnAxis, equals, getAABB2FromRect, } from "./math";
 export { WebEventListener, WebImageAsset, SpriteCtxRendererHandler, TransformCtxRendererHandler, CtxRenderer, CtxRendererHandler, WebCanvas, } from "./web";

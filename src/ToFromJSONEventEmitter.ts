@@ -22,12 +22,15 @@ export abstract class ToFromJSONEventEmitter<
   static getConstructorFromJSON<
     T extends ToFromJSONEventEmitter = ToFromJSONEventEmitter
   >(json: IJSONObject): IConstructor<T> {
-    return globalJSONClassRegistry
-      .getById<T>(json.typeId as string)
-      .expect(
-        () =>
-          `Failed to get class ${json.typeId} from globalJSONClassRegistry make sure the Component was added`
+    const constructor = globalJSONClassRegistry.getById<T>(
+      json.typeId as string
+    );
+    if (!constructor) {
+      throw new Error(
+        `Failed to get class ${json.typeId} from globalJSONClassRegistry make sure the Component was added`
       );
+    }
+    return constructor;
   }
 
   static newFromJSON<T extends ToFromJSONEventEmitter = ToFromJSONEventEmitter>(

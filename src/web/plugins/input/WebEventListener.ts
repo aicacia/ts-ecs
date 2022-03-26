@@ -122,7 +122,7 @@ export class WebEventListener extends EventListener {
   };
 
   onMouseWheel = (e: Event) => {
-    const mouseWheelEvent = e as MouseWheelEvent,
+    const mouseWheelEvent = e as WheelEvent,
       event = this.mouseWheelInputEventPool.create(mouseWheelEvent.type as any);
 
     event.wheel = mouseWheelEvent.deltaY;

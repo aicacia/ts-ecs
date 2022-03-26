@@ -1,11 +1,10 @@
-import { none } from "@aicacia/core";
 import { Assets } from "../../plugins";
 import { RenderableComponent } from "../RenderableComponent";
 export class Sprite extends RenderableComponent {
     constructor() {
         super(...arguments);
         this.layer = 0;
-        this.imageAsset = none();
+        this.imageAsset = null;
         this.clipX = 0;
         this.clipY = 0;
         this.clipWidth = 1;
@@ -13,11 +12,11 @@ export class Sprite extends RenderableComponent {
         this.width = 1;
         this.height = 1;
         this.onImageLoadHandler = () => {
-            this.imageAsset.ifSome((imageAsset) => {
-                this.clipWidth = imageAsset.getWidth();
-                this.clipHeight = imageAsset.getHeight();
-                imageAsset.off("load", this.onImageLoadHandler);
-            });
+            if (this.imageAsset) {
+                this.clipWidth = this.imageAsset.getWidth();
+                this.clipHeight = this.imageAsset.getHeight();
+                this.imageAsset.off("load", this.onImageLoadHandler);
+            }
         };
     }
     getClipX() {
@@ -71,17 +70,17 @@ export class Sprite extends RenderableComponent {
         return this.layer;
     }
     setLayer(layer) {
-        const managerOption = this.getManager();
-        managerOption.ifSome((manager) => manager.removeComponent(this));
+        const manager = this.getManager();
+        manager === null || manager === void 0 ? void 0 : manager.removeComponent(this);
         this.layer = layer | 0;
-        managerOption.ifSome((manager) => manager.addComponent(this));
+        manager === null || manager === void 0 ? void 0 : manager.addComponent(this);
         return this;
     }
     getImageAsset() {
         return this.imageAsset;
     }
     setImageAsset(imageAsset) {
-        this.imageAsset.replace(imageAsset);
+        this.imageAsset = imageAsset;
         if (imageAsset.isLoaded()) {
             this.onImageLoadHandler();
         }
@@ -91,15 +90,11 @@ export class Sprite extends RenderableComponent {
         return this;
     }
     toJSON() {
-        return Object.assign(Object.assign({}, super.toJSON()), { imageAssetUUID: this.imageAsset
-                .map((imageAsset) => imageAsset.getUUID())
-                .unwrapOr(null), layer: this.layer, clipX: this.clipX, clipY: this.clipY, clipWidth: this.clipWidth, clipHeight: this.clipHeight, width: this.width, height: this.height });
+        return Object.assign(Object.assign({}, super.toJSON()), { imageAssetUUID: this.imageAsset ? this.imageAsset.getUUID() : null, layer: this.layer, clipX: this.clipX, clipY: this.clipY, clipWidth: this.clipWidth, clipHeight: this.clipHeight, width: this.width, height: this.height });
     }
     fromJSON(json) {
         const onAddToScene = () => {
-            this.setImageAsset(this.getRequiredPlugin(Assets)
-                .getAsset(json.imageAssetUUID)
-                .expect(`Sprite.fromJSON Failed to get Asset ${json.imageAssetUUID}`));
+            this.setImageAsset(this.getRequiredPlugin(Assets).getRequiredAsset(json.imageAssetUUID));
             this.off("add-to-scene", onAddToScene);
         };
         this.on("add-to-scene", onAddToScene);

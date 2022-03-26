@@ -7,7 +7,8 @@ const gl_matrix_1 = require("gl-matrix");
 const MAT2D_0 = gl_matrix_1.mat2d.create();
 class TransformCtxRendererHandler extends CtxRendererHandler_1.CtxRendererHandler {
     onRender() {
-        this.getManager(TransformComponentManager_1.TransformComponentManager).ifSome((transformComponentManager) => {
+        const transformComponentManager = this.getManager(TransformComponentManager_1.TransformComponentManager);
+        if (transformComponentManager) {
             const renderer = this.getRequiredRenderer(), scale = renderer.getScale();
             for (const transform of transformComponentManager.getComponents()) {
                 if (transform.getRenderable()) {
@@ -28,7 +29,7 @@ class TransformCtxRendererHandler extends CtxRendererHandler_1.CtxRendererHandle
                     }, transform.getMatrix2d(MAT2D_0));
                 }
             }
-        });
+        }
         return this;
     }
 }

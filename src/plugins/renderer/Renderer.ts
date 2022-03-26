@@ -1,4 +1,4 @@
-import { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { IJSONObject, isJSONArray } from "@aicacia/json";
 import { Plugin } from "../../Plugin";
 
@@ -16,8 +16,8 @@ export abstract class Renderer extends Plugin {
   }
   getRendererHandler<R extends RendererHandler>(
     RendererHandler: IConstructor<R>
-  ) {
-    return Option.from(this.rendererHandlerMap.get(RendererHandler));
+  ): R | null {
+    return (this.rendererHandlerMap.get(RendererHandler) as R) || null;
   }
 
   addRendererHandlers(rendererHandlers: RendererHandler[]) {
@@ -76,7 +76,8 @@ export abstract class Renderer extends Plugin {
   private _removeRendererHandler<R extends RendererHandler = RendererHandler>(
     RendererHandler: IConstructor<R>
   ) {
-    this.getRendererHandler(RendererHandler).ifSome((rendererHandler) => {
+    const rendererHandler = this.rendererHandlerMap.get(RendererHandler);
+    if (rendererHandler) {
       this.emit("remove-renderer_handler", rendererHandler);
       rendererHandler.onRemove();
 
@@ -86,8 +87,7 @@ export abstract class Renderer extends Plugin {
       );
       this.rendererHandlerMap.delete(RendererHandler);
       rendererHandler.UNSAFE_removeRenderer();
-    });
-
+    }
     return this;
   }
 

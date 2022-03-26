@@ -84,22 +84,34 @@ class Camera2D extends RenderableComponent_1.RenderableComponent {
         return this.setNeedsUpdate();
     }
     setZoom(zoom) {
-        this.getEntity()
-            .flatMap(TransformComponent_1.TransformComponent.getTransform)
-            .ifSome((transform) => transform.setLocalScale2(gl_matrix_1.vec2.set(VEC2_0, zoom, zoom)));
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent_1.TransformComponent.getTransform(entity);
+            if (transform) {
+                transform.setLocalScale2(gl_matrix_1.vec2.set(VEC2_0, zoom, zoom));
+            }
+        }
         return this;
     }
     getZoom() {
-        return this.getEntity()
-            .flatMap(TransformComponent_1.TransformComponent.getTransform)
-            .map((transform) => gl_matrix_1.vec2.len(math_1.extractScale(VEC2_0, transform.getMatrix2d(MAT2D_0))) *
-            this.size)
-            .unwrapOr(this.size);
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent_1.TransformComponent.getTransform(entity);
+            if (transform) {
+                return (gl_matrix_1.vec2.len((0, math_1.extractScale)(VEC2_0, transform.getMatrix2d(MAT2D_0))) *
+                    this.size);
+            }
+        }
+        return this.size;
     }
     getView() {
-        this.getEntity()
-            .flatMap(TransformComponent_1.TransformComponent.getTransform)
-            .ifSome((transform) => gl_matrix_1.mat2d.invert(this.view, transform.getMatrix2d(MAT2D_0)));
+        const entity = this.getEntity();
+        if (entity) {
+            const transform = TransformComponent_1.TransformComponent.getTransform(entity);
+            if (transform) {
+                gl_matrix_1.mat2d.invert(this.view, transform.getMatrix2d(MAT2D_0));
+            }
+        }
         return this.view;
     }
     getProjection() {
@@ -135,10 +147,7 @@ class Camera2D extends RenderableComponent_1.RenderableComponent {
         }
     }
     isActive() {
-        return this.getRequiredManager()
-            .getActive()
-            .map((active) => active === this)
-            .unwrapOr(false);
+        return this.getRequiredManager().getActive() === this;
     }
     setActive() {
         this.getRequiredManager().setActive(this);

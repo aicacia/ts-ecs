@@ -1,4 +1,3 @@
-import { none, Option } from "@aicacia/core";
 import type { SpriteClip } from "./SpriteClip";
 import { Component } from "../../Component";
 import { Time } from "../../plugins/Time";
@@ -11,12 +10,12 @@ export class SpriteSheet extends Component {
   private currentTime = 0;
   private currentFrame = 0;
   private playBack = 1;
-  private currentName: Option<string> = none();
+  private currentName: string | null = null;
   private spriteSheets: Record<string, SpriteClip[]> = {};
 
-  get = (name: string) => {
-    return Option.from(this.spriteSheets[name]);
-  };
+  get(name: string) {
+    return this.spriteSheets[name];
+  }
   set(name: string, spriteClips: SpriteClip[]) {
     this.spriteSheets[name] = spriteClips;
     return this;
@@ -34,17 +33,23 @@ export class SpriteSheet extends Component {
         `SpriteSheet setCurrent(name: string) no SpriteSheet found named ${name}`
       );
     }
-    this.currentName.replace(name);
+    this.currentName = name;
     this.currentFrame = 0;
     this.currentTime = 0;
     return this;
   }
   getCurrent() {
-    return this.currentName.flatMap(this.get);
+    if (this.currentName) {
+      return this.get(this.currentName);
+    } else {
+      return null;
+    }
   }
 
   onUpdate() {
-    this.getCurrent().ifSome((clips) => {
+    const clips = this.getCurrent();
+
+    if (clips) {
       const clip = clips[this.currentFrame];
 
       if (clip) {
@@ -67,8 +72,7 @@ export class SpriteSheet extends Component {
         this.currentTime +=
           this.getRequiredPlugin(Time).getDelta() * this.playBack;
       }
-    });
-
+    }
     return this;
   }
 }

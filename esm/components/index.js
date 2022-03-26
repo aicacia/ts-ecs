@@ -10,14 +10,13 @@ export { RenderableComponent } from "./RenderableComponent";
 export { RunOnUpdateComponent } from "./RunOnUpdateComponent";
 export { TransformComponentManager } from "./TransformComponentManager";
 TransformComponent.getTransform = function getTransform(entity) {
-    const entityTransform = entity
-        .getComponent(Transform2D)
-        .orElse(() => entity.getComponent(Transform3D));
-    if (entityTransform.isNone()) {
-        return TransformComponent.getParentTransform(entity);
+    const entityTransform = entity.getComponent(Transform2D) ||
+        entity.getComponent(Transform3D);
+    if (entityTransform) {
+        return entityTransform;
     }
     else {
-        return entityTransform;
+        return TransformComponent.getParentTransform(entity);
     }
 };
 export { TransformComponent };

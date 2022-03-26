@@ -1,4 +1,4 @@
-import { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { IJSONObject } from "@aicacia/json";
 import { Plugin } from "../../Plugin";
 export declare abstract class Renderer extends Plugin {
@@ -6,7 +6,7 @@ export declare abstract class Renderer extends Plugin {
     private rendererHandlers;
     private rendererHandlerMap;
     getRendererHandlers(): readonly RendererHandler[];
-    getRendererHandler<R extends RendererHandler>(RendererHandler: IConstructor<R>): Option<RendererHandler<Renderer>>;
+    getRendererHandler<R extends RendererHandler>(RendererHandler: IConstructor<R>): R | null;
     addRendererHandlers(rendererHandlers: RendererHandler[]): this;
     addRendererHandler(...rendererHandlers: RendererHandler[]): this;
     removeRendererHandlers(RendererHandlers: IConstructor<RendererHandler>[]): this;

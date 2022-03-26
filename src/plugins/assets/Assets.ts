@@ -1,4 +1,3 @@
-import { Option, iter } from "@aicacia/core";
 import { IJSONObject, isJSONArray } from "@aicacia/json";
 import { Plugin } from "../../Plugin";
 import { Asset } from "./Asset";
@@ -10,15 +9,15 @@ export class Assets extends Plugin {
   private loadingPromises: Map<Asset, Promise<void>> = new Map();
   private unloadingPromises: Map<Asset, Promise<void>> = new Map();
 
-  find(fn: (asset: Asset) => boolean): Option<Asset> {
-    return iter(this.assets).find(fn);
+  find(fn: (asset: Asset) => boolean) {
+    return this.assets.find(fn);
   }
   findWithName(name: string) {
     return this.find((asset) => asset.getName() === name);
   }
 
   findAll(fn: (asset: Asset) => boolean): Asset[] {
-    return iter(this.assets).filter(fn).toArray();
+    return this.assets.filter(fn);
   }
   findAllWithName(name: string) {
     return this.findAll((asset) => asset.getName() === name);
@@ -28,8 +27,15 @@ export class Assets extends Plugin {
     return this.loadingPromises.size > 0;
   }
 
-  getAsset<T extends Asset = Asset>(uuid: string): Option<T> {
-    return Option.from(this.assetMap[uuid]) as Option<T>;
+  getAsset<T extends Asset = Asset>(uuid: string): T | null {
+    return (this.assetMap[uuid] as T) || null;
+  }
+  getRequiredAsset<T extends Asset = Asset>(uuid: string): T {
+    const asset = this.getAsset<T>(uuid);
+    if (!asset) {
+      throw new Error(`Required Asset ${uuid} not found`);
+    }
+    return asset;
   }
   getAssets(): readonly Asset[] {
     return this.assets;

@@ -2,14 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Scene = void 0;
 const json_1 = require("@aicacia/json");
-const core_1 = require("@aicacia/core");
 const Entity_1 = require("./Entity");
 const Plugin_1 = require("./Plugin");
 const ToFromJSONEventEmitter_1 = require("./ToFromJSONEventEmitter");
 class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.name = core_1.none();
+        this.name = null;
         this.entities = [];
         this.entitiesToAdd = [];
         this.entitiesToRemove = [];
@@ -80,11 +79,11 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return this.name;
     }
     setName(name) {
-        this.name.replace(name);
+        this.name = name;
         return this;
     }
     removeName() {
-        this.name.take();
+        this.name = null;
         return this;
     }
     forEachEntity(fn, recur = true) {
@@ -101,16 +100,16 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
     find(fn, recur = true) {
         for (const entity of this.entities) {
             if (fn(entity)) {
-                return core_1.some(entity);
+                return entity;
             }
             else if (recur) {
                 const found = entity.find(fn, recur);
-                if (found.isSome()) {
+                if (found) {
                     return found;
                 }
             }
         }
-        return core_1.none();
+        return undefined;
     }
     findWithTag(...tags) {
         return this.find((entity) => entity.hasTags(tags), true);
@@ -119,10 +118,7 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return this.findWithTag(...tags);
     }
     findWithName(name) {
-        return this.find((entity) => entity
-            .getName()
-            .map((entityName) => entityName === name)
-            .unwrapOr(false), true);
+        return this.find((entity) => entity.getName() === name, true);
     }
     findAll(fn, recur = true) {
         const matching = [];
@@ -143,10 +139,7 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return this.findAllWithTag(...tags);
     }
     findAllWithName(name) {
-        return this.findAll((entity) => entity
-            .getName()
-            .map((entityName) => entityName === name)
-            .unwrapOr(false), true);
+        return this.findAll((entity) => entity.getName() === name, true);
     }
     getEntities() {
         return this.entities;
@@ -155,22 +148,30 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return this.managers;
     }
     getManager(Manager) {
-        return core_1.Option.from(this.managerMap.get(Manager));
+        return this.managerMap.get(Manager) || null;
     }
     getRequiredManager(Manager) {
-        return this.getManager(Manager).expect(() => `Scene required ${Manager} Manager`);
+        const manager = this.getManager(Manager);
+        if (!manager) {
+            throw new Error(`Scene required ${Manager} Manager`);
+        }
+        return manager;
     }
     getPlugins() {
         return this.plugins;
     }
     hasPlugin(Plugin) {
-        return this.getPlugin(Plugin).isSome();
+        return this.getPlugin(Plugin) !== null;
     }
     getPlugin(Plugin) {
-        return core_1.Option.from(this.pluginsMap.get(Plugin));
+        return this.pluginsMap.get(Plugin) || null;
     }
     getRequiredPlugin(Plugin) {
-        return this.getPlugin(Plugin).expect(() => `Scene required ${Plugin} Plugin`);
+        const plugin = this.getPlugin(Plugin);
+        if (!plugin) {
+            throw new Error(`Scene required ${Plugin} Plugin`);
+        }
+        return plugin;
     }
     addPlugins(plugins) {
         for (const plugin of plugins) {
@@ -221,18 +222,14 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
      */
     UNSAFE_addComponent(component) {
         const Manager = component.getManagerConstructor();
-        const managerOption = this.getManager(Manager);
-        let manager;
-        if (managerOption.isNone()) {
+        let manager = this.getManager(Manager);
+        if (!manager) {
             manager = new Manager();
             manager.UNSAFE_setScene(this);
             this.managers.push(manager);
             this.managerMap.set(Manager, manager);
             this.sortManagers();
             manager.onAdd();
-        }
-        else {
-            manager = managerOption.unwrap();
         }
         manager.addComponent(component);
         component.UNSAFE_setManager(manager);
@@ -247,10 +244,10 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
      */
     UNSAFE_removeComponent(component) {
         const Manager = component.getManagerConstructor();
-        const managerOption = this.getManager(Manager);
+        const manager = this.getManager(Manager);
         this.emit("remove-component", component);
         component.emit("remove-from-scene");
-        managerOption.ifSome((manager) => {
+        if (manager) {
             component.onRemove();
             manager.removeComponent(component);
             component.UNSAFE_removeManager();
@@ -259,16 +256,15 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
                 this.managers.splice(this.managers.indexOf(manager), 1);
                 this.managerMap.delete(Manager);
             }
-        });
+        }
         return this;
     }
     /**
      * @ignore
      */
     UNSAFE_addEntityNow(entity, isChild) {
-        const entitySceneOption = entity.getScene();
-        if (entitySceneOption.isSome()) {
-            const entityScene = entitySceneOption.unwrap();
+        const entityScene = entity.getScene();
+        if (entityScene) {
             if (entityScene === this) {
                 throw new Error("Scene trying to add an Entity that is already a member of the Scene");
             }
@@ -299,9 +295,9 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
      * @ignore
      */
     UNSAFE_removeEntityNow(entity) {
-        const entitySceneOption = entity.getScene();
-        if (entitySceneOption.isSome()) {
-            const entityScene = entitySceneOption.unwrap();
+        var _a;
+        const entityScene = entity.getScene();
+        if (entityScene) {
             if (entityScene !== this) {
                 throw new Error("Scene trying to remove an Entity that is not a member of the Scene");
             }
@@ -317,7 +313,7 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
             }
         }
         else {
-            entity.getParent().ifSome((parent) => parent.UNSAFE_removeChild(entity));
+            (_a = entity.getParent()) === null || _a === void 0 ? void 0 : _a.UNSAFE_removeChild(entity);
         }
         for (const child of entity.getChildren().slice()) {
             this.removeEntityNow(child, true);
@@ -344,13 +340,14 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return this;
     }
     _removePlugin(Plugin) {
-        this.getPlugin(Plugin).ifSome((plugin) => {
+        const plugin = this.getPlugin(Plugin);
+        if (plugin) {
             this.emit("remove-plugin", plugin);
             plugin.onRemove();
             plugin.UNSAFE_removeScene();
             this.plugins.splice(this.plugins.indexOf(plugin), 1);
             this.pluginsMap.delete(Plugin);
-        });
+        }
         return this;
     }
     sortPlugins() {
@@ -365,19 +362,19 @@ class Scene extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return a.getManagerPriority() - b.getManagerPriority();
     }
     toJSON() {
-        return Object.assign(Object.assign({}, super.toJSON()), { name: this.name.unwrapOr(null), plugins: this.plugins
+        return Object.assign(Object.assign({}, super.toJSON()), { name: this.name || null, plugins: this.plugins
                 .filter((plugin) => plugin.getConstructor().isToFromJSONEnabled())
                 .map((plugin) => plugin.toJSON()), entities: this.entities.map((entity) => entity.toJSON()) });
     }
     fromJSON(json) {
         super.fromJSON(json);
         if (json.name) {
-            this.name.replace(json.name);
+            this.name = json.name;
         }
-        if (json_1.isJSONArray(json.plugins)) {
+        if ((0, json_1.isJSONArray)(json.plugins)) {
             this.addPlugins(json.plugins.map((plugin) => Plugin_1.Plugin.newFromJSON(plugin)));
         }
-        if (json_1.isJSONArray(json.entities)) {
+        if ((0, json_1.isJSONArray)(json.entities)) {
             this.addEntities(json.entities.map((entity) => new Entity_1.Entity().fromJSON(entity)));
         }
         return this.maintain(false);

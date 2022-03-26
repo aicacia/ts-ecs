@@ -1,4 +1,3 @@
-import { Option } from "@aicacia/core";
 import { IJSONObject } from "@aicacia/json";
 import { Plugin } from "../../Plugin";
 import { Asset } from "./Asset";
@@ -8,12 +7,13 @@ export declare class Assets extends Plugin {
     private loadedAssets;
     private loadingPromises;
     private unloadingPromises;
-    find(fn: (asset: Asset) => boolean): Option<Asset>;
-    findWithName(name: string): Option<Asset>;
+    find(fn: (asset: Asset) => boolean): Asset | undefined;
+    findWithName(name: string): Asset | undefined;
     findAll(fn: (asset: Asset) => boolean): Asset[];
     findAllWithName(name: string): Asset[];
     isLoading(): boolean;
-    getAsset<T extends Asset = Asset>(uuid: string): Option<T>;
+    getAsset<T extends Asset = Asset>(uuid: string): T | null;
+    getRequiredAsset<T extends Asset = Asset>(uuid: string): T;
     getAssets(): readonly Asset[];
     getLoadedAssets(): readonly Asset[];
     getLoadingAssets(): Asset[];

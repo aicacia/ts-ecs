@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Plugin = void 0;
-const core_1 = require("@aicacia/core");
 const IRequirement_1 = require("./IRequirement");
 const ToFromJSONEventEmitter_1 = require("./ToFromJSONEventEmitter");
 class Plugin extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.scene = core_1.none();
+        this.scene = null;
     }
     static getPluginPriority() {
         return this.pluginPriority;
@@ -25,28 +24,48 @@ class Plugin extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
         return Object.getPrototypeOf(this).constructor.requiredPlugins;
     }
     getPlugin(Plugin) {
-        return this.getScene().flatMap((scene) => scene.getPlugin(Plugin));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getPlugin(Plugin);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredPlugin(Plugin) {
-        return this.getPlugin(Plugin).expect(() => `${this.getConstructor()} required ${Plugin} Plugin`);
+        const plugin = this.getPlugin(Plugin);
+        if (!plugin) {
+            throw new Error(`${this.getConstructor()} required ${Plugin} Plugin`);
+        }
+        return plugin;
     }
     getManager(Manager) {
-        return this.getScene().flatMap((scene) => scene.getManager(Manager));
+        const scene = this.getScene();
+        if (scene) {
+            return scene.getManager(Manager);
+        }
+        else {
+            return null;
+        }
     }
     getRequiredManager(Manager) {
-        return this.getManager(Manager).expect(() => `${this.getConstructor()} required ${Manager} Manager`);
+        const manager = this.getManager(Manager);
+        if (!manager) {
+            throw new Error(`${this.getConstructor()} required ${Manager} Manager`);
+        }
+        return manager;
     }
     validateRequirements() {
         const missingPlugins = [];
         for (const plugin of this.getRequiredScene().getPlugins()) {
-            const missingRequiredPlugins = IRequirement_1.filterRequirements(plugin.getRequiredPlugins(), (P) => !this.getRequiredScene().hasPlugin(P));
+            const missingRequiredPlugins = (0, IRequirement_1.filterRequirements)(plugin.getRequiredPlugins(), (P) => !this.getRequiredScene().hasPlugin(P));
             if (missingRequiredPlugins.length > 0) {
                 missingPlugins.push(...missingRequiredPlugins);
             }
         }
         if (missingPlugins.length > 0) {
             const pluginMessage = missingPlugins
-                .map((missingRequirement) => `${IRequirement_1.requirementToString(this.getConstructor())} Plugin requires ${IRequirement_1.requirementToString(missingRequirement)} Plugin`)
+                .map((missingRequirement) => `${(0, IRequirement_1.requirementToString)(this.getConstructor())} Plugin requires ${(0, IRequirement_1.requirementToString)(missingRequirement)} Plugin`)
                 .join("\n");
             throw new Error(pluginMessage);
         }
@@ -55,21 +74,25 @@ class Plugin extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
      * @ignore
      */
     UNSAFE_setScene(scene) {
-        this.scene.replace(scene);
+        this.scene = scene;
         return this;
     }
     /**
      * @ignore
      */
     UNSAFE_removeScene() {
-        this.scene.clear();
+        this.scene = null;
         return this;
     }
     getScene() {
         return this.scene;
     }
     getRequiredScene() {
-        return this.getScene().expect(() => `${this.getConstructor()} required a Scene`);
+        const scene = this.getScene();
+        if (!scene) {
+            throw new Error(`${this.getConstructor()} required a Scene`);
+        }
+        return scene;
     }
     onInit() {
         return this;

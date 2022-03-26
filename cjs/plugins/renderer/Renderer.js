@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Renderer = void 0;
-const core_1 = require("@aicacia/core");
 const json_1 = require("@aicacia/json");
 const Plugin_1 = require("../../Plugin");
 class Renderer extends Plugin_1.Plugin {
@@ -17,7 +16,7 @@ class Renderer extends Plugin_1.Plugin {
         return this.rendererHandlers;
     }
     getRendererHandler(RendererHandler) {
-        return core_1.Option.from(this.rendererHandlerMap.get(RendererHandler));
+        return this.rendererHandlerMap.get(RendererHandler) || null;
     }
     addRendererHandlers(rendererHandlers) {
         for (const rendererHandler of rendererHandlers) {
@@ -66,13 +65,14 @@ class Renderer extends Plugin_1.Plugin {
         return this;
     }
     _removeRendererHandler(RendererHandler) {
-        this.getRendererHandler(RendererHandler).ifSome((rendererHandler) => {
+        const rendererHandler = this.rendererHandlerMap.get(RendererHandler);
+        if (rendererHandler) {
             this.emit("remove-renderer_handler", rendererHandler);
             rendererHandler.onRemove();
             this.rendererHandlers.splice(this.rendererHandlers.indexOf(rendererHandler), 1);
             this.rendererHandlerMap.delete(RendererHandler);
             rendererHandler.UNSAFE_removeRenderer();
-        });
+        }
         return this;
     }
     sortRendererHandlers() {
@@ -84,7 +84,7 @@ class Renderer extends Plugin_1.Plugin {
     }
     fromJSON(json) {
         super.fromJSON(json);
-        if (json_1.isJSONArray(json.rendererHandlers)) {
+        if ((0, json_1.isJSONArray)(json.rendererHandlers)) {
             this.addRendererHandlers(json.rendererHandlers.map((json) => RendererHandler_1.RendererHandler.newFromJSON(json)));
         }
         return this;

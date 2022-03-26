@@ -6,7 +6,7 @@ const ToFromJSONEventEmitter_1 = require("../../ToFromJSONEventEmitter");
 class Asset extends ToFromJSONEventEmitter_1.ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.uuid = uuid_1.v4();
+        this.uuid = (0, uuid_1.v4)();
         this.name = "";
         this.loaded = false;
         this.loading = false;

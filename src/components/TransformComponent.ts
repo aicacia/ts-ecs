@@ -1,4 +1,3 @@
-import type { Option } from "@aicacia/core";
 import { mat2d, mat4, quat, vec2, vec3 } from "gl-matrix";
 import type { Entity } from "../Entity";
 import { RenderableComponent } from "./RenderableComponent";
@@ -10,19 +9,26 @@ const VEC2_0 = vec2.create(),
 export abstract class TransformComponent extends RenderableComponent {
   static Manager = TransformComponentManager;
 
-  static getParentTransform(entity: Entity): Option<TransformComponent> {
-    return entity.getParent().andThen(TransformComponent.getTransform);
+  static getParentTransform(entity: Entity): TransformComponent | null {
+    const parent = entity.getParent();
+    if (parent) {
+      return TransformComponent.getTransform(parent);
+    } else {
+      return null;
+    }
   }
 
-  static getTransform(entity: Entity): Option<TransformComponent>;
+  static getTransform(entity: Entity): TransformComponent | null;
   static getTransform(_entity: any): any {
     return undefined;
   }
 
   static getRequiredTransform(entity: Entity) {
-    return TransformComponent.getTransform(entity).expect(
-      `Entity required a TransformComponent`
-    );
+    const transform = TransformComponent.getTransform(entity);
+    if (!transform) {
+      throw new Error(`Entity required a TransformComponent`);
+    }
+    return transform;
   }
 
   private needsUpdate = true;
@@ -33,7 +39,12 @@ export abstract class TransformComponent extends RenderableComponent {
   }
 
   getParentTransform() {
-    return this.getEntity().flatMap(TransformComponent.getParentTransform);
+    const entity = this.getEntity();
+    if (entity) {
+      return TransformComponent.getParentTransform(entity);
+    } else {
+      return null;
+    }
   }
 
   setNeedsUpdate(needsUpdate = true) {
@@ -41,7 +52,8 @@ export abstract class TransformComponent extends RenderableComponent {
 
     if (needsUpdate !== this.needsUpdate) {
       this.needsUpdate = needsUpdate;
-      this.getEntity().ifSome((entity) => {
+      const entity = this.getEntity();
+      if (entity) {
         for (const child of entity.getChildren()) {
           for (const transform of child.getComponentsInstanceOf(
             TransformComponent as any
@@ -49,7 +61,7 @@ export abstract class TransformComponent extends RenderableComponent {
             (transform as TransformComponent).setNeedsUpdate(needsUpdate);
           }
         }
-      });
+      }
     }
     return this;
   }

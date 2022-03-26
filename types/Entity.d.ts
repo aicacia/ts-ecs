@@ -1,5 +1,5 @@
 import { IJSONObject } from "@aicacia/json";
-import { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import { Component } from "./Component";
 import type { Scene } from "./Scene";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
@@ -18,7 +18,7 @@ export declare class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     private tags;
     private children;
     private components;
-    getName(): Option<string>;
+    getName(): string | null;
     setName(name: string): this;
     removeName(): this;
     hasTags(tags: string[]): boolean;
@@ -33,9 +33,9 @@ export declare class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
     getRoot(): Entity;
     isRoot(): boolean;
     hasParent(): boolean;
-    getParent(): Option<Entity>;
+    getParent(): Entity | null;
     hasScene(): boolean;
-    getScene(): Option<Scene>;
+    getScene(): Scene | null;
     getRequiredScene(): Scene;
     /**
      * @ignore
@@ -46,22 +46,22 @@ export declare class Entity extends ToFromJSONEventEmitter<IEntityEventTypes> {
      */
     UNSAFE_removeScene(): this;
     forEachChild(fn: (entity: Entity) => false | void, recur?: boolean): this;
-    find(fn: (entity: Entity) => boolean, recur?: boolean): Option<Entity>;
-    findWithName(name: string): Option<Entity>;
-    findWithTag(...tags: string[]): Option<Entity>;
-    findWithTags(tags: string[]): Option<Entity>;
-    findWithComponent<C extends Component>(Component: IConstructor<C>): Option<Entity>;
+    find(fn: (entity: Entity) => boolean, recur?: boolean): Entity | undefined;
+    findWithName(name: string): Entity | undefined;
+    findWithTag(...tags: string[]): Entity | undefined;
+    findWithTags(tags: string[]): Entity | undefined;
+    findWithComponent<C extends Component>(Component: IConstructor<C>): Entity | undefined;
     findAll(fn: (entity: Entity) => boolean, recur?: boolean): Entity[];
     findAllWithName(name: string, recur?: boolean): Entity[];
     findAllWithTag(...tags: string[]): Entity[];
     findAllWithTags(tags: string[]): Entity[];
     findAllWithComponent<C extends Component>(Component: IConstructor<C>, recur?: boolean): Entity[];
-    findParent(fn: (entity: Entity) => boolean): Option<Entity>;
+    findParent(fn: (entity: Entity) => boolean): Entity | undefined;
     getComponents(): Map<IConstructor<Component, any[]>, Component>;
     hasComponent<C extends Component = Component>(Component: IConstructor<C>): boolean;
-    getComponent<C extends Component = Component>(Component: IConstructor<C>): Option<C>;
+    getComponent<C extends Component = Component>(Component: IConstructor<C>): C | null;
     getRequiredComponent<C extends Component = Component>(Component: IConstructor<C>): C;
-    getComponentInstanceOf<C extends Component = Component>(Component: IConstructor<C>): Option<C>;
+    getComponentInstanceOf<C extends Component = Component>(Component: IConstructor<C>): C | null;
     getComponentsInstanceOf<C extends Component = Component>(Component: IConstructor<C>): C[];
     addComponents(components: Component[]): this;
     addComponent(...components: Component[]): this;

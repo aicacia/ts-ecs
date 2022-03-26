@@ -1,9 +1,8 @@
-import { none, Option } from "@aicacia/core";
 import type { IJSONObject } from "@aicacia/json";
 import { ImageAsset } from "../../../plugins/assets/ImageAsset";
 
 export class WebImageAsset extends ImageAsset {
-  private image: Option<HTMLImageElement> = none();
+  private image: HTMLImageElement | null = null;
   private src: string;
 
   constructor(src: string) {
@@ -15,10 +14,10 @@ export class WebImageAsset extends ImageAsset {
     return this.image;
   }
   getWidth() {
-    return this.image.map((image) => image.width).unwrapOr(0);
+    return this.image?.width ?? 0;
   }
   getHeight() {
-    return this.image.map((image) => image.height).unwrapOr(0);
+    return this.image?.height ?? 0;
   }
 
   protected loadAsset() {
@@ -26,7 +25,7 @@ export class WebImageAsset extends ImageAsset {
       const image = new Image();
 
       image.addEventListener("load", () => {
-        this.image.replace(image);
+        this.image = image;
         resolve();
       });
       image.addEventListener("error", (error) => reject(error));
@@ -35,7 +34,7 @@ export class WebImageAsset extends ImageAsset {
   }
 
   protected unloadAsset() {
-    this.image.clear();
+    this.image = null;
     return Promise.resolve();
   }
 

@@ -1,4 +1,4 @@
-import { Option, IConstructor } from "@aicacia/core";
+import type { IConstructor } from "@aicacia/core";
 import type { IRequirement } from "./IRequirement";
 import type { Entity } from "./Entity";
 import type { Manager } from "./Manager";
@@ -20,9 +20,9 @@ export declare abstract class Component extends ToFromJSONEventEmitter<IComponen
     getManagerConstructor<M extends Manager = Manager>(): IConstructor<M>;
     getRequiredComponents(): IRequirement<Component>[];
     getRequiredPlugins(): IRequirement<Plugin>[];
-    getComponent<C extends Component = Component>(Component: IConstructor<C>): Option<C>;
+    getComponent<C extends Component = Component>(Component: IConstructor<C>): C | null;
     getRequiredComponent<C extends Component = Component>(Component: IConstructor<C>): C;
-    getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): Option<P>;
+    getPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P | null;
     getRequiredPlugin<P extends Plugin = Plugin>(Plugin: IConstructor<P>): P;
     /**
      * @ignore
@@ -32,9 +32,9 @@ export declare abstract class Component extends ToFromJSONEventEmitter<IComponen
      * @ignore
      */
     UNSAFE_removeEntity(): this;
-    getEntity(): Option<Entity>;
+    getEntity(): Entity | null;
     getRequiredEntity(): Entity;
-    getScene(): Option<import("./Scene").Scene>;
+    getScene(): import("./Scene").Scene | null;
     getRequiredScene(): import("./Scene").Scene;
     /**
      * @ignore
@@ -44,9 +44,9 @@ export declare abstract class Component extends ToFromJSONEventEmitter<IComponen
      * @ignore
      */
     UNSAFE_removeManager(): this;
-    getManager<M extends Manager = Manager>(): Option<M>;
+    getManager<M extends Manager = Manager>(): M | null;
     getRequiredManager<M extends Manager = Manager>(): M;
-    getSceneManager<M extends Manager = Manager>(Manager: IConstructor<M>): Option<M>;
+    getSceneManager<M extends Manager = Manager>(Manager: IConstructor<M>): M | null;
     getRequiredSceneManager<M extends Manager = Manager>(Manager: IConstructor<M>): M;
     onInit(): this;
     onDetach(): this;

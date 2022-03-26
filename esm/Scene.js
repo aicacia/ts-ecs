@@ -1,12 +1,11 @@
 import { isJSONArray } from "@aicacia/json";
-import { none, Option, some } from "@aicacia/core";
 import { Entity } from "./Entity";
 import { Plugin } from "./Plugin";
 import { ToFromJSONEventEmitter } from "./ToFromJSONEventEmitter";
 export class Scene extends ToFromJSONEventEmitter {
     constructor() {
         super(...arguments);
-        this.name = none();
+        this.name = null;
         this.entities = [];
         this.entitiesToAdd = [];
         this.entitiesToRemove = [];
@@ -77,11 +76,11 @@ export class Scene extends ToFromJSONEventEmitter {
         return this.name;
     }
     setName(name) {
-        this.name.replace(name);
+        this.name = name;
         return this;
     }
     removeName() {
-        this.name.take();
+        this.name = null;
         return this;
     }
     forEachEntity(fn, recur = true) {
@@ -98,16 +97,16 @@ export class Scene extends ToFromJSONEventEmitter {
     find(fn, recur = true) {
         for (const entity of this.entities) {
             if (fn(entity)) {
-                return some(entity);
+                return entity;
             }
             else if (recur) {
                 const found = entity.find(fn, recur);
-                if (found.isSome()) {
+                if (found) {
                     return found;
                 }
             }
         }
-        return none();
+        return undefined;
     }
     findWithTag(...tags) {
         return this.find((entity) => entity.hasTags(tags), true);
@@ -116,10 +115,7 @@ export class Scene extends ToFromJSONEventEmitter {
         return this.findWithTag(...tags);
     }
     findWithName(name) {
-        return this.find((entity) => entity
-            .getName()
-            .map((entityName) => entityName === name)
-            .unwrapOr(false), true);
+        return this.find((entity) => entity.getName() === name, true);
     }
     findAll(fn, recur = true) {
         const matching = [];
@@ -140,10 +136,7 @@ export class Scene extends ToFromJSONEventEmitter {
         return this.findAllWithTag(...tags);
     }
     findAllWithName(name) {
-        return this.findAll((entity) => entity
-            .getName()
-            .map((entityName) => entityName === name)
-            .unwrapOr(false), true);
+        return this.findAll((entity) => entity.getName() === name, true);
     }
     getEntities() {
         return this.entities;
@@ -152,22 +145,30 @@ export class Scene extends ToFromJSONEventEmitter {
         return this.managers;
     }
     getManager(Manager) {
-        return Option.from(this.managerMap.get(Manager));
+        return this.managerMap.get(Manager) || null;
     }
     getRequiredManager(Manager) {
-        return this.getManager(Manager).expect(() => `Scene required ${Manager} Manager`);
+        const manager = this.getManager(Manager);
+        if (!manager) {
+            throw new Error(`Scene required ${Manager} Manager`);
+        }
+        return manager;
     }
     getPlugins() {
         return this.plugins;
     }
     hasPlugin(Plugin) {
-        return this.getPlugin(Plugin).isSome();
+        return this.getPlugin(Plugin) !== null;
     }
     getPlugin(Plugin) {
-        return Option.from(this.pluginsMap.get(Plugin));
+        return this.pluginsMap.get(Plugin) || null;
     }
     getRequiredPlugin(Plugin) {
-        return this.getPlugin(Plugin).expect(() => `Scene required ${Plugin} Plugin`);
+        const plugin = this.getPlugin(Plugin);
+        if (!plugin) {
+            throw new Error(`Scene required ${Plugin} Plugin`);
+        }
+        return plugin;
     }
     addPlugins(plugins) {
         for (const plugin of plugins) {
@@ -218,18 +219,14 @@ export class Scene extends ToFromJSONEventEmitter {
      */
     UNSAFE_addComponent(component) {
         const Manager = component.getManagerConstructor();
-        const managerOption = this.getManager(Manager);
-        let manager;
-        if (managerOption.isNone()) {
+        let manager = this.getManager(Manager);
+        if (!manager) {
             manager = new Manager();
             manager.UNSAFE_setScene(this);
             this.managers.push(manager);
             this.managerMap.set(Manager, manager);
             this.sortManagers();
             manager.onAdd();
-        }
-        else {
-            manager = managerOption.unwrap();
         }
         manager.addComponent(component);
         component.UNSAFE_setManager(manager);
@@ -244,10 +241,10 @@ export class Scene extends ToFromJSONEventEmitter {
      */
     UNSAFE_removeComponent(component) {
         const Manager = component.getManagerConstructor();
-        const managerOption = this.getManager(Manager);
+        const manager = this.getManager(Manager);
         this.emit("remove-component", component);
         component.emit("remove-from-scene");
-        managerOption.ifSome((manager) => {
+        if (manager) {
             component.onRemove();
             manager.removeComponent(component);
             component.UNSAFE_removeManager();
@@ -256,16 +253,15 @@ export class Scene extends ToFromJSONEventEmitter {
                 this.managers.splice(this.managers.indexOf(manager), 1);
                 this.managerMap.delete(Manager);
             }
-        });
+        }
         return this;
     }
     /**
      * @ignore
      */
     UNSAFE_addEntityNow(entity, isChild) {
-        const entitySceneOption = entity.getScene();
-        if (entitySceneOption.isSome()) {
-            const entityScene = entitySceneOption.unwrap();
+        const entityScene = entity.getScene();
+        if (entityScene) {
             if (entityScene === this) {
                 throw new Error("Scene trying to add an Entity that is already a member of the Scene");
             }
@@ -296,9 +292,9 @@ export class Scene extends ToFromJSONEventEmitter {
      * @ignore
      */
     UNSAFE_removeEntityNow(entity) {
-        const entitySceneOption = entity.getScene();
-        if (entitySceneOption.isSome()) {
-            const entityScene = entitySceneOption.unwrap();
+        var _a;
+        const entityScene = entity.getScene();
+        if (entityScene) {
             if (entityScene !== this) {
                 throw new Error("Scene trying to remove an Entity that is not a member of the Scene");
             }
@@ -314,7 +310,7 @@ export class Scene extends ToFromJSONEventEmitter {
             }
         }
         else {
-            entity.getParent().ifSome((parent) => parent.UNSAFE_removeChild(entity));
+            (_a = entity.getParent()) === null || _a === void 0 ? void 0 : _a.UNSAFE_removeChild(entity);
         }
         for (const child of entity.getChildren().slice()) {
             this.removeEntityNow(child, true);
@@ -341,13 +337,14 @@ export class Scene extends ToFromJSONEventEmitter {
         return this;
     }
     _removePlugin(Plugin) {
-        this.getPlugin(Plugin).ifSome((plugin) => {
+        const plugin = this.getPlugin(Plugin);
+        if (plugin) {
             this.emit("remove-plugin", plugin);
             plugin.onRemove();
             plugin.UNSAFE_removeScene();
             this.plugins.splice(this.plugins.indexOf(plugin), 1);
             this.pluginsMap.delete(Plugin);
-        });
+        }
         return this;
     }
     sortPlugins() {
@@ -362,14 +359,14 @@ export class Scene extends ToFromJSONEventEmitter {
         return a.getManagerPriority() - b.getManagerPriority();
     }
     toJSON() {
-        return Object.assign(Object.assign({}, super.toJSON()), { name: this.name.unwrapOr(null), plugins: this.plugins
+        return Object.assign(Object.assign({}, super.toJSON()), { name: this.name || null, plugins: this.plugins
                 .filter((plugin) => plugin.getConstructor().isToFromJSONEnabled())
                 .map((plugin) => plugin.toJSON()), entities: this.entities.map((entity) => entity.toJSON()) });
     }
     fromJSON(json) {
         super.fromJSON(json);
         if (json.name) {
-            this.name.replace(json.name);
+            this.name = json.name;
         }
         if (isJSONArray(json.plugins)) {
             this.addPlugins(json.plugins.map((plugin) => Plugin.newFromJSON(plugin)));

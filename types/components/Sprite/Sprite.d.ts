@@ -1,4 +1,3 @@
-import { Option } from "@aicacia/core";
 import type { IJSONObject } from "@aicacia/json";
 import type { vec2 } from "gl-matrix";
 import { Assets } from "../../plugins";
@@ -29,7 +28,7 @@ export declare class Sprite extends RenderableComponent {
     setHeight(height: number): this;
     getLayer(): number;
     setLayer(layer: number): this;
-    getImageAsset<T extends ImageAsset = ImageAsset>(): Option<T>;
+    getImageAsset<T extends ImageAsset = ImageAsset>(): T | null;
     setImageAsset(imageAsset: ImageAsset): this;
     private onImageLoadHandler;
     toJSON(): {

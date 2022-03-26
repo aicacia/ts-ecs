@@ -1,9 +1,8 @@
-import { none } from "@aicacia/core";
 import { Asset } from "./Asset";
 export class JSONAsset extends Asset {
     constructor(src, options) {
         super();
-        this.json = none();
+        this.json = null;
         this.src = src;
         this.options = options;
     }
@@ -14,11 +13,11 @@ export class JSONAsset extends Asset {
         return fetch(this.src, this.options)
             .then((response) => response.json())
             .then((json) => {
-            this.json.replace(json);
+            this.json = json;
         });
     }
     unloadAsset() {
-        this.json.clear();
+        this.json = null;
         return Promise.resolve();
     }
     toJSON() {

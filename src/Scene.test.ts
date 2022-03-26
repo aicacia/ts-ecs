@@ -14,18 +14,14 @@ export class Test extends Component {
   onUpdate() {
     this.position += 1;
 
-    this.getEntity()
-      .flatMap((entity) =>
-        entity.getParent().flatMap((parent) => parent.getComponent(Test))
-      )
-      .mapOrElse(
-        (parentComponent) => {
-          this.globalPosition = parentComponent.position + this.position;
-        },
-        () => {
-          this.globalPosition = this.position;
-        }
-      );
+    const parent = this.getRequiredEntity().getParent();
+    this.globalPosition = this.position;
+    if (parent) {
+      const parentComponent = parent.getComponent(Test);
+      if (parentComponent) {
+        this.globalPosition = parentComponent.position + this.position;
+      }
+    }
 
     return this;
   }
@@ -72,16 +68,12 @@ tape("Scene", (assert: tape.Test) => {
 
   scene.update();
 
-  const parent = scene
-    .findWithTag("parent")
-    .expect("failed to find entity with tag 'parent'");
+  const parent = scene.findWithTag("parent") as Entity;
   assert.true(parent.isRoot());
   assert.equal(parent.getDepth(), 0);
   assert.deepEqual(parent.getTags(), new Set(["parent"]));
 
-  const child = scene
-    .findWithTag("child")
-    .expect("failed to find entity with tag 'child'");
+  const child = scene.findWithTag("child") as Entity;
   assert.false(child.isRoot());
   assert.equal(child.getDepth(), 1);
   assert.deepEqual(child.getTags(), new Set(["child"]));
@@ -91,7 +83,7 @@ tape("Scene", (assert: tape.Test) => {
   assert.true(child.isRoot());
   assert.equal(child.getDepth(), 0);
 
-  assert.true(scene.findWithTag("child2").isSome());
+  assert.true(scene.findWithTag("child2") !== null);
 
   assert.end();
 });
@@ -150,7 +142,7 @@ tape("Scene to/from JSON", (assert: tape.Test) => {
 
   assert.equals(scene.findAllWithTag("child").length, 2);
   assert.equals(
-    scene.findWithTag("child").unwrap().getRequiredComponent(Test).position,
+    scene.findWithTag("child")?.getRequiredComponent(Test).position,
     0
   );
 
@@ -171,8 +163,7 @@ tape("Scene find(All)", (assert: tape.Test) => {
 
   scene
     .findWithTag("parent")
-    .unwrap()
-    .addChild(new Entity().addTag("child").addComponent(new Test()));
+    ?.addChild(new Entity().addTag("child").addComponent(new Test()));
 
   scene.maintain();
 
